@@ -24,6 +24,13 @@ if($conn === false){
 	echo "Success!";
 }
 
+$sql = "SELECT * FROM test;";
+
+$stmt = sqlsrv_query( $conn, $sql);
+if( $stmt === false ) {
+     echo "Query failed!";
+}
+
 ?>
 
 </body>
