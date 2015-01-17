@@ -4,6 +4,9 @@
 
 <h1>My first PHP page</h1>
 
+<?php error_reporting(-1); ?>
+<?php ini_set('display_errors', true); ?>
+
 <?php
 	
 	ini_set('display_errors', 'On');
