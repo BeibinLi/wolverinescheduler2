@@ -33,10 +33,18 @@ if( $stmt === false ) {
 	echo "Query successful";
 }
 
-$count = mysql_num_rows($stmt); // retrieve a count of the rows in the previous query
-while ($row = mysql_fetch_assoc($stmt)) { // loop through all the rows in the resultset
-    echo $row['id'] . $row['number'] . $row['string'];
+// Make the first (and in this case, only) row of the result set available for reading.
+if( sqlsrv_fetch( $stmt ) === false) {
+     echo "No row";
 }
+
+// Get the row fields. Field indeces start at 0 and must be retrieved in order.
+// Retrieving row fields by name is not supported by sqlsrv_get_field.
+$name = sqlsrv_get_field( $stmt, 1);
+echo "$name: ";
+
+$comment = sqlsrv_get_field( $stmt, 2);
+echo $comment;
 
 ?>
 
