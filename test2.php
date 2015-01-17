@@ -19,7 +19,7 @@
 
 $server = "tcp:rd4vxrj1mk.database.windows.net";
 $user = "SQLAdmin";
-$pwd = "Mhacks1234";
+$pwd = "Mhacks12345";
 $db = "School";
 
 $conn = sqlsrv_connect($server, array("UID"=>$user, "PWD"=>$pwd, "Database"=>$db));
