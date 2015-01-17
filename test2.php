@@ -29,7 +29,11 @@ $sql = "SELECT * FROM test;";
 $stmt = sqlsrv_query( $conn, $sql);
 if( $stmt === false ) {
      echo "Query failed!";
+} else {
+	echo "Query successful";
 }
+
+echo $stmt;
 
 ?>
 
