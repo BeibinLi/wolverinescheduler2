@@ -33,7 +33,10 @@ if( $stmt === false ) {
 	echo "Query successful";
 }
 
-echo $stmt;
+$count = mysql_num_rows($stmt); // retrieve a count of the rows in the previous query
+while ($row = mysql_fetch_assoc($stmt)) { // loop through all the rows in the resultset
+    echo $row['id'] . $row['number'] . $row['string'];
+}
 
 ?>
 
