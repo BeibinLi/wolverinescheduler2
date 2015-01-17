@@ -17,7 +17,7 @@
 
 <?php
 
-$server = "tcp:rd4vxrj1mk.database.windows.net:1433";
+$server = "tcp:rd4vxrj1mk.database.windows.net";
 $user = "SQLAdmin";
 $pwd = "Mhacks1234";
 $db = "School";
