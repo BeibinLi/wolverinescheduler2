@@ -5,6 +5,10 @@
 <h1>My first PHP page</h1>
 
 <?php
+
+ini_set('display_errors', 'On');
+error_reporting(E_ALL);
+
 echo "Hello World!";
 
 $server = "tcp:<value of SERVER from section above>";
