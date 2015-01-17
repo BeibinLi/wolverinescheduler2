@@ -22,3 +22,7 @@ if($conn === false){
 	echo "Success!";
 }
 
+?>
+
+</body>
+</html>
