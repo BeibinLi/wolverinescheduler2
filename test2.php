@@ -7,18 +7,12 @@
 <?php error_reporting(-1); ?>
 <?php ini_set('display_errors', true); ?>
 
-<?php
-	
-	ini_set('display_errors', 'On');
-	error_reporting(E_ALL);
-
-	echo "Hello World!";
-?>
+<?php echo "Hello World!"; ?>
 
 <?php
 
 $server = "tcp:rd4vxrj1mk.database.windows.net";
-$user = "SQLAdmin";
+$user = "user";
 $pwd = "Mhacks12345";
 $db = "School";
 
