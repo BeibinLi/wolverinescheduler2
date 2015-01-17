@@ -12,7 +12,7 @@
 <?php
 
 $server = "tcp:rd4vxrj1mk.database.windows.net";
-$user = "user";
+$user = "SQLAdmin";
 $pwd = "Mhacks12345";
 $db = "School";
 
