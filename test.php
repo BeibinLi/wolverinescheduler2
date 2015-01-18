@@ -87,7 +87,7 @@ function find_course_combination(&$potential_courses, $curr_index, $credits, &$s
     
     for ($i = $curr_index + 1 ; $i < count($potential_courses); $i++) {
       echo $i; echo " ";  var_dump($potential_courses);
-      $course = $potential_courses[(int)$i];
+      $course = $potential_courses[$i];
       
     //   foreach($potential_courses as $fuck){
     //       echo $fuck->coursename; echo " ";
@@ -113,7 +113,7 @@ $schedule; //2D array
 
 function hasConflictWithList($L, &$V){
   for ($i = 0 ; $i <= count($V); $i++) {
-    if(hasConflict($L, $V[i])) return True;
+    if(hasConflict($L, $V[$i])) return True;
   }    
   return False;
 }
@@ -127,12 +127,12 @@ function find_time(&$course_list, $curr_index, &$curr_result){
   }
   
   for ($i = $curr_index+1 ; $i <= count($course_list); $i++) {
-    $temp_course = $course_list[i];
+    $temp_course = $course_list[$i];
     for ($j = 0 ; $j <= count($temp_course->lectures); $j++) {
-      if( hasConflictWithList($temp_course->lectures[j], $curr_result) ) 
+      if( hasConflictWithList($temp_course->lectures[$j], $curr_result) ) 
         continue;
       
-      array_push($curr_result, $temp_course->lectures[j]);
+      array_push($curr_result, $temp_course->lectures[$j]);
       find_time($course_list, $i, $curr_result);
       array_pop($curr_result);
     }
@@ -143,7 +143,7 @@ function debug_solutions()
 {
     for($i=0; $i < count($solutions); $i++){
         $total_credit = 0;
-        for($j=0; $j < count($solutions[i]); $j++){
+        for($j=0; $j < count($solutions[$i]); $j++){
             $course = $solutions[$i][$j];
             echo $course->coursename; echo " ";
             $total_credit = $total_credit + $course->credit;
