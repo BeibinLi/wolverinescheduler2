@@ -370,9 +370,8 @@ function debug_schedule(){
 
     $count = 1;
     for($i=0; $i < min(count($schedule), 10); $i++){
+    	if (!count($schedule)) break;
         echo "Schedule "; echo $count; echo ":<br>";
-        echo count($schedule);
-        echo min(count($schedule), 10);
         for($j=0; $j<count($schedule[$i]); $j++){
             $lect = $schedule[$i][$j];
             echo $lect->coursename; echo ": "; 
