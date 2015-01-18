@@ -7,7 +7,7 @@
 <?php echo 'hello world';
 echo "<br>"; //new line
 
-echo "update1"; echo "<br>"; //new line
+echo "update"; echo "<br>"; //new line
 
 ?>
 
@@ -207,15 +207,15 @@ function print_time($time)
 $bigstring;
 
 function print_one_schedule($aschedule) {
-    $out = array();
+    $out = array(); //2D
     
     $title = str_repeat('&nbsp;', 12) . "Monday". str_repeat('&nbsp;', 9).   "Tuesday". str_repeat('&nbsp;', 9).   
     "Wednesday". str_repeat('&nbsp;', 9).   "Thursday". str_repeat('&nbsp;', 9).   "Friday";
     for($i = 1; $i < 10; $i++){
-    	$out[$i] = array();
+    	$out[$i] = array(); // array of string
     	$out[$i][0] = (string)($i + 7);
     	for($j=1; $j<6;$j++){
-    		$out[i][j] = " ";
+    		$out[$i][$j] = " ";
     	}
     }
     
