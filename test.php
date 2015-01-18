@@ -75,7 +75,11 @@ function absolute_val($x){
 }
 
 function find_course_combination(&$potential_courses, $curr_index, $credits, &$selected) {
-    // echo "find_course_comb inputs are: "; var_dump($potential_courses); var_dump($selected); echo "<br>";
+    echo "find_course_comb inputs are: "; var_dump($potential_courses); 
+          echo "<br>"; //new line
+    echo "remaining credit is: "; echo $credits; echo "<br>";
+    echo "selected array is: "; var_dump($selected); echo "<br>";
+    
     if( absolute_val($credits) < $ALLOW_DIFF ){
       array_push($solutions, $selected);
       echo "I FIND A SOLUTION!  "; var_dump($selected);
@@ -86,16 +90,15 @@ function find_course_combination(&$potential_courses, $curr_index, $credits, &$s
     if($credits < 0) return;
     
     for ($i = $curr_index + 1 ; $i < count($potential_courses); $i++) {
-      echo $i; echo " ";  var_dump($potential_courses);
-      $course = $potential_courses[1];
-      
-    //   foreach($potential_courses as $fuck){
-    //       echo $fuck->coursename; echo " ";
-    //   } // the foreach function works! fuck
+      $course = $potential_courses[$i];
 
       echo "now pushing: "; var_dump($course); echo "<br>"; //new line
       array_push($selected, $course);
-      find_course_combination($potential_courses, $i, $creidts - $course->credit, $selected);
+      
+      $remain_credit = $creidts - $course->credit;
+      echo "Remaining Credit! Fuck: "; echo $remain_credit; echo " Course->Credit: "; echo $course->credit;
+      
+      find_course_combination($potential_courses, $i, $remain_credit, $selected);
       array_pop($selected);
     }  //end for
 }
@@ -113,7 +116,7 @@ $schedule; //2D array
 
 function hasConflictWithList($L, &$V){
   for ($i = 0 ; $i <= count($V); $i++) {
-    if(hasConflict($L, $V[i])) return True;
+    if(hasConflict($L, $V[$i])) return True;
   }    
   return False;
 }
@@ -127,12 +130,12 @@ function find_time(&$course_list, $curr_index, &$curr_result){
   }
   
   for ($i = $curr_index+1 ; $i <= count($course_list); $i++) {
-    $temp_course = $course_list[i];
+    $temp_course = $course_list[$i];
     for ($j = 0 ; $j <= count($temp_course->lectures); $j++) {
-      if( hasConflictWithList($temp_course->lectures[j], $curr_result) ) 
+      if( hasConflictWithList($temp_course->lectures[$j], $curr_result) ) 
         continue;
       
-      array_push($curr_result, $temp_course->lectures[j]);
+      array_push($curr_result, $temp_course->lectures[$j]);
       find_time($course_list, $i, $curr_result);
       array_pop($curr_result);
     }
@@ -143,7 +146,7 @@ function debug_solutions()
 {
     for($i=0; $i < count($solutions); $i++){
         $total_credit = 0;
-        for($j=0; $j < count($solutions[i]); $j++){
+        for($j=0; $j < count($solutions[$i]); $j++){
             $course = $solutions[$i][$j];
             echo $course->coursename; echo " ";
             $total_credit = $total_credit + $course->credit;
