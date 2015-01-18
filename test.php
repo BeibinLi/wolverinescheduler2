@@ -35,7 +35,7 @@ class Lecture{
 class Course{
     public $coursename;
     public $credit;
-    public $lectures;
+    public $lectures = array();
     
     function __construct() 
     { 
@@ -52,8 +52,9 @@ class Course{
         $this->credit = $a2;
     }
     
-    public function add(&$L){
-        array_push($this->lectures, (Lecture)$L);
+    public function add($L){
+        
+        array_push($this->lectures, $L);
         echo "ADD"; var_dump($this->lectures); echo "<br>";
     }
 }
