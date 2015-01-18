@@ -214,9 +214,9 @@ function print_one_schedule($aschedule) {
     for($i = 1; $i < 10; $i++){
     	$out[$i] = array();
     	$out[$i][0] = (string)($i + 7);
-    	for($j=1; $j<6;$j++){
-    		$out[i][j] = "";
-    	}
+    	// for($j=1; $j<6;$j++){
+    	// 	$out[i][j] = "";
+    	// }
     }
     
     //Core, set up
@@ -249,6 +249,7 @@ function print_one_schedule($aschedule) {
     		// }else if( strlen($out[$i][$j]) < 4 ){
     		// 	echo  str_repeat('&nbsp;', 8);
     		}else{
+    		    echo $i; echo ","; echo $j;
     		    echo $out[$i][$j]; 
     		}
     		echo  str_repeat('&nbsp;', 7);
