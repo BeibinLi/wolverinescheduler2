@@ -2,7 +2,9 @@
 <html>
 <body>
 
-<h1>My first PHP page</h1>
+<h1> PHP page for algorithm </h1>
+
+<?php echo "Hello World!"; ?>
 
 <?php
 
@@ -14,7 +16,6 @@ class Lecture{
     function __construct(){
         echo "new Lecture created\r\n";
     }
-    
 }
 
 $lec = new Lecture();
