@@ -96,7 +96,7 @@ function find_course_combination(&$potential_courses, $curr_index, $credits, &$s
       array_push($selected, $course);
       
       $remain_credit = $creidts - $course->credit;
-      echo "Remaining Credit! Fuck: "; echo $remain_credit;
+      echo "Remaining Credit! Fuck: "; echo $remain_credit; echo " Course->Credit: "; echo $course->credit;
       
       find_course_combination($potential_courses, $i, $remain_credit, $selected);
       array_pop($selected);
