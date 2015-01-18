@@ -78,7 +78,10 @@ Released : 20120902
 </center>
 <?php
 if(!empty($_POST)) {
+  echo "POST not empty";
   for ($i = 1; $i < 6; $i++) {
+    echo "<br >";
+    echo "i = $i";
     try {
       $dpt = $_POST['dept_in' . $i];
       $coursenum = $_POST['num_in' . $i];
