@@ -46,30 +46,30 @@ Released : 20120902
 <h1>Add New Course</h1>
 </div>
 <center>
-<form id="addbar" action="" method="post">
+<form id="addbar" action="/schedulizer/index.php" method="post" enctype="multipart/form-data">
 <table style="width:70%; padding-bottom:15px">
 <tr style="font-size:1.4em; font-family: 'Abel', sans-serif;">
 <td>Department</td>
 <td>Course Number</td>
 </tr><tr>
-<td><input id="dept_in" type="text" class="class_in" name="dept1" value="ENGR" onclick="changeValueDept()" style="font-family: 'Abel', Arial; color:#CCCCCC" /></td>
-<td><input id="num_in" type="text" class="class_in" name="num1" value="101" onclick="changeValueNum()" style="font-family: 'Abel', Arial; color:#CCCCCC" /></td>
+<td><input id="dept_in1" type="text" class="class_in" name="dept_in1" value="ENGR" onclick="changeValueDept()" style="font-family: 'Abel', Arial; color:#CCCCCC" /></td>
+<td><input id="num_in1" type="text" class="class_in" name="num_in1" value="101" onclick="changeValueNum()" style="font-family: 'Abel', Arial; color:#CCCCCC" /></td>
 </tr>
 <tr>
-<td><input id="Text1" type="text" class="class_in" name="dept2" style="font-family: 'Abel', Arial; color:#CCCCCC" /></td>
-<td><input id="Text2" type="text" class="class_in" style="font-family: 'Abel', Arial; color:#CCCCCC" /></td>
+<td><input id="dept_in2" type="text" class="class_in" name="dept_in2" style="font-family: 'Abel', Arial; color:#CCCCCC" /></td>
+<td><input id="num_in2" type="text" class="class_in" name="num_in2" style="font-family: 'Abel', Arial; color:#CCCCCC" /></td>
 </tr>
 <tr>
-<td><input id="Text3" type="text" class="class_in" style="font-family: 'Abel', Arial; color:#CCCCCC" /></td>
-<td><input id="Text4" type="text" class="class_in" style="font-family: 'Abel', Arial; color:#CCCCCC" /></td>
+<td><input id="dept_in3" type="text" class="class_in" name="dept_in3" style="font-family: 'Abel', Arial; color:#CCCCCC" /></td>
+<td><input id="num_in3" type="text" class="class_in" name="num_in3" style="font-family: 'Abel', Arial; color:#CCCCCC" /></td>
 </tr>
 <tr>
-<td><input id="Text5" type="text" class="class_in" style="font-family: 'Abel', Arial; color:#CCCCCC" /></td>
-<td><input id="Text6" type="text" class="class_in" style="font-family: 'Abel', Arial; color:#CCCCCC" /></td>
+<td><input id="dept_in4" type="text" class="class_in" name="dept_in4" style="font-family: 'Abel', Arial; color:#CCCCCC" /></td>
+<td><input id="num_in4" type="text" class="class_in" name="num_in4" style="font-family: 'Abel', Arial; color:#CCCCCC" /></td>
 </tr>
 <tr>
-<td><input id="Text7" type="text" class="class_in" style="font-family: 'Abel', Arial; color:#CCCCCC" /></td>
-<td><input id="Text8" type="text" class="class_in" style="font-family: 'Abel', Arial; color:#CCCCCC" /></td>
+<td><input id="dept_in5" type="text" class="class_in" name="dept_in5" style="font-family: 'Abel', Arial; color:#CCCCCC" /></td>
+<td><input id="num_in5" type="text" class="class_in" name="num_in5" style="font-family: 'Abel', Arial; color:#CCCCCC" /></td>
 <!-- <td><input id="add_button" type="image" class="add" src="images/math-add-icon.png" style="width:35px; height:35px"> </td> -->
 </tr>
 </table>
