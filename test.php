@@ -207,6 +207,26 @@ function print_time($time)
 
 $bigstring;
 
+function print_one_schedule($aschedule) {
+    $out = array();
+    
+    $out[0] = "        Monday   Tuesday   Wednesday   Thursday   Friday";
+    for($i = 1; $i < 12; $i++){
+    	$out[$i][0] = $i + 7;
+    }
+    
+    
+    
+    //Print out
+    echo $out[0]; echo "<br>";
+    for($i = 1; $i < count($out); $i++){
+    	for($j=0; $j < count($out[$i]); $j++){
+    		echo $out[i][j]; echo " ";
+    	}
+    	echo "<br>";
+    }
+}
+
 function debug_schedule(){
         echo "<br>";
     global $solutions;
@@ -229,6 +249,7 @@ function debug_schedule(){
             $bigstring = $bigstring . $lect->coursename . ", "  . $lect->start_time . ", ". $lect->end_time . ", " . $lect->days . ";";
         }
 	var_dump($bigstring);  echo "<br>";
+	print_one_schedule($schedule[0]);
     
     for($i=0; $i<count($schedule); $i++){
         echo "Schedule: "; echo $count; echo "<br>";
