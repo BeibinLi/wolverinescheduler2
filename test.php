@@ -7,7 +7,7 @@
 <?php echo 'hello world';
 echo "<br>"; //new line
 
-echo "update3"; echo "<br>"; //new line
+echo "update4"; echo "<br>"; //new line
 
 ?>
 
@@ -286,7 +286,7 @@ foreach($inputs as $course_name){
 	$num_credit = sqlsrv_get_field( $stmt, 0);
 	$new_course = new Course($course_name, $num_credit);
 	    
-	$sql = "SELECT start, end, days, location 
+	$sql = "SELECT starttime, endtime, days 
     	FROM lectures
     	WHERE coursename = " . $course_name . ";";
 
@@ -301,8 +301,7 @@ foreach($inputs as $course_name){
 	    $start_time = sqlsrv_get_field( $stmt, 0);
 	    $end_time = sqlsrv_get_field( $stmt, 1);
 	    $days = sqlsrv_get_field( $stmt, 2);
-	    $location = sqlsrv_get_field( $stmt, 3);
-	    
+
 	    $new_lecture = new Lecture($course_name, $start_time, $end_time, $days); //?? todo for location
     	}
 	
