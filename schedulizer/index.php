@@ -25,7 +25,76 @@ Released : 20120902
 	<link href="fullcalendar.print.css" rel="stylesheet" media="print">
 	<script src="moment.min.js"></script>
 	<script src="jquery.min.js"></script>
-	<script>
+	
+	<style>
+		#calendar {
+			max-width: 900px;
+			margin: 0 auto;
+		}
+	</style>
+
+
+</head>
+<body>
+<div id="wrapper">
+<div id="header-wrapper" class="container">
+<div id="header" class="container">
+<div id="logo">
+<img src="images/Untitled-4.png" width="230">
+</div>
+<div id="menu">
+<ul>
+<li class="current_page_item"><a href="#">Homepage</a></li>
+<li><a href="#">Blog</a></li>
+<li><a href="#">Photos</a></li>
+<li><a href="#">About</a></li>
+<li><a href="#">Contact</a></li>
+</ul>
+</div>
+</div>
+<div><img src="images/img03.png" width="1000" height="40" alt="" /></div>
+</div>
+<!-- end #header -->
+<div id="page">
+<div id="addingcourse">
+<div id="add_new_course">
+<h1>Add New Course</h1>
+</div>
+<center>
+<form id="addbar" action="/schedulizer/index.php" method="post" enctype="multipart/form-data">
+<table style="width:70%; padding-bottom:15px">
+<tr style="font-size:1.4em; font-family: 'Abel', sans-serif;">
+<td>Department</td>
+<td>Course Number</td>
+</tr><tr>
+<td><input id="dept_in1" type="text" class="class_in" name="dept_in1" value="<?php $varx = isset($_POST["dept_in1"]) ? $_POST["dept_in1"] : ""; echo $varx; ?>" onclick="changeValueDept()" style="font-family: 'Abel', Arial; color:#000000" /></td>
+<td><input id="num_in1" type="text" class="class_in" name="num_in1" value="<?php $varx = isset($_POST["num_in1"]) ? $_POST["num_in1"] : ""; echo $varx; ?>" onclick="changeValueNum()" style="font-family: 'Abel', Arial; color:#000000" /></td>
+</tr>
+<tr>
+<td><input id="dept_in2" type="text" class="class_in" name="dept_in2" value="<?php $varx = isset($_POST["dept_in2"]) ? $_POST["dept_in2"] : ""; echo $varx; ?>" style="font-family: 'Abel', Arial; color:#000000" /></td>
+<td><input id="num_in2" type="text" class="class_in" name="num_in2" value="<?php $varx = isset($_POST["num_in2"]) ? $_POST["num_in2"] : ""; echo $varx; ?>" style="font-family: 'Abel', Arial; color:#000000" /></td>
+</tr>
+<tr>
+<td><input id="dept_in3" type="text" class="class_in" name="dept_in3" value="<?php $varx = isset($_POST["dept_in3"]) ? $_POST["dept_in3"] : ""; echo $varx; ?>" style="font-family: 'Abel', Arial; color:#000000" /></td>
+<td><input id="num_in3" type="text" class="class_in" name="num_in3" value="<?php $varx = isset($_POST["num_in3"]) ? $_POST["num_in3"] : ""; echo $varx; ?>" style="font-family: 'Abel', Arial; color:#000000" /></td>
+</tr>
+<tr>
+<td><input id="dept_in4" type="text" class="class_in" name="dept_in4" value="<?php $varx = isset($_POST["dept_in4"]) ? $_POST["dept_in4"] : ""; echo $varx; ?>" style="font-family: 'Abel', Arial; color:#000000" /></td>
+<td><input id="num_in4" type="text" class="class_in" name="num_in4" value="<?php $varx = isset($_POST["num_in4"]) ? $_POST["num_in4"] : ""; echo $varx; ?>" style="font-family: 'Abel', Arial; color:#000000" /></td>
+</tr>
+<tr>
+<td><input id="dept_in5" type="text" class="class_in" name="dept_in5" value="<?php $varx = isset($_POST["dept_in5"]) ? $_POST["dept_in5"] : ""; echo $varx; ?>" style="font-family: 'Abel', Arial; color:#000000" /></td>
+<td><input id="num_in5" type="text" class="class_in" name="num_in5" value="<?php $varx = isset($_POST["num_in5"]) ? $_POST["num_in5"] : ""; echo $varx; ?>" style="font-family: 'Abel', Arial; color:#000000" /></td>
+<!-- <td><input id="add_button" type="image" class="add" src="images/math-add-icon.png" style="width:35px; height:35px"> </td> -->
+</tr>
+</table>
+<input id="schedule_button" type="submit" value="CLICK TO SCHEDULE" style="background-color: #FFD700; width:40%; height: 50px;margin:0px; border:0px; font-size:1.6em; font-family: 'Abel', Arial; font-weight:bold" ></input>
+</form>
+</center>
+
+
+
+<script>
 		$(document).ready(function() {
 		
 		
@@ -425,71 +494,6 @@ if(!empty($_POST)) {
 			});
 		});
 	</script>
-	<style>
-		#calendar {
-			max-width: 900px;
-			margin: 0 auto;
-		}
-	</style>
-
-
-</head>
-<body>
-<div id="wrapper">
-<div id="header-wrapper" class="container">
-<div id="header" class="container">
-<div id="logo">
-<img src="images/Untitled-4.png" width="230">
-</div>
-<div id="menu">
-<ul>
-<li class="current_page_item"><a href="#">Homepage</a></li>
-<li><a href="#">Blog</a></li>
-<li><a href="#">Photos</a></li>
-<li><a href="#">About</a></li>
-<li><a href="#">Contact</a></li>
-</ul>
-</div>
-</div>
-<div><img src="images/img03.png" width="1000" height="40" alt="" /></div>
-</div>
-<!-- end #header -->
-<div id="page">
-<div id="addingcourse">
-<div id="add_new_course">
-<h1>Add New Course</h1>
-</div>
-<center>
-<form id="addbar" action="/schedulizer/index.php" method="post" enctype="multipart/form-data">
-<table style="width:70%; padding-bottom:15px">
-<tr style="font-size:1.4em; font-family: 'Abel', sans-serif;">
-<td>Department</td>
-<td>Course Number</td>
-</tr><tr>
-<td><input id="dept_in1" type="text" class="class_in" name="dept_in1" value="<?php $varx = isset($_POST["dept_in1"]) ? $_POST["dept_in1"] : ""; echo $varx; ?>" onclick="changeValueDept()" style="font-family: 'Abel', Arial; color:#000000" /></td>
-<td><input id="num_in1" type="text" class="class_in" name="num_in1" value="<?php $varx = isset($_POST["num_in1"]) ? $_POST["num_in1"] : ""; echo $varx; ?>" onclick="changeValueNum()" style="font-family: 'Abel', Arial; color:#000000" /></td>
-</tr>
-<tr>
-<td><input id="dept_in2" type="text" class="class_in" name="dept_in2" value="<?php $varx = isset($_POST["dept_in2"]) ? $_POST["dept_in2"] : ""; echo $varx; ?>" style="font-family: 'Abel', Arial; color:#000000" /></td>
-<td><input id="num_in2" type="text" class="class_in" name="num_in2" value="<?php $varx = isset($_POST["num_in2"]) ? $_POST["num_in2"] : ""; echo $varx; ?>" style="font-family: 'Abel', Arial; color:#000000" /></td>
-</tr>
-<tr>
-<td><input id="dept_in3" type="text" class="class_in" name="dept_in3" value="<?php $varx = isset($_POST["dept_in3"]) ? $_POST["dept_in3"] : ""; echo $varx; ?>" style="font-family: 'Abel', Arial; color:#000000" /></td>
-<td><input id="num_in3" type="text" class="class_in" name="num_in3" value="<?php $varx = isset($_POST["num_in3"]) ? $_POST["num_in3"] : ""; echo $varx; ?>" style="font-family: 'Abel', Arial; color:#000000" /></td>
-</tr>
-<tr>
-<td><input id="dept_in4" type="text" class="class_in" name="dept_in4" value="<?php $varx = isset($_POST["dept_in4"]) ? $_POST["dept_in4"] : ""; echo $varx; ?>" style="font-family: 'Abel', Arial; color:#000000" /></td>
-<td><input id="num_in4" type="text" class="class_in" name="num_in4" value="<?php $varx = isset($_POST["num_in4"]) ? $_POST["num_in4"] : ""; echo $varx; ?>" style="font-family: 'Abel', Arial; color:#000000" /></td>
-</tr>
-<tr>
-<td><input id="dept_in5" type="text" class="class_in" name="dept_in5" value="<?php $varx = isset($_POST["dept_in5"]) ? $_POST["dept_in5"] : ""; echo $varx; ?>" style="font-family: 'Abel', Arial; color:#000000" /></td>
-<td><input id="num_in5" type="text" class="class_in" name="num_in5" value="<?php $varx = isset($_POST["num_in5"]) ? $_POST["num_in5"] : ""; echo $varx; ?>" style="font-family: 'Abel', Arial; color:#000000" /></td>
-<!-- <td><input id="add_button" type="image" class="add" src="images/math-add-icon.png" style="width:35px; height:35px"> </td> -->
-</tr>
-</table>
-<input id="schedule_button" type="submit" value="CLICK TO SCHEDULE" style="background-color: #FFD700; width:40%; height: 50px;margin:0px; border:0px; font-size:1.6em; font-family: 'Abel', Arial; font-weight:bold" ></input>
-</form>
-</center>
 
 
 
