@@ -18,8 +18,10 @@
   $pwd = "Mhacks12345";
   $db = "MHacks2015";
   
+  $conn;
   try {
     $conn = sqlsrv_connect($server, array("UID"=>$user, "PWD"=>$pwd, "Database"=>$db));
+    $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
   } catch(Exception $e){
     die(var_dump($e));
   }
