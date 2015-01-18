@@ -252,7 +252,7 @@ function print_one_schedule($aschedule) {
     		    //echo $i; echo ","; echo $j;
     		    echo $out[$i][$j]; 
     		}
-    		echo  str_repeat('&nbsp;', 7);
+    		echo  str_repeat('&nbsp;', 14);
     	}
     	echo "<br>";
     }
