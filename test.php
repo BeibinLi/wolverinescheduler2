@@ -247,7 +247,7 @@ function print_one_schedule($aschedule) {
     		// }else if( strlen($out[$i][$j]) < 4 ){
     		// 	echo  str_repeat('&nbsp;', 8);
     		}else{
-    		    echo $out[$i][$j]; var_dump($out[$i][$j]); 
+    		    if($j != 3) echo $out[$i][$j]; 
     		}
     		echo  str_repeat('&nbsp;', 7);
     	}
