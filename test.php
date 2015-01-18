@@ -7,7 +7,7 @@
 <?php echo 'hello world';
 echo "<br>"; //new line
 
-echo "update3"; echo "<br>"; //new line
+echo "update"; echo "<br>"; //new line
 
 ?>
 
@@ -244,7 +244,7 @@ function debug_schedule(){
 
 //START READING USER INPUT
 
-$inputs = array("EECS 281", "EECS 183");
+$inputs = array("EECS 281", "EECS 183", "STATS 250", "PSYH 111", "EECS 482");
 
 
 // START SQL FETCH
@@ -320,7 +320,21 @@ $temp_sol = array();
 
 
 
-find_course_combination($allCourse, -1, 8, $temp_sol);
+function max_credits(){
+   global $allCourse;
+   $total = 0;
+   foreach($allCourse as $oneCourse){
+   	$total += $oneCourse->credit;
+   }
+   
+   if($total > 18) return 18;
+   return $total - 1;
+}
+
+$student_credit = max_credits();
+
+
+find_course_combination($allCourse, -1, $student_credit, $temp_sol);
 echo "THE SOLUTION IS: "; var_dump($solutions);
 
 for($i=0; $i < count($solutions); $i++){
