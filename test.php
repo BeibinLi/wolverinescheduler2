@@ -86,7 +86,7 @@ function find_course_combination(&$potential_courses, $curr_index, $credits, &$s
     }  //end for
 }
 
-/*
+
 function hasConflict($L1, $L2){
 //??? todo for monday? tuesday?
   if($L1->start_time >= $L2->start_time and $L1->start_time < $L2->end_time) return True;
@@ -94,8 +94,9 @@ function hasConflict($L1, $L2){
   return False;
 }
 
-$schedule = array{} //2D array
+$schedule; //2D array
 
+/*
 function hasConflictWithList($L, &$V){
   for ($i = 0 ; $i <= count($V); $i++) {
     if(hasConflict($L, $V[i])) return True;
