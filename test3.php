@@ -39,10 +39,12 @@
       die(var_dump($e));
     }
   }
-
-  foreach($courses as $course) {
-    echo $course['coursename'];
-    echo $course['credits'];
+  
+  if(count($courses) > 0) {
+    foreach($courses as $course) {
+      echo $course['coursename'];
+      echo $course['credits'];
+    }
   }
 ?>
 
