@@ -32,17 +32,9 @@ class Lecture{
     }
 }
 
-// $lec = new Lecture("EECS 381", 3, 5);
-
-
 class Course{
     public $coursename;
     public $credit;
-    
-    // public function set($name, $cr){
-    //     $this->credit = $cr;
-    //     $this->coursename = $name;
-    // }
     
     function __construct() 
     { 
@@ -60,13 +52,9 @@ class Course{
     }
 }
 
-
+// GLOBAL VARIABLES
 $solutions = array(); //2D array
-
-
-
-$ALLOW_DIFF = 2;
-
+$schedule; //2D array
 
 function absolute_val($x){
     if($x > 0) return $x;
@@ -75,12 +63,16 @@ function absolute_val($x){
 }
 
 function find_course_combination(&$potential_courses, $curr_index, $credits, &$selected) {
+    global $solutions;
+    global $schedule;
+    
     echo "find_course_comb inputs are: "; var_dump($potential_courses); 
           echo "<br>"; //new line
-    echo "remaining credit is: "; echo $credits; echo "<br>";
+    echo "input credit is: "; echo $credits;     echo " abs: "; echo absolute_val($credits); echo "<br>";
     echo "selected array is: "; var_dump($selected); echo "<br>";
     
-    if( absolute_val($credits) < $ALLOW_DIFF ){
+
+    if( absolute_val($credits) < 2){
       array_push($solutions, $selected);
       echo "I FIND A SOLUTION!  "; var_dump($selected);
       echo "<br>"; //new line
@@ -95,8 +87,10 @@ function find_course_combination(&$potential_courses, $curr_index, $credits, &$s
       echo "now pushing: "; var_dump($course); echo "<br>"; //new line
       array_push($selected, $course);
       
-      $remain_credit = $creidts - $course->credit;
-      echo "Remaining Credit! Fuck: "; echo $remain_credit; echo " Course->Credit: "; echo $course->credit;
+      $remain_credit = $credits - $course->credit;
+      echo "Remaining Credit! Fuck: "; echo $remain_credit; echo " Course->Credit: "; echo $course->credit; 
+          echo "input credit is: "; echo $credits; echo "<br>";
+
       
       find_course_combination($potential_courses, $i, $remain_credit, $selected);
       array_pop($selected);
@@ -111,7 +105,6 @@ function hasConflict($L1, $L2){
   return False;
 }
 
-$schedule; //2D array
 
 
 function hasConflictWithList($L, &$V){
@@ -124,6 +117,9 @@ function hasConflictWithList($L, &$V){
 
 
 function find_time(&$course_list, $curr_index, &$curr_result){
+    global $solutions;
+    global $schedule;
+    
   if(count($course_list) == count($curr_result)) {
     array_push($schedule, $curr_result);  
     return;
@@ -144,17 +140,20 @@ function find_time(&$course_list, $curr_index, &$curr_result){
 
 function debug_solutions()
 {
+    echo "<br>";
+    global $solutions;
+    global $schedule;
+    
     for($i=0; $i < count($solutions); $i++){
         $total_credit = 0;
         for($j=0; $j < count($solutions[$i]); $j++){
             $course = $solutions[$i][$j];
             echo $course->coursename; echo " ";
-            $total_credit = $total_credit + $course->credit;
+            $total_credit += $course->credit;
         }
         echo "total: " << $total_credit ; echo "<br>"; //new line
     }
 }
-// var_dump($cs);
 
 
 //begin main
@@ -167,9 +166,9 @@ $allCourse = array($c1, $c2, $c3, $c4);
 $temp_sol = array();
 
 
-echo "update"; echo "<br>"; //new line
+echo "update2"; echo "<br>"; //new line
 
-find_course_combination($allCourse, -1, 4, $temp_sol);
+find_course_combination($allCourse, -1, 12, $temp_sol);
 echo "THE SOLUTION IS: "; var_dump($solutions);
 debug_solutions();
 

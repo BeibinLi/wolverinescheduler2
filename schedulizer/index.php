@@ -27,7 +27,7 @@ Released   : 20120902
 	<div id="header-wrapper" class="container">
 	<div id="header" class="container">
 		<div id="logo">
-			<img src="images/Untitled-4.png" width="230"> />
+			<img src="images/Untitled-4.png" width="230">
 		</div>
 		<div id="menu">
 			<ul>
@@ -56,7 +56,7 @@ Released   : 20120902
             </tr><tr>
                 <td><input id="dept_in" type="text" class="class_in" value="ENGR" onclick="changeValueDept()" style="font-family: 'Abel', Arial; color:#CCCCCC" /></td>
                 <td><input id="num_in" type="text" class="class_in" value="101" onclick="changeValueNum()" style="font-family: 'Abel', Arial; color:#CCCCCC" /></td>
-                <td><input id="add_button" type="image" class="add" src="images/math-add-icon.png" style="width:35px; height:35px"> /></td>
+                <td><input id="add_button" type="image" class="add" src="images/math-add-icon.png" style="width:35px; height:35px"></td>
             </tr>
           </table>
          </form>
