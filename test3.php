@@ -31,7 +31,7 @@
       $coursenum = $_POST['coursenum'];
       $coursename = $dpt . " " . $coursenum;
       $sql_select = "SELECT coursename, credits FROM courses
-      WHERE coursename = '?'";
+      WHERE coursename = ?";
       $stmt = $conn->query($sql_select);
       $stmt->bindValue(1, $coursename);
       $courses = $stmt->fetchAll();
