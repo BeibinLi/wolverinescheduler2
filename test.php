@@ -135,9 +135,9 @@ function debug_solutions()
         echo "total: " << $total_credit ; echo "<br>"; //new line
     }
 }
-echo "update"; echo "<br>"; //new line
+echo "update2"; echo "<br>"; //new line
 $cs = new Course("EECS 280", 4);
-echo $cs;
+var_dump($cs);
 
 
 ?>
