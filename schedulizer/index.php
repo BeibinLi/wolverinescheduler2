@@ -30,7 +30,7 @@ Released : 20120902
 		$(document).ready(function() {
 		
 			var result = "<?php echo json_encode($schedule); ?>"
-			var test_result = "<?php echo json_encode($test_var); ?>"
+			var test_result = "<?php echo $test_var; ?>"
 			alert(test_result);
 			alert(result[0]);
 			
