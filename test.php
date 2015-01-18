@@ -7,7 +7,7 @@
 <?php echo 'hello world';
 echo "<br>"; //new line
 
-echo "update1"; echo "<br>"; //new line
+echo "update2"; echo "<br>"; //new line
 
 ?>
 
@@ -45,7 +45,7 @@ class Lecture{
 }
 
 $demodemo = new Lecture("EECS 280", 9, 10, "MWF");
-var_dump(demodemo);
+var_dump($demodemo);
 
 
 class Course{
