@@ -275,24 +275,27 @@ function print_time($time)
 $bigstring;
 
 function print_one_schedule($aschedule) {
-    $out = array();
+    $out = array(); //2D
     
-    $out[0] = str_repeat('&nbsp;', 12) . "Monday". str_repeat('&nbsp;', 9).   "Tuesday". str_repeat('&nbsp;', 9).   
-    "Wednesday". str_repeat('&nbsp;', 9).   "Thursday". str_repeat('&nbsp;', 9).   "Friday";
+    $title = str_repeat('&nbsp;', 12) . "MONDAY". str_repeat('&nbsp;', 8).   "TUESDAY". str_repeat('&nbsp;', 7).   
+    "WEDNESDAY". str_repeat('&nbsp;', 6).   "THRUSDAY". str_repeat('&nbsp;', 6).   "FRIDAY";
     for($i = 1; $i < 10; $i++){
-    	$out[$i] = array();
-    	$out[$i][0] = $i + 7;
+    	$out[$i] = array(); // array of string
+    	$out[$i][0] = (string)($i + 7);
+    	for($j=1; $j<6;$j++){
+    		$out[$i][$j] = " ";
+    	}
     }
     
     //Core, set up
     foreach($aschedule as $lec){
     	$s_arr = str_split((string)$lec->days);
     	foreach($s_arr as $c){
-    		if($c = "M") $out[(int)$lec->start_time - 7][1] = $lec->coursename;
-    		if($c = "T") $out[(int)$lec->start_time - 7][2] = $lec->coursename;
-    		if($c = "W") $out[(int)$lec->start_time - 7][3] = $lec->coursename;
-    		if($c = "R") $out[(int)$lec->start_time - 7][4] = $lec->coursename;
-    		if($c = "F") $out[(int)$lec->start_time - 7][5] = $lec->coursename;
+    		if($c == "M") { $out[(int)$lec->start_time - 7][1] = $lec->coursename; }
+    		else if($c == "T") { $out[(int)$lec->start_time - 7][2] = $lec->coursename;}
+    		else if($c == "W") { $out[(int)$lec->start_time - 7][3] = $lec->coursename;}
+    		else if($c == "R") { $out[(int)$lec->start_time - 7][4] = $lec->coursename;}
+    		else if($c == "F") { $out[(int)$lec->start_time - 7][5] = $lec->coursename;}
     	}
     }
     
@@ -300,19 +303,24 @@ function print_one_schedule($aschedule) {
     
     //Print out
     echo "<br>";
-    echo $out[0]; echo "<br>"; 
+    echo $title; echo "<br>"; 
     echo "------------------------------------------------------------------------------------------------------------";
     echo "<br>"; 
     for($i = 1; $i < count($out); $i++){
-    	for($j=0; $j < count($out[$i]); $j++){
-    		if($out[$i][$j] == 8){
+    	for($j=0; $j < 6; $j++){
+    		if($i == 1 and $j == 0){
     			echo "08";
-    		}else if($out[$i][$j] == 9){
+    		}else if( $i == 2 and $j == 0){
     			echo "09";
-    		}else{
+    		}else if($j == 0){ // first column
     			echo $out[$i][$j]; 
+    		}else if( strlen($out[$i][$j]) < 4 ){
+    			echo  str_repeat('&nbsp;', 8);
+    		}else{
+    		    //echo $i; echo ","; echo $j;
+    		    echo $out[$i][$j]; 
     		}
-    		echo  str_repeat('&nbsp;', 7);
+    		echo  str_repeat('&nbsp;', 14);
     	}
     	echo "<br>";
     }
