@@ -318,9 +318,9 @@ function print_one_schedule($aschedule) {
     			echo  str_repeat('&nbsp;', 8);
     		}else{
     		    //echo $i; echo ","; echo $j;
-    		    echo $out[$i][$j]; 
+    		    echo strtoupper($out[$i][$j]); 
     		}
-    		echo  str_repeat('&nbsp;', 14);
+    		echo  str_repeat('&nbsp;', 10);
     	}
     	echo "<br>";
     }
@@ -331,7 +331,7 @@ function debug_schedule(){
     global $solutions;
     global $schedule;
     
-    var_dump($schedule);
+    //var_dump($schedule);
     
     global $bigstring;
     
