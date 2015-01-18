@@ -30,7 +30,7 @@ class Lecture{
     }
 }
 
-$lec = new Lecture(1, 2, 3);
+$lec = new Lecture("EECS 381", 3, 5);
 echo $lec->coursename; echo $lec->start_time; echo $lec->end_time;
 
 
@@ -49,8 +49,8 @@ class Course{
     } 
     
     function __construct2($a1, $a2){
-        // $this->credit = $a1;
-        // $this->coursename = $a2
+        $this->credit = $a1;
+        $this->coursename = $a2
         
         echo $a1; echo $a2;
         echo 'Course created: ';
