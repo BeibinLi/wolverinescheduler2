@@ -28,9 +28,9 @@ Released : 20120902
 	<script>
 
 		$(document).ready(function() {
-			var result = "<?php var_dump($schedule); echo $schedule ?>"
+			var result = "<?php echo $schedule ?>"
 
-			alert(result);
+			alert(result[0][0]);
 
 			$('#calendar').fullCalendar({
 				header: {
