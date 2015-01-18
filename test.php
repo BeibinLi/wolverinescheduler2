@@ -7,7 +7,7 @@
 <?php echo 'hello world';
 echo "<br>"; //new line
 
-echo "update4"; echo "<br>"; //new line
+echo "update5"; echo "<br>"; //new line
 
 ?>
 
@@ -279,6 +279,8 @@ foreach($inputs as $course_name){
         echo "Query successful";
     }
 
+ 	var_dump($stmt);
+ 	
 	// Make the first (and in this case, only) row of the result set available for reading.
     if( sqlsrv_fetch( $stmt ) ) {
 	// Get the row fields. Field indeces start at 0 and must be retrieved in order.
