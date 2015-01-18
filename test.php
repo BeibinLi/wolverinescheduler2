@@ -4,7 +4,8 @@
 
 <h1> PHP page for algorithm </h1>
 
-<?php echo "hello\nworld\n"; ?>
+<?php echo 'hello
+            world'; ?>
 
 <?php
 
@@ -23,8 +24,8 @@ class Lecture{
     } 
     
     function __construct2($a1,$a2){
-        echo "new Lecture created\r\n";
-        echo "\r\n";
+        echo 'new Lecture created
+        ';
     }
 }
 
@@ -47,12 +48,14 @@ class Course{
     } 
     
     function __construct2($a1, $a2){
-        $this->credit = $a1;
-        $this->coursename = $a2
+        // $this->credit = $a1;
+        // $this->coursename = $a2
         
-        echo "Course created: ";
+        echo 'Course created: 
+            ';
         echo $this->coursename;
-        echo "\r\n";
+        echo '
+        ';
     }
     
     function add($lec){
