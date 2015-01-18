@@ -30,10 +30,9 @@
       $dpt = $_POST['dpt'];
       $coursenum = $_POST['coursenum'];
       $coursename = $dpt . " " . $coursenum;
-      echo $coursename;
       $sql_select = "SELECT coursename, credits FROM courses
       WHERE coursename = '?'";
-      $stmt = $conn->prepare($sql_select);
+      $stmt = $conn->query($sql_select);
       $stmt->bindValue(1, $coursename);
       $courses = $stmt->fetchAll();
       if(count($courses) > 0) {
