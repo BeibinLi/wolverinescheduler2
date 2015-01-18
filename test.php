@@ -130,7 +130,7 @@ function debug_solutions()
         $total_credit = 0;
         for($j=0; $j < count($solutions[i]); $j++){
             $course = $solutions[$i][$j];
-            echo course->coursename; echo " ";
+            echo $course->coursename; echo " ";
             $total_credit = $total_credit + $course->credit;
         }
         echo "total: " << $total_credit ; echo "<br>"; //new line
@@ -142,9 +142,9 @@ echo "update"; echo "<br>"; //new line
 
 //begin main
 $c1 = new Course("EECS 280", 4);
-// $c2 = new Course("EECS 370", 4);
-// $c3 = new Course("MATH 412", 3);
-// $c4 = new Course("MATH 500", 3);
+$c2 = new Course("EECS 370", 4);
+$c3 = new Course("MATH 412", 3);
+$c4 = new Course("MATH 500", 3);
 
 // $allCourse = array(c1, c2, c3, c4);
 
