@@ -13,7 +13,7 @@
 <?php ini_set('display_errors', true); ?>
 
 <?php
-  $host = "tcp:yjjy54mc4i.database.windows.net";
+  $host = "tcp:rd4vxrj1mk.database.windows.net";
   $user = "SQLAdmin";
   $pwd = "Mhacks12345";
   $db = "MHacks2015";
