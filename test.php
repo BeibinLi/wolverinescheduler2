@@ -7,7 +7,7 @@
 <?php echo 'hello world';
 echo "<br>"; //new line
 
-echo "update2"; echo "<br>"; //new line
+echo "update3"; echo "<br>"; //new line
 
 ?>
 
@@ -44,9 +44,8 @@ class Lecture{
     }
 }
 
-$demodemo = new Lecture("EECS 280", 9, 10, "MWF");
-var_dump($demodemo);
-
+// $demodemo = new Lecture("EECS 280", 9, 10, "MWF");
+// var_dump($demodemo);
 
 class Course{
     public $coursename;
@@ -245,7 +244,7 @@ function debug_schedule(){
 
 //START READING USER INPUT
 
-$inputs = array("EECS 280", "EECS 281");
+$inputs = array("EECS 281", "EECS 183");
 
 
 // START SQL FETCH
