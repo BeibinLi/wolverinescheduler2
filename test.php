@@ -227,19 +227,20 @@ for($i=0; $i < count($solutions); $i++){
     $total_credits = 0;
     for($j=0; $j<count($solutions[$i]); $j++){
         $sch = $solutions[$i][$j];
+        $total_credits += $sch->credit;
         echo $sch->coursename; echo " ";
     }
     echo "total: "; echo $total_credits; echo "<br>";
     $dumb = array();
     $schedule = array(); //not necessary!
-//     // find_time($solutions[$i], -1, $dumb);
+    find_time($solutions[$i], -1, $dumb);
     
 //     // debug_schedule();
 }
 
 // debug_solutions();
 
-echo "update4"; echo "<br>"; //new line
+echo "update5"; echo "<br>"; //new line
 
 
 ?>
