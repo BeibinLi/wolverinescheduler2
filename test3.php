@@ -13,14 +13,13 @@
 <?php ini_set('display_errors', true); ?>
 
 <?php
-  $server = "tcp:rd4vxrj1mk.database.windows.net";
-  $user = "SQLAdmin";
+  $host = "tcp:yjjy54mc4i.database.windows.net";
+  $user = "SQLAdmin@yjjy54mc4i";
   $pwd = "Mhacks12345";
-  $db = "MHacks2015";
+  $db = "tasklist";
   
-  $conn;
   try {
-    $conn = sqlsrv_connect($server, array("UID"=>$user, "PWD"=>$pwd, "Database"=>$db));
+    $conn = new PDO( "sqlsrv:Server= $host ; Database = $db ", $user, $pwd);
     $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
   } catch(Exception $e){
     die(var_dump($e));
