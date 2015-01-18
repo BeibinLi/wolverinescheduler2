@@ -87,7 +87,8 @@ function find_course_combination(&$potential_courses, $curr_index, $credits, &$s
     
     for ($i = $curr_index + 1 ; $i < count($potential_courses); $i++) {
       echo $i; echo " ";  var_dump($potential_courses);
-      $course = (array)$potential_courses[i];
+      $course = $potential_courses[i];
+      echo "HERE! "; echo $potential_courses[i]["coursename"]; 
       array_push($selected, $course);
       echo "now pushing: "; var_dump($course); echo "<br>"; //new line
       find_course_combination($potential_courses, $i, $creidts - $course->credit, $selected);
