@@ -55,7 +55,7 @@ class Course{
 }
 
 $eecs = new Course();
-$eecs->set("eecs 280", 4);
+// $eecs->set("eecs 280", 4);
 
 
 /*
