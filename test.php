@@ -35,7 +35,7 @@ class Lecture{
 class Course{
     public $coursename;
     public $credit;
-    public $lectures;
+    public (array)$lectures;
     
     function __construct() 
     { 
@@ -52,8 +52,9 @@ class Course{
         $this->credit = $a2;
     }
     
-    public function add($L){
+    public function add(&$L){
         array_push($this->lectures, $L);
+        echo "ADD"; var_dump($this->lectures); echo "<br>";
     }
 }
 
@@ -169,9 +170,11 @@ $c4 = new Course("MATH 500", 3);
 
 $L1 = new Lecture("EECS 280", 8, 9);
 $L2 = new Lecture("EECS 280", 9, 10);
+
 $c1->add($L1);
 $c1->add($L2);
 var_dump($c1);
+var_dump($c1->lectures);
 
 $L3 = new Lecture("EECS 370", 10, 11);
 $L4 = new Lecture("EECS 370", 12, 15);
@@ -189,7 +192,7 @@ $allCourse = array($c1, $c2, $c3, $c4);
 $temp_sol = array();
 
 
-echo "update"; echo "<br>"; //new line
+echo "update3"; echo "<br>"; //new line
 
 find_course_combination($allCourse, -1, 12, $temp_sol);
 // echo "THE SOLUTION IS: "; var_dump($solutions);
