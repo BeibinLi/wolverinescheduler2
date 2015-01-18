@@ -41,7 +41,17 @@ Released : 20120902
 			// alert(result[0]);
 			
 			// alert(result[0][0])
-
+			tempEvent = [];
+			var size = <?php count($schedule)?>;
+			for(var i=0;i<size;i++)
+			{
+				var coursename = <?php $schedule[$i][$j]->coursename ?>;
+            			var coursestart =  <?php $schedule[$i][$j]->start_time ?>;
+            			var courseend =  <?php $schedule[$i][$j]->end_time ?>;
+            			var day;
+            			//if()
+				tempEvent[i] = [coursename,'2014-11-12T'+coursestart+':00:00'];
+			}
 			$('#calendar').fullCalendar({
 				header: {
 					left: 'prev,next today',
@@ -51,48 +61,7 @@ Released : 20120902
 				defaultDate: '2014-11-12',
 				editable: true,
 				eventLimit: true, // allow "more" link when too many events
-				events: [
-					{
-						id: 999,
-						title: 'Repeating Event',
-						start: '2014-11-09T16:00:00'
-					},
-					{
-						id: 999,
-						title: 'Repeating Event',
-						start: '2014-11-16T16:00:00'
-					},
-					{
-						title: 'Meeting',
-						start: '2014-11-12T10:30:00',
-						end: '2014-11-12T12:30:00'
-					},
-					{
-						title: 'Lunch',
-						start: '2014-11-12T12:00:00'
-					},
-					{
-						title: 'Meeting',
-						start: '2014-11-12T14:30:00'
-					},
-					{
-						title: 'Happy Hour',
-						start: '2014-11-12T17:30:00'
-					},
-					{
-						title: 'Dinner',
-						start: '2014-11-12T20:00:00'
-					},
-					{
-						title: 'Birthday Party',
-						start: '2014-11-13T07:00:00'
-					},
-					{
-						title: 'Click for Google',
-						url: 'http://google.com/',
-						start: '2014-11-28'
-					}
-				]
+				events: tempEvent
 			});
 
 		});
