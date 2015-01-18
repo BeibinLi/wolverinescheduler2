@@ -42,7 +42,7 @@
         echo "Lectures:";
         foreach($courses as $course) {
           //echo "Course: " . $course['C.coursename'] . ", Credits: " . $course['C.credits'];
-          echo PHP_EOL;
+          echo "<br >";
           echo "Start: " . $course['starttime'] . ", End: " . $course['endtime'] . 
             ", Location: " . $course['location'] . ", Capacity: " . $course['capacity'] . 
             ", Instructor: " . $course['instructor'] . ", Days: " . $course['days'];
