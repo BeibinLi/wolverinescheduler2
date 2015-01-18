@@ -22,10 +22,12 @@ class Lecture{
         } 
     } 
     
-    // function __construct2($a1,$a2){
-    //     echo 'new Lecture created ';
-    //     echo "\r"; echo "\n";
-    // }
+    function __construct2($a1,$a2,$a3){
+        echo 'new Lecture created ';
+        $this->coursename = $a1;
+        $this->start_time = $a2;
+        $this->end_time = $a3;
+    }
 }
 
 $lec = new Lecture(1, 2, 3);
