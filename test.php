@@ -62,7 +62,7 @@ class Course{
 
 
 
-echo "update";
+echo "update4";
 
 
 
@@ -70,11 +70,11 @@ $potential_courses; //array of courses
 
 $solutions; //2D array
 
-/*
+
 
 $ALLOW_DIFF = 1;
 
-
+/*
 func find_course_combination(&$potential_courses, $curr_index, $credits, &$selected) {
     if($credits <= $ALLOW_DIFF or (0-credits <= $ALLOW_DIFF)){
       array_push($solutions, $selected);
