@@ -36,12 +36,12 @@ $lec = new Lecture("EECS 381", 3, 5);
 class Course{
     public $credit;
     public $coursename;
-    // public $lectures;
-    
-    function __construct(){}
+
+    function __construct(){
+        echo 'Course created: ';
+    }
     
     public function set($a1,$a2){
-        echo 'Course created: ';
         $this->credit = $a1;
         $this->coursename = $a2
         echo $this->credit;
@@ -53,7 +53,7 @@ class Course{
     }
 }
 
-// $eecs = new Course();
+$eecs = new Course();
 // $eecs->set("eecs 280", 4);
 
 
