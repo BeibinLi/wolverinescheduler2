@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+﻿﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <!--
 Design by Free CSS Templates
 http://www.freecsstemplates.org
@@ -14,7 +14,7 @@ Released : 20120902
 <meta name="keywords" content="" />
 <meta name="description" content="" />
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<title>Emerald by FCT</title>
+<title>Plan Your Semester</title>
 <link href='http://fonts.googleapis.com/css?family=Abel' rel='stylesheet' type='text/css'>
 <link href="style.css" rel="stylesheet" type="text/css" media="screen" />
 <script type="text/javascript" src="jquery/jquery-1.11.2.min.js"></script>
@@ -58,7 +58,7 @@ Released : 20120902
 <div id="page">
 <div id="addingcourse">
 <div id="add_new_course">
-<h1>Add New Course</h1>
+<h1>Enter Your Courses</h1>
 </div>
 <center>
 <form id="addbar" action="/schedulizer/index.php" method="post" enctype="multipart/form-data">
@@ -273,6 +273,59 @@ function print_time($time)
     }
 }
 $bigstring;
+
+function print_one_schedule($aschedule) {
+    $out = array(); //2D
+    
+    $title = str_repeat('&nbsp;', 13) . "MONDAY". str_repeat('&nbsp;', 6).   "TUESDAY". str_repeat('&nbsp;', 5).   
+    "WEDNESDAY". str_repeat('&nbsp;', 4).   "THRUSDAY". str_repeat('&nbsp;', 3).   "FRIDAY";
+    for($i = 1; $i < 10; $i++){
+    	$out[$i] = array(); // array of string
+    	$out[$i][0] = (string)($i + 7);
+    	for($j=1; $j<6;$j++){
+    		$out[$i][$j] = " ";
+    	}
+    }
+    
+    //Core, set up
+    foreach($aschedule as $lec){
+    	$s_arr = str_split((string)$lec->days);
+    	foreach($s_arr as $c){
+    		if($c == "M") { $out[(int)$lec->start_time - 7][1] = $lec->coursename; }
+    		else if($c == "T") { $out[(int)$lec->start_time - 7][2] = $lec->coursename;}
+    		else if($c == "W") { $out[(int)$lec->start_time - 7][3] = $lec->coursename;}
+    		else if($c == "R") { $out[(int)$lec->start_time - 7][4] = $lec->coursename;}
+    		else if($c == "F") { $out[(int)$lec->start_time - 7][5] = $lec->coursename;}
+    	}
+    }
+    
+    //var_dump($out);
+    
+    //Print out
+    echo "<br>";
+    echo $title; echo "<br>"; 
+    echo "------------------------------------------------------------------------------------------------------------";
+    echo "<br>"; 
+    for($i = 1; $i < count($out); $i++){
+    	for($j=0; $j < 6; $j++){
+    		if($i == 1 and $j == 0){
+    			echo "08";
+    		}else if( $i == 2 and $j == 0){
+    			echo "09";
+    		}else if($j == 0){ // first column
+    			echo $out[$i][$j]; 
+    		}else if( strlen($out[$i][$j]) < 4 ){
+    			echo  str_repeat('&nbsp;', 8);
+    		}else{
+    		    //echo $i; echo ","; echo $j;
+    		    echo strtoupper($out[$i][$j]); 
+    		}
+    		echo  str_repeat('&nbsp;', 10);
+    	}
+    	echo "<br>";
+    }
+}
+
 function debug_schedule(){
         echo "<br>";
     global $solutions;
@@ -282,11 +335,13 @@ function debug_schedule(){
     
     global $bigstring;
     
+    echo "Here are the possibe solutions:"; echo "<br>";
     $count = 1;
     if( count($schedule) == 0 || $schedule[0] == NULL ){
-    	echo "No possible schedules."; echo "<br><br>";
+    	echo "Ooops! No Output! Try difference courses"; echo "<br>";
     	return;
     }
+
 	$i = 0;  echo "<br>";
 	for($j=0; $j<count($schedule[$i]); $j++){
             $lect = $schedule[$i][$j];
@@ -294,21 +349,23 @@ function debug_schedule(){
         }
 	// var_dump($bigstring);  echo "<br>";
     
-    echo "Possible schedules:"; echo "<br><br>";
     for($i=0; $i<count($schedule); $i++){
         echo "Schedule: "; echo $count; echo "<br>";
         for($j=0; $j<count($schedule[$i]); $j++){
             $lect = $schedule[$i][$j];
-            echo $lect->coursename; echo ": "; 
+            echo strtoupper($lect->coursename); echo ": "; 
             print_time( $lect->start_time ); echo " - "; print_time( $lect->end_time);
             echo "   "; echo $lect->days; echo "<br>";
         }
+        print_one_schedule($schedule[$i]);
+
         echo "<br>"; echo "<br>"; echo "<br>";
         $count++;
     }
     
     echo "<br>";
 }
+
 
 $host = "tcp:rd4vxrj1mk.database.windows.net";
 $user = "SQLAdmin";
@@ -421,82 +478,6 @@ if(!empty($_POST)) {
 
 
 
-<script>
-		$(document).ready(function() {
-		
-		
-		
-		
-		
-		
-		
-		
-		
-			var result = "<?php echo $bigstring; ?>"
-			alert(result);
-			
-			
-			
-			
-			$('#calendar').fullCalendar({
-				header: {
-					left: 'prev,next today',
-					center: 'title',
-					right: 'month,agendaWeek,agendaDay'
-				},
-				defaultDate: '2014-11-12',
-				editable: true,
-				eventLimit: true, // allow "more" link when too many events
-				events: [
-					{
-						id: 999,
-						title: 'Repeating Event',
-						start: '2014-11-09T16:00:00'
-					},
-					{
-						id: 999,
-						title: 'Repeating Event',
-						start: '2014-11-16T16:00:00'
-					},
-					{
-						title: 'Meeting',
-						start: '2014-11-12T10:30:00',
-						end: '2014-11-12T12:30:00'
-					},
-					{
-						title: 'Lunch',
-						start: '2014-11-12T12:00:00'
-					},
-					{
-						title: 'Meeting',
-						start: '2014-11-12T14:30:00'
-					},
-					{
-						title: 'Happy Hour',
-						start: '2014-11-12T17:30:00'
-					},
-					{
-						title: 'Dinner',
-						start: '2014-11-12T20:00:00'
-					},
-					{
-						title: 'Birthday Party',
-						start: '2014-11-13T07:00:00'
-					},
-					{
-						title: 'Click for Google',
-						url: 'http://google.com/',
-						start: '2014-11-28'
-					}
-				]
-				events.push({title: 'Mhacks Party',
-					start: '2014-11-12T07:00:00'});
-			});
-		});
-	</script>
-
-
-
 <!--
 <form id="addbar" style="width:80%" action="" method="post">
 <h2>Department
@@ -534,29 +515,6 @@ Course Number
 <div id="course_list">
 <table id="course_table"></table>
 </div>
-</div>
-<div id="num_schedule">
-1 possible schedule:
-</div>
-<div id="my-slide" >
-	<script>
-	var size=<?php ?>;
-		for(var i=0;i<size;++i)
-		{
-			var iDiv = document.createElement('div');
-			iDiv.id = 'block'+i;
-			iDiv.className = 'block';
-			document.getElementsById('#my-slide')[i].appendChild(iDiv);
-			iDiv.appendChild(<?php ?>);
-		}
-	</script>				
-</div>
-
-
-//schedule number var total = <?php echo $TOTAL_COUNT; ?>
-var total = <?php echo count($schedule); ?>
-
-<div data-lazy-background="http://devrama.com/static/devrama-slider/images/4247776023_81a3f048ca_b.png">
 </div>
 </div>
 <script type="text/javascript">

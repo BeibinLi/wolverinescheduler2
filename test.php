@@ -7,7 +7,7 @@
 <?php echo 'hello world';
 echo "<br>"; //new line
 
-echo "update2"; echo "<br>"; //new line
+echo "update"; echo "<br>"; //new line
 
 ?>
 
@@ -17,7 +17,6 @@ class Lecture{
     public $coursename;
     public $start_time;
     public $end_time;
-    public $days;
     
     function __construct() 
     { 
@@ -207,6 +206,58 @@ function print_time($time)
 
 $bigstring;
 
+function print_one_schedule($aschedule) {
+    $out = array(); //2D
+    
+    $title = str_repeat('&nbsp;', 12) . "MONDAY". str_repeat('&nbsp;', 8).   "TUESDAY". str_repeat('&nbsp;', 7).   
+    "WEDNESDAY". str_repeat('&nbsp;', 6).   "THRUSDAY". str_repeat('&nbsp;', 6).   "FRIDAY";
+    for($i = 1; $i < 10; $i++){
+    	$out[$i] = array(); // array of string
+    	$out[$i][0] = (string)($i + 7);
+    	for($j=1; $j<6;$j++){
+    		$out[$i][$j] = " ";
+    	}
+    }
+    
+    //Core, set up
+    foreach($aschedule as $lec){
+    	$s_arr = str_split((string)$lec->days);
+    	foreach($s_arr as $c){
+    		if($c == "M") { $out[(int)$lec->start_time - 7][1] = $lec->coursename; }
+    		else if($c == "T") { $out[(int)$lec->start_time - 7][2] = $lec->coursename;}
+    		else if($c == "W") { $out[(int)$lec->start_time - 7][3] = $lec->coursename;}
+    		else if($c == "R") { $out[(int)$lec->start_time - 7][4] = $lec->coursename;}
+    		else if($c == "F") { $out[(int)$lec->start_time - 7][5] = $lec->coursename;}
+    	}
+    }
+    
+    //var_dump($out);
+    
+    //Print out
+    echo "<br>";
+    echo $title; echo "<br>"; 
+    echo "------------------------------------------------------------------------------------------------------------";
+    echo "<br>"; 
+    for($i = 1; $i < count($out); $i++){
+    	for($j=0; $j < 6; $j++){
+    		if($i == 1 and $j == 0){
+    			echo "08";
+    		}else if( $i == 2 and $j == 0){
+    			echo "09";
+    		}else if($j == 0){ // first column
+    			echo $out[$i][$j]; 
+    		}else if( strlen($out[$i][$j]) < 4 ){
+    			echo  str_repeat('&nbsp;', 8);
+    		}else{
+    		    //echo $i; echo ","; echo $j;
+    		    echo strtoupper($out[$i][$j]); 
+    		}
+    		echo  str_repeat('&nbsp;', 14);
+    	}
+    	echo "<br>";
+    }
+}
+
 function debug_schedule(){
         echo "<br>";
     global $solutions;
@@ -228,7 +279,7 @@ function debug_schedule(){
             $lect = $schedule[$i][$j];
             $bigstring = $bigstring . $lect->coursename . ", "  . $lect->start_time . ", ". $lect->end_time . ", " . $lect->days . ";";
         }
-	var_dump($bigstring);  echo "<br>";
+	// var_dump($bigstring);  echo "<br>";
     
     for($i=0; $i<count($schedule); $i++){
         echo "Schedule: "; echo $count; echo "<br>";
@@ -238,6 +289,8 @@ function debug_schedule(){
             print_time( $lect->start_time ); echo " - "; print_time( $lect->end_time);
             echo "   "; echo $lect->days; echo "<br>";
         }
+        print_one_schedule($schedule[$i]);
+
         echo "<br>"; echo "<br>"; echo "<br>";
         $count++;
     }
@@ -249,7 +302,7 @@ function debug_schedule(){
 
 //START READING USER INPUT
 
-$inputs = array( "EECS 281", "EECS 183", "STATS 250");
+$inputs = array( "eecs 281", "eecs 183", "MATH 217", "EECS 482");
 // $inputs = array(" ");
 
 // START SQL FETCH
