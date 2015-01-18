@@ -212,6 +212,7 @@ function print_one_schedule($aschedule) {
     
     $out[0] = "        Monday   Tuesday   Wednesday   Thursday   Friday";
     for($i = 1; $i < 12; $i++){
+    	$out[$i] = array();
     	$out[$i][0] = $i + 7;
     }
     
@@ -219,13 +220,15 @@ function print_one_schedule($aschedule) {
     foreach($aschedule as $lec){
     	$s_arr = str_split((string)$lec->days);
     	foreach($s_arr as $c){
-    		if($c = "M") $out[$lec->start_time][1] = $lec->coursename;
-    		if($c = "T") $out[$lec->start_time][2] = $lec->coursename;
-    		if($c = "W") $out[$lec->start_time][3] = $lec->coursename;
-    		if($c = "R") $out[$lec->start_time][4] = $lec->coursename;
-    		if($c = "F") $out[$lec->start_time][5] = $lec->coursename;
+    		if($c = "M") $out[(int)$lec->start_time][1] = $lec->coursename;
+    		if($c = "T") $out[(int)$lec->start_time][2] = $lec->coursename;
+    		if($c = "W") $out[(int)$lec->start_time][3] = $lec->coursename;
+    		if($c = "R") $out[(int)$lec->start_time][4] = $lec->coursename;
+    		if($c = "F") $out[(int)$lec->start_time][5] = $lec->coursename;
     	}
     }
+    
+    var_dump($out);
     
     //Print out
     echo "<br>";
