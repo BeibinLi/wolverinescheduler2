@@ -190,61 +190,35 @@ function debug_solutions()
         echo "total: "; echo $total_credit ; echo "<br>"; //new line
     }
 }
+
+
 function debug_schedule(){
         echo "<br>";
     global $solutions;
     global $schedule;
     
-    echo "Here is the sections:"; echo "<br>";
-    
+    echo "Here are the sections:"; echo "<br>";
+    $count = 1;
     for($i=0; $i<count($schedule); $i++){
-        echo "Schedule: ";
+        echo "Schedule: "; echo $count; echo "<br>";
         for($j=0; $j<count($schedule[$i]); $j++){
             $lect = $schedule[$i][$j];
-            echo $lect->start_time; echo "  ";
+            echo $lect->coursename; echo ": "; 
+            echo $lect->start_time; echo " - "; echo $lect->end_time;
+            echo "   "; echo $lect->days; echo "<br>";
         }
-        echo "<br>";
+        echo "<br>"; echo "<br>"; echo "<br>";
+        $count++;
     }
     
     echo "<br>";
 }
 
 
-// //begin main
-// $c1 = new Course("EECS 280", 4);
-// $c2 = new Course("EECS 370", 4);
-// $c3 = new Course("MATH 412", 3);
-// $c4 = new Course("MATH 500", 3);
-
-// $L1 = new Lecture("EECS 280", 8, 9);
-// $L2 = new Lecture("EECS 280", 9, 10);
-
-// $c1->add($L1);
-// $c1->add($L2);
-// // var_dump($c1);
-// // var_dump($c1->lectures);
-
-// $L3 = new Lecture("EECS 370", 10, 11);
-// $L4 = new Lecture("EECS 370", 12, 15);
-// $c2->add($L3);
-// $c2->add($L4);
-
-// $L5 = new Lecture("MATH 412", 13, 15);
-// $L6 = new Lecture("MATH 412", 8, 11);
-// $c3->add($L5);
-// $c3->add($L6);
-
-// $L6 = new Lecture("MATH 500", 15, 16);
-// $L7 = new Lecture("MATH 500", 10, 12);
-// $L8 = new Lecture("MATH 500", 11, 14);
-// $c4->add($L6);
-// $c4->add($L7);
-// $c4->add($L8);
-
 
 //START READING USER INPUT
 
-$inputs = array("EECS 281", "EECS 183", "STATS 250", "PSYH 111", "EECS 482");
+$inputs = array("EECS 281", "EECS 183", "STATS 250", "EECS 482");
 
 
 // START SQL FETCH
