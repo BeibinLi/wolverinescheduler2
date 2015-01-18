@@ -61,7 +61,7 @@ class Course{
 
 // GLOBAL VARIABLES
 $solutions = array(); //2D array
-$schedule; //2D array
+$schedule = array(); //2D array
 
 function absolute_val($x){
     if($x > 0) return $x;
@@ -239,12 +239,11 @@ for($i=0; $i < count($solutions); $i++){
     find_time($solutions[$i], -1, $dumb);
 }
 
-debug_schedule();
 var_dump($schedule);
 
 
 
-echo "update3"; echo "<br>"; //new line
+echo "update4"; echo "<br>"; //new line
 
 
 ?>
