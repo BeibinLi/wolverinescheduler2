@@ -27,14 +27,14 @@ class Course{
     public $coursename;
     // public $lectures;
     
-    function __construct($credit_in, $coursename_in){
-        $this->credit = $credit_in;
-        $this->coursename = $coursename_in
+    // function __construct($credit_in, $coursename_in){
+    //     $this->credit = $credit_in;
+    //     $this->coursename = $coursename_in
         
-        echo "Course created: ";
-        echo $this->coursename;
-        echo "\r\n";
-    }
+    //     echo "Course created: ";
+    //     echo $this->coursename;
+    //     echo "\r\n";
+    // }
     
     function add($lec){
         array_push($this->lectures, $lec);
