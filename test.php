@@ -5,7 +5,7 @@
 <h1> PHP page for algorithm </h1>
 
 <?php echo 'hello world';
-echo "<br>";
+echo "<br>"; //new line
 ?>
 
 <?php
@@ -38,11 +38,16 @@ $lec = new Lecture("EECS 381", 3, 5);
 class Course{
     public $credit;
     public $coursename;
-
+    
+    public function set($cr, $name){
+        $this->credit = $cr;
+        $this->coursename = $name;
+    }
 }
 $cs = new Course();
 
-echo "updated";
+
+echo "updated2";
 
 
 /*
