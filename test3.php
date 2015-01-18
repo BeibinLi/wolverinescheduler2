@@ -3,6 +3,12 @@
 <html>
 <body>
 
+<form method="post" action="index.php" enctype="multipart/form-data" >
+  Department <input type="text" name="dpt" id="dpt"/></br>
+  Course Number <input type="text" name="coursenum" id="coursenum"/></br>
+  <input type="submit" name="submit" value="Submit" />
+</form>
+
 <?php error_reporting(-1); ?>
 <?php ini_set('display_errors', true); ?>
 
@@ -11,25 +17,33 @@
   $user = "SQLAdmin";
   $pwd = "Mhacks12345";
   $db = "MHacks2015";
-  $conn = sqlsrv_connect($server, array("UID"=>$user, "PWD"=>$pwd, "Database"=>$db));
-  if($conn === false){
-    echo "Connection Failure\r\n";
-  } else {
-    echo "Connection Success\r\n";
+  
+  try {
+    $conn = sqlsrv_connect($server, array("UID"=>$user, "PWD"=>$pwd, "Database"=>$db));
+  } catch(Exception $e){
+    die(var_dump($e));
   }
-  $sql = "SELECT coursename, credits
-    FROM courses
-    WHERE credits = 4;";
-  $stmt = sqlsrv_query($conn, $sql);
-  if( $stmt === false ) {
-    echo "Query failed\r\n";
-  } else {
-    echo "Query successful\r\n";
+  
+  if(!empty($_POST)) {
+    try {
+      $dpt = $_POST['dpt'];
+      $coursenum = $_POST['coursenum'];
+      $coursename = $dpt . " " . $coursenum;
+      $sql_select = "SELECT coursename, credits FROM MHacks2015
+      WHERE coursename = ?";
+      $stmt = $conn->prepare($sql_select);
+      $stmt->bindValue(1, $coursename);
+      $courses = $stmt->fetchAll();
+    }
+    catch(Exception $e) {
+      die(var_dump($e));
+    }
   }
-  while(sqlsrv_fetch($stmt)) {
-    $coursename = sqlsrv_get_field( $stmt, 0);
+  
+  while(sqlsrv_fetch($courses)) {
+    $coursename = sqlsrv_get_field( $courses, 0);
     echo "$coursename : ";
-    $credits = sqlsrv_get_field( $stmt, 1);
+    $credits = sqlsrv_get_field( $courses, 1);
     echo "$credits\r\n";
   }
 ?>
