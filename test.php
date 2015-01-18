@@ -7,7 +7,7 @@
 <?php echo 'hello world';
 echo "<br>"; //new line
 
-echo "update"; echo "<br>"; //new line
+echo "update2"; echo "<br>"; //new line
 
 ?>
 
@@ -239,9 +239,9 @@ function print_one_schedule($aschedule) {
     echo "<br>"; 
     for($i = 1; $i < count($out); $i++){
     	for($j=0; $j < count($out[$i]); $j++){
-    		if($out[$i][$j] == 8){
+    		if((int)$out[$i][$j] == 8){
     			echo "08";
-    		}else if($out[$i][$j] == 9){
+    		}else if((int)$out[$i][$j] == 9){
     			echo "09";
     		}else if($j == 0){ // first column
     			echo $out[$i][$j]; 
