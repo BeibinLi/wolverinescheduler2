@@ -232,57 +232,57 @@ $inputs = array();
 
 
 // START SQL FETCH
-error_reporting(-1);
-ini_set('display_errors', true);
-echo "Hello World!";
+// error_reporting(-1);
+// ini_set('display_errors', true);
+// echo "Hello World!";
 
-$server = "tcp:rd4vxrj1mk.database.windows.net";
-$user = "SQLAdmin";
-$pwd = "Mhacks12345";
-$db = "MHacks2015";
+// $server = "tcp:rd4vxrj1mk.database.windows.net";
+// $user = "SQLAdmin";
+// $pwd = "Mhacks12345";
+// $db = "MHacks2015";
 
-$conn = sqlsrv_connect($server, array("UID"=>$user, "PWD"=>$pwd, "Database"=>$db));
+// $conn = sqlsrv_connect($server, array("UID"=>$user, "PWD"=>$pwd, "Database"=>$db));
 
-if($conn === false){
-	echo "Failure!";
-} else {
-	echo "Success!";
-}
-
-
-
-foreach($inputs as $class){
-    $sql = "SELECT coursename, credits
-    FROM courses
-    WHERE coursename = 4;"; //???
-
-    $stmt = sqlsrv_query( $conn, $sql);
-    if( $stmt === false ) {
-        echo "Query failed!";
-    } else {
-        echo "Query successful";
-    }
-
-echo "\r\n";
-
-// Make the first (and in this case, only) row of the result set available for reading.
-while( sqlsrv_fetch( $stmt ) ) {
-
-	// Get the row fields. Field indeces start at 0 and must be retrieved in order.
-	// Retrieving row fields by name is not supported by sqlsrv_get_field.
-	$name = sqlsrv_get_field( $stmt, 0);
-	echo "$name: ";
-	echo "\r\n";
-
-	$comment = sqlsrv_get_field( $stmt, 1);
-	echo $comment;
-	echo "\r\n";
-}
-
-}//end foreach inputs
+// if($conn === false){
+// 	echo "Failure!";
+// } else {
+// 	echo "Success!";
+// }
 
 
-// $allCourse = array($c1, $c2, $c3, $c4);
+
+// foreach($inputs as $class){
+//     $sql = "SELECT coursename, credits
+//     FROM courses
+//     WHERE coursename = 4;"; //???
+
+//     $stmt = sqlsrv_query( $conn, $sql);
+//     if( $stmt === false ) {
+//         echo "Query failed!";
+//     } else {
+//         echo "Query successful";
+//     }
+
+// echo "\r\n";
+
+// // Make the first (and in this case, only) row of the result set available for reading.
+// while( sqlsrv_fetch( $stmt ) ) {
+
+// 	// Get the row fields. Field indeces start at 0 and must be retrieved in order.
+// 	// Retrieving row fields by name is not supported by sqlsrv_get_field.
+// 	$name = sqlsrv_get_field( $stmt, 0);
+// 	echo "$name: ";
+// 	echo "\r\n";
+
+// 	$comment = sqlsrv_get_field( $stmt, 1);
+// 	echo $comment;
+// 	echo "\r\n";
+// }
+
+// }//end foreach inputs
+
+
+$allCourse = array();
 $temp_sol = array();
 
 
