@@ -28,7 +28,7 @@ Released : 20120902
 	<script>
 
 		$(document).ready(function() {
-
+			alert("1");
 			// var result = "<?php echo $schedule; ?>"
 			// var test_result = "<?php echo $test_var; ?>"
 			// alert(test_result);
