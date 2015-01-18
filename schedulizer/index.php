@@ -28,7 +28,7 @@ Released : 20120902
 	<script>
 
 		$(document).ready(function() {
-			var result = "<?php echo $schedule ?>"
+			var result = "<?php var_dump($schedule); echo $schedule ?>"
 
 			alert(result);
 
