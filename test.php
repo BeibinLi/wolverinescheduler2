@@ -205,10 +205,14 @@ function print_time($time)
     }
 }
 
+$bigstring;
+
 function debug_schedule(){
         echo "<br>";
     global $solutions;
     global $schedule;
+    
+    global $bigstring;
     
     echo "Here are the sections:"; echo "<br>";
     $count = 1;
@@ -216,7 +220,13 @@ function debug_schedule(){
     	echo "Wrong! No Output!"; echo "<br>";
     	return;
     }
-    var_dump(schedule);
+
+	$i = 0;
+	for($j=0; $j<count($schedule[$i]); $j++){
+            $lect = $schedule[$i][$j];
+            $bigstring = $bigstring . ", ". $lect->coursename . ", " . $lect->start_time . $lect->end_time) . $lect->days . ";";
+        }
+	var_dump($bigstring);
     
     for($i=0; $i<count($schedule); $i++){
         echo "Schedule: "; echo $count; echo "<br>";
