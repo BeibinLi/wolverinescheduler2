@@ -24,7 +24,7 @@
     die(var_dump($e));
   }
   
-  if(!empty($_POST)) {
+  //if(!empty($_POST)) {
     try {
       //$dpt = $_POST['dpt'];
       //$coursenum = $_POST['coursenum'];
@@ -44,7 +44,7 @@
     catch(Exception $e) {
       die(var_dump($e));
     }
-  }
+  //}
   
 ?>
 
