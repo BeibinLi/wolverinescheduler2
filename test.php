@@ -28,7 +28,7 @@ $solutions = array{}; //2D array
 $ALLOW_DIFF = 1;
 
 
-func find_course_combination($potential_courses, $curr_index, $credits, $selected) {
+func find_course_combination(&$potential_courses, $curr_index, $credits, &$selected) {
     if($credits <= $ALLOW_DIFF or (0-credits <= $ALLOW_DIFF)){
       array_push($solutions, $selected);
       return;
@@ -53,14 +53,14 @@ func hasConflict($L1, $L2){
 
 $schedule = array{} //2D array
 
-func hasConflictWithList($L, $V){
+func hasConflictWithList($L, &$V){
   for ($i = 0 ; $i <= count($V); $i++) {
     if(hasConflict($L, $V[i])) return True;
   }    
   return False;
 }
 
-func find_time($course_list, $curr_index, $curr_result){
+func find_time(&$course_list, $curr_index, &$curr_result){
   if(count($course_list) == count($curr_result)) {
     array_push($schedule, $curr_result);  
     return;
