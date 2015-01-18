@@ -19,6 +19,86 @@ Released : 20120902
 <script type="text/javascript" src="jquery/jquery-1.11.2.min.js"></script>
 <script type="text/javascript" src="jquery/jquery.devrama.slider-0.9.4.js"></script>
 <script type="text/javascript" src="js/list.js"></script>
+	<link href="fullcalendar.css" rel="stylesheet">
+	<link href="fullcalendar.print.css" rel="stylesheet" media="print">
+	<script src="moment.min.js"></script>
+	<script src="jquery.min.js"></script>
+	<script>
+
+		$(document).ready(function() {
+
+			$('#calendar').fullCalendar({
+				header: {
+					left: 'prev,next today',
+					center: 'title',
+					right: 'month,agendaWeek,agendaDay'
+				},
+				defaultDate: '2014-11-12',
+				editable: true,
+				eventLimit: true, // allow "more" link when too many events
+				events: [
+					{
+						id: 999,
+						title: 'Repeating Event',
+						start: '2014-11-09T16:00:00'
+					},
+					{
+						id: 999,
+						title: 'Repeating Event',
+						start: '2014-11-16T16:00:00'
+					},
+					{
+						title: 'Meeting',
+						start: '2014-11-12T10:30:00',
+						end: '2014-11-12T12:30:00'
+					},
+					{
+						title: 'Lunch',
+						start: '2014-11-12T12:00:00'
+					},
+					{
+						title: 'Meeting',
+						start: '2014-11-12T14:30:00'
+					},
+					{
+						title: 'Happy Hour',
+						start: '2014-11-12T17:30:00'
+					},
+					{
+						title: 'Dinner',
+						start: '2014-11-12T20:00:00'
+					},
+					{
+						title: 'Birthday Party',
+						start: '2014-11-13T07:00:00'
+					},
+					{
+						title: 'Click for Google',
+						url: 'http://google.com/',
+						start: '2014-11-28'
+					}
+				]
+			});
+
+		});
+
+	</script>
+	<style>
+
+		body {
+			margin: 40px 10px;
+			padding: 0;
+			font-family: "Lucida Grande",Helvetica,Arial,Verdana,sans-serif;
+			font-size: 14px;
+		}
+
+		#calendar {
+			max-width: 900px;
+			margin: 0 auto;
+		}
+
+	</style>
+
 </head>
 <body>
 <div id="wrapper">
@@ -445,242 +525,3774 @@ Course Number
 1 possible schedule:
 </div>
 <div id="my-slide" >
-<div>
-<table width="100%" id="caltable">
-<tr>
-<th>Time</th>
-<th>Mon</th>
-<th>Tue</th>
-<th>Wed</th>
-<th>Thru</th>
-<th>Fri</th>
-</tr>
-<tr>
-<th rowspan="2">8:00 - 9:00am</th>
-<td>Physics-1</td>
-<td>English</td>
-<td title="No Class" class="Holiday"></td>
-<td>Chemestry-1</td>
-<td>Alzebra</td>
-</tr>
-<tr>
-<td>Math-2</td>
-<td>Chemestry-2</td>
-<td>Physics-1</td>
-<td>Hindi</td>
-<td>English</td>
-</tr>
-<tr>
-<th rowspan="2">9:00 - 10:00am</th>
-<td>Hindi</td>
-<td>English</td>
-<td>Math-1</td>
-<td>Chemistry</td>
-<td>Physics</td>
-</tr>
-<tr>
-<td>Cumm. Skill</td>
-<td>Sports</td>
-<td>English</td>
-<td>Computer Lab</td>
-<td>Header</td>
-</tr>
-<tr>
-<th rowspan="2">10:00 - 11:00am</th>
-<td>Header</td>
-<td>Header</td>
-<td>Header</td>
-<td>Header</td>
-<td>Header</td>
-</tr>
-<tr>
-<td>Cumm. Skill</td>
-<td>Sports</td>
-<td>English</td>
-<td>Computer Lab</td>
-<td>Header</td>
-</tr>
-<tr>
-<th rowspan="2">11:00 - 12:00pm</th>
-<td>Header</td>
-<td>Header</td>
-<td>Header</td>
-<td>Header</td>
-<td>Header</td>
-</tr>
-<tr>
-<td>Cumm. Skill</td>
-<td>Sports</td>
-<td>English</td>
-<td>Computer Lab</td>
-<td>Header</td>
-</tr>
-<tr>
-<th rowspan="2">12:00 - 1:00pm</th>
-<td>Header</td>
-<td>Header</td>
-<td>Header</td>
-<td>Header</td>
-<td>Header</td>
-</tr>
-<tr>
-<td>Cumm. Skill</td>
-<td>Sports</td>
-<td>English</td>
-<td>Computer Lab</td>
-<td>Header</td>
-</tr>
-<tr>
-<th rowspan="2">1:00 - 2:00pm</th>
-<td>Header</td>
-<td>Header</td>
-<td>Header</td>
-<td>Header</td>
-<td>Header</td>
-</tr>
-<tr>
-<td>Cumm. Skill</td>
-<td>Sports</td>
-<td>English</td>
-<td>Computer Lab</td>
-<td>Header</td>
-</tr>
-<tr>
-<th rowspan="2">2:00 - 3:00pm</th>
-<td>Header</td>
-<td>Header</td>
-<td>Header</td>
-<td>Header</td>
-<td>Header</td>
-</tr>
-<tr>
-<td>Cumm. Skill</td>
-<td>Sports</td>
-<td>English</td>
-<td>Computer Lab</td>
-<td>Header</td>
-</tr>
-<tr>
-<th rowspan="2">3:00 - 4:00pm</th>
-<td>Header</td>
-<td>Header</td>
-<td>Header</td>
-<td>Header</td>
-<td>Header</td>
-</tr>
-<tr>
-<td>Cumm. Skill</td>
-<td>Sports</td>
-<td>English</td>
-<td>Computer Lab</td>
-<td>Header</td>
-</tr>
-<tr>
-<th rowspan="2">4:00 - 5:00pm</th>
-<td>Header</td>
-<td>Header</td>
-<td>Header</td>
-<td>Header</td>
-<td>Header</td>
-</tr>
-<tr>
-<td>Cumm. Skill</td>
-<td>Sports</td>
-<td>English</td>
-<td>Computer Lab</td>
-<td>Header</td>
-</tr>
-<tr>
-<th rowspan="2">5:00 - 6:00pm</th>
-<td>Header</td>
-<td>Header</td>
-<td>Header</td>
-<td>Header</td>
-<td>Header</td>
-</tr>
-<tr>
-<td>Cumm. Skill</td>
-<td>Sports</td>
-<td>English</td>
-<td>Computer Lab</td>
-<td>Header</td>
-</tr>
-<tr>
-<th rowspan="2">6:00 - 7:00pm</th>
-<td>Header</td>
-<td>Header</td>
-<td>Header</td>
-<td>Header</td>
-<td>Header</td>
-</tr>
-<tr>
-<td>Cumm. Skill</td>
-<td>Sports</td>
-<td>English</td>
-<td>Computer Lab</td>
-<td>Header</td>
-</tr>
-<tr>
-<th rowspan="2">7:00 - 8:00pm</th>
-<td>Header</td>
-<td>Header</td>
-<td>Header</td>
-<td>Header</td>
-<td>Header</td>
-</tr>
-<tr>
-<td>Cumm. Skill</td>
-<td>Sports</td>
-<td>English</td>
-<td>Computer Lab</td>
-<td>Header</td>
-</tr>
-<tr>
-<th rowspan="2">8:00 - 9:00pm</th>
-<td>Header</td>
-<td>Header</td>
-<td>Header</td>
-<td>Header</td>
-<td>Header</td>
-</tr>
-<tr>
-<td>Cumm. Skill</td>
-<td>Sports</td>
-<td>English</td>
-<td>Computer Lab</td>
-<td>Header</td>
-</tr>
-<tr>
-<th rowspan="2">9:00 - 10:00pm</th>
-<td>Header</td>
-<td>Header</td>
-<td>Header</td>
-<td>Header</td>
-<td>Header</td>
-</tr>
-<tr>
-<td>Cumm. Skill</td>
-<td>Sports</td>
-<td>English</td>
-<td>Computer Lab</td>
-<td>Header</td>
-</tr>
-<tr>
-<th rowspan="2">10:00 - 11:00pm</th>
-<td>Header</td>
-<td>Header</td>
-<td>Header</td>
-<td>Header</td>
-<td>Header</td>
-</tr>
-<tr>
-<td>Cumm. Skill</td>
-<td>Sports</td>
-<td>English</td>
-<td>Computer Lab</td>
-<td>Header</td>
-</tr>
-</table>
+	<div id="calendar" class="fc fc-ltr fc-unthemed">
+	<div class="fc-view-container" style="">
+		<div class="fc-view fc-agendaWeek-view fc-agenda-view">
+			<table>
+				<thead>
+				<tr>
+					<td class="fc-widget-header">
+						<div class="fc-row fc-widget-header">
+							<table>
+								<thead>
+								<tr>
+									<th class="fc-axis fc-widget-header" style="width: 49px;"></th>
+									<th class="fc-day-header fc-widget-header fc-sun">Sun</th>
+									<th class="fc-day-header fc-widget-header fc-mon">Mon</th>
+									<th class="fc-day-header fc-widget-header fc-tue">Tue</th>
+									<th class="fc-day-header fc-widget-header fc-wed">Wed</th>
+									<th class="fc-day-header fc-widget-header fc-thu">Thu</th>
+									<th class="fc-day-header fc-widget-header fc-fri">Fri</th>
+									<th class="fc-day-header fc-widget-header fc-sat">Sat</th>
+								</tr>
+								</thead>
+							</table>
+						</div>
+					</td>
+				</tr>
+				</thead>
+				<tbody>
+				<tr>
+					<td class="fc-widget-content">
+						<hr class="fc-widget-header">
+						<div class="fc-time-grid-container fc-scroller" style="height: 446px;">
+							<div class="fc-time-grid"><div class="fc-bg">
+								<table>
+									<tbody>
+									<tr>
+										<td class="fc-axis fc-widget-content" style="width: 49px;"></td>
+										<td class="fc-day fc-widget-content fc-sun fc-past" data-date="2014-11-09"></td>
+										<td class="fc-day fc-widget-content fc-mon fc-past" data-date="2014-11-10"></td>
+										<td class="fc-day fc-widget-content fc-tue fc-past" data-date="2014-11-11"></td>
+										<td class="fc-day fc-widget-content fc-wed fc-past" data-date="2014-11-12"></td>
+										<td class="fc-day fc-widget-content fc-thu fc-past" data-date="2014-11-13"></td>
+										<td class="fc-day fc-widget-content fc-fri fc-past" data-date="2014-11-14"></td>
+										<td class="fc-day fc-widget-content fc-sat fc-past" data-date="2014-11-15"></td>
+									</tr>
+									</tbody>
+								</table>
+							</div>
+								<div class="fc-slats">
+									<table>
+										<tbody>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"><span>12am</span>
+											</td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>1am</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>2am</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>3am</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>4am</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>5am</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>6am</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>7am</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>8am</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>9am</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"><span>10am</span>
+											</td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"><span>11am</span>
+											</td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"><span>12pm</span>
+											</td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>1pm</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>2pm</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>3pm</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>4pm</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>5pm</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>6pm</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>7pm</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>8pm</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>9pm</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"><span>10pm</span>
+											</td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"><span>11pm</span>
+											</td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										</tbody>
+									</table>
+								</div>
+								<hr class="fc-widget-header" style="display: none;">
+								<div class="fc-content-skeleton">
+									<table>
+										<tbody>
+										<tr>
+											<td class="fc-axis" style="width:49px"></td>
+											<td>
+												<div class="fc-event-container"><a
+														class="fc-time-grid-event fc-event fc-start fc-end fc-draggable fc-resizable"
+														style="top: 703px; bottom: -791px; z-index: 1; left: 0%; right: 0%;">
+													<div class="fc-content">
+														<div class="fc-time" data-start="4:00" data-full="4:00 PM">
+															<span>4:00</span></div>
+														<div class="fc-title">Repeating Event</div>
+													</div>
+													<div class="fc-bg"></div>
+													<div class="fc-resizer"></div>
+												</a></div>
+											</td>
+											<td>
+												<div class="fc-event-container"></div>
+											</td>
+											<td>
+												<div class="fc-event-container"></div>
+											</td>
+											<td>
+												<div class="fc-event-container"><a
+														class="fc-time-grid-event fc-event fc-start fc-end fc-draggable fc-resizable"
+														style="top: 461px; bottom: -549px; z-index: 1; left: 0%; right: 0%; margin-right: 20px;">
+													<div class="fc-content">
+														<div class="fc-time" data-start="10:30"
+															 data-full="10:30 AM - 12:30 PM"><span>10:30 - 12:30</span>
+														</div>
+														<div class="fc-title">Meeting</div>
+													</div>
+													<div class="fc-bg"></div>
+													<div class="fc-resizer"></div>
+												</a><a class="fc-time-grid-event fc-event fc-start fc-end fc-draggable fc-resizable"
+													   style="top: 527px; bottom: -615px; z-index: 2; left: 50%; right: 0%;">
+													<div class="fc-content">
+														<div class="fc-time" data-start="12:00" data-full="12:00 PM">
+															<span>12:00</span></div>
+														<div class="fc-title">Lunch</div>
+													</div>
+													<div class="fc-bg"></div>
+													<div class="fc-resizer"></div>
+												</a><a class="fc-time-grid-event fc-event fc-start fc-end fc-draggable fc-resizable"
+													   style="top: 637px; bottom: -725px; z-index: 1; left: 0%; right: 0%;">
+													<div class="fc-content">
+														<div class="fc-time" data-start="2:30" data-full="2:30 PM">
+															<span>2:30</span></div>
+														<div class="fc-title">Meeting</div>
+													</div>
+													<div class="fc-bg"></div>
+													<div class="fc-resizer"></div>
+												</a><a class="fc-time-grid-event fc-event fc-start fc-end fc-draggable fc-resizable"
+													   style="top: 769px; bottom: -857px; z-index: 1; left: 0%; right: 0%;">
+													<div class="fc-content">
+														<div class="fc-time" data-start="5:30" data-full="5:30 PM">
+															<span>5:30</span></div>
+														<div class="fc-title">Happy Hour</div>
+													</div>
+													<div class="fc-bg"></div>
+													<div class="fc-resizer"></div>
+												</a><a class="fc-time-grid-event fc-event fc-start fc-end fc-draggable fc-resizable"
+													   style="top: 879px; bottom: -967px; z-index: 1; left: 0%; right: 0%;">
+													<div class="fc-content">
+														<div class="fc-time" data-start="8:00" data-full="8:00 PM">
+															<span>8:00</span></div>
+														<div class="fc-title">Dinner</div>
+													</div>
+													<div class="fc-bg"></div>
+													<div class="fc-resizer"></div>
+												</a></div>
+											</td>
+											<td>
+												<div class="fc-event-container"><a
+														class="fc-time-grid-event fc-event fc-start fc-end fc-draggable fc-resizable"
+														style="top: 307px; bottom: -395px; z-index: 1; left: 0%; right: 0%;">
+													<div class="fc-content">
+														<div class="fc-time" data-start="7:00" data-full="7:00 AM">
+															<span>7:00</span></div>
+														<div class="fc-title">Birthday Party</div>
+													</div>
+													<div class="fc-bg"></div>
+													<div class="fc-resizer"></div>
+												</a></div>
+											</td>
+											<td>
+												<div class="fc-event-container"></div>
+											</td>
+											<td>
+												<div class="fc-event-container"></div>
+											</td>
+										</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</td>
+				</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+
+<div id="calendar" class="fc fc-ltr fc-unthemed">
+	<div class="fc-view-container" style="">
+		<div class="fc-view fc-agendaWeek-view fc-agenda-view">
+			<table>
+				<thead>
+				<tr>
+					<td class="fc-widget-header">
+						<div class="fc-row fc-widget-header">
+							<table>
+								<thead>
+								<tr>
+									<th class="fc-axis fc-widget-header" style="width: 49px;"></th>
+									<th class="fc-day-header fc-widget-header fc-sun">Sun</th>
+									<th class="fc-day-header fc-widget-header fc-mon">Mon</th>
+									<th class="fc-day-header fc-widget-header fc-tue">Tue</th>
+									<th class="fc-day-header fc-widget-header fc-wed">Wed</th>
+									<th class="fc-day-header fc-widget-header fc-thu">Thu</th>
+									<th class="fc-day-header fc-widget-header fc-fri">Fri</th>
+									<th class="fc-day-header fc-widget-header fc-sat">Sat</th>
+								</tr>
+								</thead>
+							</table>
+						</div>
+					</td>
+				</tr>
+				</thead>
+				<tbody>
+				<tr>
+					<td class="fc-widget-content">
+						<hr class="fc-widget-header">
+						<div class="fc-time-grid-container fc-scroller" style="height: 446px;">
+							<div class="fc-time-grid"><div class="fc-bg">
+								<table>
+									<tbody>
+									<tr>
+										<td class="fc-axis fc-widget-content" style="width: 49px;"></td>
+										<td class="fc-day fc-widget-content fc-sun fc-past" data-date="2014-11-09"></td>
+										<td class="fc-day fc-widget-content fc-mon fc-past" data-date="2014-11-10"></td>
+										<td class="fc-day fc-widget-content fc-tue fc-past" data-date="2014-11-11"></td>
+										<td class="fc-day fc-widget-content fc-wed fc-past" data-date="2014-11-12"></td>
+										<td class="fc-day fc-widget-content fc-thu fc-past" data-date="2014-11-13"></td>
+										<td class="fc-day fc-widget-content fc-fri fc-past" data-date="2014-11-14"></td>
+										<td class="fc-day fc-widget-content fc-sat fc-past" data-date="2014-11-15"></td>
+									</tr>
+									</tbody>
+								</table>
+							</div>
+								<div class="fc-slats">
+									<table>
+										<tbody>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"><span>12am</span>
+											</td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>1am</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>2am</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>3am</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>4am</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>5am</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>6am</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>7am</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>8am</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>9am</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"><span>10am</span>
+											</td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"><span>11am</span>
+											</td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"><span>12pm</span>
+											</td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>1pm</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>2pm</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>3pm</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>4pm</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>5pm</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>6pm</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>7pm</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>8pm</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>9pm</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"><span>10pm</span>
+											</td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"><span>11pm</span>
+											</td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										</tbody>
+									</table>
+								</div>
+								<hr class="fc-widget-header" style="display: none;">
+								<div class="fc-content-skeleton">
+									<table>
+										<tbody>
+										<tr>
+											<td class="fc-axis" style="width:49px"></td>
+											<td>
+												<div class="fc-event-container"><a
+														class="fc-time-grid-event fc-event fc-start fc-end fc-draggable fc-resizable"
+														style="top: 703px; bottom: -791px; z-index: 1; left: 0%; right: 0%;">
+													<div class="fc-content">
+														<div class="fc-time" data-start="4:00" data-full="4:00 PM">
+															<span>4:00</span></div>
+														<div class="fc-title">Repeating Event</div>
+													</div>
+													<div class="fc-bg"></div>
+													<div class="fc-resizer"></div>
+												</a></div>
+											</td>
+											<td>
+												<div class="fc-event-container"></div>
+											</td>
+											<td>
+												<div class="fc-event-container"></div>
+											</td>
+											<td>
+												<div class="fc-event-container"><a
+														class="fc-time-grid-event fc-event fc-start fc-end fc-draggable fc-resizable"
+														style="top: 461px; bottom: -549px; z-index: 1; left: 0%; right: 0%; margin-right: 20px;">
+													<div class="fc-content">
+														<div class="fc-time" data-start="10:30"
+															 data-full="10:30 AM - 12:30 PM"><span>10:30 - 12:30</span>
+														</div>
+														<div class="fc-title">Meeting</div>
+													</div>
+													<div class="fc-bg"></div>
+													<div class="fc-resizer"></div>
+												</a><a class="fc-time-grid-event fc-event fc-start fc-end fc-draggable fc-resizable"
+													   style="top: 527px; bottom: -615px; z-index: 2; left: 50%; right: 0%;">
+													<div class="fc-content">
+														<div class="fc-time" data-start="12:00" data-full="12:00 PM">
+															<span>12:00</span></div>
+														<div class="fc-title">Lunch</div>
+													</div>
+													<div class="fc-bg"></div>
+													<div class="fc-resizer"></div>
+												</a><a class="fc-time-grid-event fc-event fc-start fc-end fc-draggable fc-resizable"
+													   style="top: 637px; bottom: -725px; z-index: 1; left: 0%; right: 0%;">
+													<div class="fc-content">
+														<div class="fc-time" data-start="2:30" data-full="2:30 PM">
+															<span>2:30</span></div>
+														<div class="fc-title">Meeting</div>
+													</div>
+													<div class="fc-bg"></div>
+													<div class="fc-resizer"></div>
+												</a><a class="fc-time-grid-event fc-event fc-start fc-end fc-draggable fc-resizable"
+													   style="top: 769px; bottom: -857px; z-index: 1; left: 0%; right: 0%;">
+													<div class="fc-content">
+														<div class="fc-time" data-start="5:30" data-full="5:30 PM">
+															<span>5:30</span></div>
+														<div class="fc-title">Happy Hour</div>
+													</div>
+													<div class="fc-bg"></div>
+													<div class="fc-resizer"></div>
+												</a><a class="fc-time-grid-event fc-event fc-start fc-end fc-draggable fc-resizable"
+													   style="top: 879px; bottom: -967px; z-index: 1; left: 0%; right: 0%;">
+													<div class="fc-content">
+														<div class="fc-time" data-start="8:00" data-full="8:00 PM">
+															<span>8:00</span></div>
+														<div class="fc-title">Dinner</div>
+													</div>
+													<div class="fc-bg"></div>
+													<div class="fc-resizer"></div>
+												</a></div>
+											</td>
+											<td>
+												<div class="fc-event-container"><a
+														class="fc-time-grid-event fc-event fc-start fc-end fc-draggable fc-resizable"
+														style="top: 307px; bottom: -395px; z-index: 1; left: 0%; right: 0%;">
+													<div class="fc-content">
+														<div class="fc-time" data-start="7:00" data-full="7:00 AM">
+															<span>7:00</span></div>
+														<div class="fc-title">Birthday Party</div>
+													</div>
+													<div class="fc-bg"></div>
+													<div class="fc-resizer"></div>
+												</a></div>
+											</td>
+											<td>
+												<div class="fc-event-container"></div>
+											</td>
+											<td>
+												<div class="fc-event-container"></div>
+											</td>
+										</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</td>
+				</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+
+<div id="calendar" class="fc fc-ltr fc-unthemed">
+	<div class="fc-view-container" style="">
+		<div class="fc-view fc-agendaWeek-view fc-agenda-view">
+			<table>
+				<thead>
+				<tr>
+					<td class="fc-widget-header">
+						<div class="fc-row fc-widget-header">
+							<table>
+								<thead>
+								<tr>
+									<th class="fc-axis fc-widget-header" style="width: 49px;"></th>
+									<th class="fc-day-header fc-widget-header fc-sun">Sun</th>
+									<th class="fc-day-header fc-widget-header fc-mon">Mon</th>
+									<th class="fc-day-header fc-widget-header fc-tue">Tue</th>
+									<th class="fc-day-header fc-widget-header fc-wed">Wed</th>
+									<th class="fc-day-header fc-widget-header fc-thu">Thu</th>
+									<th class="fc-day-header fc-widget-header fc-fri">Fri</th>
+									<th class="fc-day-header fc-widget-header fc-sat">Sat</th>
+								</tr>
+								</thead>
+							</table>
+						</div>
+					</td>
+				</tr>
+				</thead>
+				<tbody>
+				<tr>
+					<td class="fc-widget-content">
+						<hr class="fc-widget-header">
+						<div class="fc-time-grid-container fc-scroller" style="height: 446px;">
+							<div class="fc-time-grid"><div class="fc-bg">
+								<table>
+									<tbody>
+									<tr>
+										<td class="fc-axis fc-widget-content" style="width: 49px;"></td>
+										<td class="fc-day fc-widget-content fc-sun fc-past" data-date="2014-11-09"></td>
+										<td class="fc-day fc-widget-content fc-mon fc-past" data-date="2014-11-10"></td>
+										<td class="fc-day fc-widget-content fc-tue fc-past" data-date="2014-11-11"></td>
+										<td class="fc-day fc-widget-content fc-wed fc-past" data-date="2014-11-12"></td>
+										<td class="fc-day fc-widget-content fc-thu fc-past" data-date="2014-11-13"></td>
+										<td class="fc-day fc-widget-content fc-fri fc-past" data-date="2014-11-14"></td>
+										<td class="fc-day fc-widget-content fc-sat fc-past" data-date="2014-11-15"></td>
+									</tr>
+									</tbody>
+								</table>
+							</div>
+								<div class="fc-slats">
+									<table>
+										<tbody>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"><span>12am</span>
+											</td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>1am</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>2am</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>3am</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>4am</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>5am</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>6am</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>7am</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>8am</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>9am</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"><span>10am</span>
+											</td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"><span>11am</span>
+											</td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"><span>12pm</span>
+											</td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>1pm</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>2pm</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>3pm</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>4pm</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>5pm</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>6pm</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>7pm</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>8pm</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>9pm</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"><span>10pm</span>
+											</td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"><span>11pm</span>
+											</td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										</tbody>
+									</table>
+								</div>
+								<hr class="fc-widget-header" style="display: none;">
+								<div class="fc-content-skeleton">
+									<table>
+										<tbody>
+										<tr>
+											<td class="fc-axis" style="width:49px"></td>
+											<td>
+												<div class="fc-event-container"><a
+														class="fc-time-grid-event fc-event fc-start fc-end fc-draggable fc-resizable"
+														style="top: 703px; bottom: -791px; z-index: 1; left: 0%; right: 0%;">
+													<div class="fc-content">
+														<div class="fc-time" data-start="4:00" data-full="4:00 PM">
+															<span>4:00</span></div>
+														<div class="fc-title">Repeating Event</div>
+													</div>
+													<div class="fc-bg"></div>
+													<div class="fc-resizer"></div>
+												</a></div>
+											</td>
+											<td>
+												<div class="fc-event-container"></div>
+											</td>
+											<td>
+												<div class="fc-event-container"></div>
+											</td>
+											<td>
+												<div class="fc-event-container"><a
+														class="fc-time-grid-event fc-event fc-start fc-end fc-draggable fc-resizable"
+														style="top: 461px; bottom: -549px; z-index: 1; left: 0%; right: 0%; margin-right: 20px;">
+													<div class="fc-content">
+														<div class="fc-time" data-start="10:30"
+															 data-full="10:30 AM - 12:30 PM"><span>10:30 - 12:30</span>
+														</div>
+														<div class="fc-title">Meeting</div>
+													</div>
+													<div class="fc-bg"></div>
+													<div class="fc-resizer"></div>
+												</a><a class="fc-time-grid-event fc-event fc-start fc-end fc-draggable fc-resizable"
+													   style="top: 527px; bottom: -615px; z-index: 2; left: 50%; right: 0%;">
+													<div class="fc-content">
+														<div class="fc-time" data-start="12:00" data-full="12:00 PM">
+															<span>12:00</span></div>
+														<div class="fc-title">Lunch</div>
+													</div>
+													<div class="fc-bg"></div>
+													<div class="fc-resizer"></div>
+												</a><a class="fc-time-grid-event fc-event fc-start fc-end fc-draggable fc-resizable"
+													   style="top: 637px; bottom: -725px; z-index: 1; left: 0%; right: 0%;">
+													<div class="fc-content">
+														<div class="fc-time" data-start="2:30" data-full="2:30 PM">
+															<span>2:30</span></div>
+														<div class="fc-title">Meeting</div>
+													</div>
+													<div class="fc-bg"></div>
+													<div class="fc-resizer"></div>
+												</a><a class="fc-time-grid-event fc-event fc-start fc-end fc-draggable fc-resizable"
+													   style="top: 769px; bottom: -857px; z-index: 1; left: 0%; right: 0%;">
+													<div class="fc-content">
+														<div class="fc-time" data-start="5:30" data-full="5:30 PM">
+															<span>5:30</span></div>
+														<div class="fc-title">Happy Hour</div>
+													</div>
+													<div class="fc-bg"></div>
+													<div class="fc-resizer"></div>
+												</a><a class="fc-time-grid-event fc-event fc-start fc-end fc-draggable fc-resizable"
+													   style="top: 879px; bottom: -967px; z-index: 1; left: 0%; right: 0%;">
+													<div class="fc-content">
+														<div class="fc-time" data-start="8:00" data-full="8:00 PM">
+															<span>8:00</span></div>
+														<div class="fc-title">Dinner</div>
+													</div>
+													<div class="fc-bg"></div>
+													<div class="fc-resizer"></div>
+												</a></div>
+											</td>
+											<td>
+												<div class="fc-event-container"><a
+														class="fc-time-grid-event fc-event fc-start fc-end fc-draggable fc-resizable"
+														style="top: 307px; bottom: -395px; z-index: 1; left: 0%; right: 0%;">
+													<div class="fc-content">
+														<div class="fc-time" data-start="7:00" data-full="7:00 AM">
+															<span>7:00</span></div>
+														<div class="fc-title">Birthday Party</div>
+													</div>
+													<div class="fc-bg"></div>
+													<div class="fc-resizer"></div>
+												</a></div>
+											</td>
+											<td>
+												<div class="fc-event-container"></div>
+											</td>
+											<td>
+												<div class="fc-event-container"></div>
+											</td>
+										</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</td>
+				</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+
+<div id="calendar" class="fc fc-ltr fc-unthemed">
+	<div class="fc-view-container" style="">
+		<div class="fc-view fc-agendaWeek-view fc-agenda-view">
+			<table>
+				<thead>
+				<tr>
+					<td class="fc-widget-header">
+						<div class="fc-row fc-widget-header">
+							<table>
+								<thead>
+								<tr>
+									<th class="fc-axis fc-widget-header" style="width: 49px;"></th>
+									<th class="fc-day-header fc-widget-header fc-sun">Sun</th>
+									<th class="fc-day-header fc-widget-header fc-mon">Mon</th>
+									<th class="fc-day-header fc-widget-header fc-tue">Tue</th>
+									<th class="fc-day-header fc-widget-header fc-wed">Wed</th>
+									<th class="fc-day-header fc-widget-header fc-thu">Thu</th>
+									<th class="fc-day-header fc-widget-header fc-fri">Fri</th>
+									<th class="fc-day-header fc-widget-header fc-sat">Sat</th>
+								</tr>
+								</thead>
+							</table>
+						</div>
+					</td>
+				</tr>
+				</thead>
+				<tbody>
+				<tr>
+					<td class="fc-widget-content">
+						<hr class="fc-widget-header">
+						<div class="fc-time-grid-container fc-scroller" style="height: 446px;">
+							<div class="fc-time-grid"><div class="fc-bg">
+								<table>
+									<tbody>
+									<tr>
+										<td class="fc-axis fc-widget-content" style="width: 49px;"></td>
+										<td class="fc-day fc-widget-content fc-sun fc-past" data-date="2014-11-09"></td>
+										<td class="fc-day fc-widget-content fc-mon fc-past" data-date="2014-11-10"></td>
+										<td class="fc-day fc-widget-content fc-tue fc-past" data-date="2014-11-11"></td>
+										<td class="fc-day fc-widget-content fc-wed fc-past" data-date="2014-11-12"></td>
+										<td class="fc-day fc-widget-content fc-thu fc-past" data-date="2014-11-13"></td>
+										<td class="fc-day fc-widget-content fc-fri fc-past" data-date="2014-11-14"></td>
+										<td class="fc-day fc-widget-content fc-sat fc-past" data-date="2014-11-15"></td>
+									</tr>
+									</tbody>
+								</table>
+							</div>
+								<div class="fc-slats">
+									<table>
+										<tbody>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"><span>12am</span>
+											</td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>1am</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>2am</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>3am</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>4am</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>5am</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>6am</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>7am</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>8am</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>9am</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"><span>10am</span>
+											</td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"><span>11am</span>
+											</td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"><span>12pm</span>
+											</td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>1pm</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>2pm</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>3pm</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>4pm</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>5pm</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>6pm</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>7pm</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>8pm</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>9pm</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"><span>10pm</span>
+											</td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"><span>11pm</span>
+											</td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										</tbody>
+									</table>
+								</div>
+								<hr class="fc-widget-header" style="display: none;">
+								<div class="fc-content-skeleton">
+									<table>
+										<tbody>
+										<tr>
+											<td class="fc-axis" style="width:49px"></td>
+											<td>
+												<div class="fc-event-container"><a
+														class="fc-time-grid-event fc-event fc-start fc-end fc-draggable fc-resizable"
+														style="top: 703px; bottom: -791px; z-index: 1; left: 0%; right: 0%;">
+													<div class="fc-content">
+														<div class="fc-time" data-start="4:00" data-full="4:00 PM">
+															<span>4:00</span></div>
+														<div class="fc-title">Repeating Event</div>
+													</div>
+													<div class="fc-bg"></div>
+													<div class="fc-resizer"></div>
+												</a></div>
+											</td>
+											<td>
+												<div class="fc-event-container"></div>
+											</td>
+											<td>
+												<div class="fc-event-container"></div>
+											</td>
+											<td>
+												<div class="fc-event-container"><a
+														class="fc-time-grid-event fc-event fc-start fc-end fc-draggable fc-resizable"
+														style="top: 461px; bottom: -549px; z-index: 1; left: 0%; right: 0%; margin-right: 20px;">
+													<div class="fc-content">
+														<div class="fc-time" data-start="10:30"
+															 data-full="10:30 AM - 12:30 PM"><span>10:30 - 12:30</span>
+														</div>
+														<div class="fc-title">Meeting</div>
+													</div>
+													<div class="fc-bg"></div>
+													<div class="fc-resizer"></div>
+												</a><a class="fc-time-grid-event fc-event fc-start fc-end fc-draggable fc-resizable"
+													   style="top: 527px; bottom: -615px; z-index: 2; left: 50%; right: 0%;">
+													<div class="fc-content">
+														<div class="fc-time" data-start="12:00" data-full="12:00 PM">
+															<span>12:00</span></div>
+														<div class="fc-title">Lunch</div>
+													</div>
+													<div class="fc-bg"></div>
+													<div class="fc-resizer"></div>
+												</a><a class="fc-time-grid-event fc-event fc-start fc-end fc-draggable fc-resizable"
+													   style="top: 637px; bottom: -725px; z-index: 1; left: 0%; right: 0%;">
+													<div class="fc-content">
+														<div class="fc-time" data-start="2:30" data-full="2:30 PM">
+															<span>2:30</span></div>
+														<div class="fc-title">Meeting</div>
+													</div>
+													<div class="fc-bg"></div>
+													<div class="fc-resizer"></div>
+												</a><a class="fc-time-grid-event fc-event fc-start fc-end fc-draggable fc-resizable"
+													   style="top: 769px; bottom: -857px; z-index: 1; left: 0%; right: 0%;">
+													<div class="fc-content">
+														<div class="fc-time" data-start="5:30" data-full="5:30 PM">
+															<span>5:30</span></div>
+														<div class="fc-title">Happy Hour</div>
+													</div>
+													<div class="fc-bg"></div>
+													<div class="fc-resizer"></div>
+												</a><a class="fc-time-grid-event fc-event fc-start fc-end fc-draggable fc-resizable"
+													   style="top: 879px; bottom: -967px; z-index: 1; left: 0%; right: 0%;">
+													<div class="fc-content">
+														<div class="fc-time" data-start="8:00" data-full="8:00 PM">
+															<span>8:00</span></div>
+														<div class="fc-title">Dinner</div>
+													</div>
+													<div class="fc-bg"></div>
+													<div class="fc-resizer"></div>
+												</a></div>
+											</td>
+											<td>
+												<div class="fc-event-container"><a
+														class="fc-time-grid-event fc-event fc-start fc-end fc-draggable fc-resizable"
+														style="top: 307px; bottom: -395px; z-index: 1; left: 0%; right: 0%;">
+													<div class="fc-content">
+														<div class="fc-time" data-start="7:00" data-full="7:00 AM">
+															<span>7:00</span></div>
+														<div class="fc-title">Birthday Party</div>
+													</div>
+													<div class="fc-bg"></div>
+													<div class="fc-resizer"></div>
+												</a></div>
+											</td>
+											<td>
+												<div class="fc-event-container"></div>
+											</td>
+											<td>
+												<div class="fc-event-container"></div>
+											</td>
+										</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</td>
+				</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+
+<div id="calendar" class="fc fc-ltr fc-unthemed">
+	<div class="fc-view-container" style="">
+		<div class="fc-view fc-agendaWeek-view fc-agenda-view">
+			<table>
+				<thead>
+				<tr>
+					<td class="fc-widget-header">
+						<div class="fc-row fc-widget-header">
+							<table>
+								<thead>
+								<tr>
+									<th class="fc-axis fc-widget-header" style="width: 49px;"></th>
+									<th class="fc-day-header fc-widget-header fc-sun">Sun</th>
+									<th class="fc-day-header fc-widget-header fc-mon">Mon</th>
+									<th class="fc-day-header fc-widget-header fc-tue">Tue</th>
+									<th class="fc-day-header fc-widget-header fc-wed">Wed</th>
+									<th class="fc-day-header fc-widget-header fc-thu">Thu</th>
+									<th class="fc-day-header fc-widget-header fc-fri">Fri</th>
+									<th class="fc-day-header fc-widget-header fc-sat">Sat</th>
+								</tr>
+								</thead>
+							</table>
+						</div>
+					</td>
+				</tr>
+				</thead>
+				<tbody>
+				<tr>
+					<td class="fc-widget-content">
+						<hr class="fc-widget-header">
+						<div class="fc-time-grid-container fc-scroller" style="height: 446px;">
+							<div class="fc-time-grid"><div class="fc-bg">
+								<table>
+									<tbody>
+									<tr>
+										<td class="fc-axis fc-widget-content" style="width: 49px;"></td>
+										<td class="fc-day fc-widget-content fc-sun fc-past" data-date="2014-11-09"></td>
+										<td class="fc-day fc-widget-content fc-mon fc-past" data-date="2014-11-10"></td>
+										<td class="fc-day fc-widget-content fc-tue fc-past" data-date="2014-11-11"></td>
+										<td class="fc-day fc-widget-content fc-wed fc-past" data-date="2014-11-12"></td>
+										<td class="fc-day fc-widget-content fc-thu fc-past" data-date="2014-11-13"></td>
+										<td class="fc-day fc-widget-content fc-fri fc-past" data-date="2014-11-14"></td>
+										<td class="fc-day fc-widget-content fc-sat fc-past" data-date="2014-11-15"></td>
+									</tr>
+									</tbody>
+								</table>
+							</div>
+								<div class="fc-slats">
+									<table>
+										<tbody>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"><span>12am</span>
+											</td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>1am</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>2am</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>3am</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>4am</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>5am</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>6am</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>7am</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>8am</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>9am</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"><span>10am</span>
+											</td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"><span>11am</span>
+											</td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"><span>12pm</span>
+											</td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>1pm</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>2pm</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>3pm</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>4pm</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>5pm</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>6pm</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>7pm</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>8pm</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>9pm</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"><span>10pm</span>
+											</td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"><span>11pm</span>
+											</td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										</tbody>
+									</table>
+								</div>
+								<hr class="fc-widget-header" style="display: none;">
+								<div class="fc-content-skeleton">
+									<table>
+										<tbody>
+										<tr>
+											<td class="fc-axis" style="width:49px"></td>
+											<td>
+												<div class="fc-event-container"><a
+														class="fc-time-grid-event fc-event fc-start fc-end fc-draggable fc-resizable"
+														style="top: 703px; bottom: -791px; z-index: 1; left: 0%; right: 0%;">
+													<div class="fc-content">
+														<div class="fc-time" data-start="4:00" data-full="4:00 PM">
+															<span>4:00</span></div>
+														<div class="fc-title">Repeating Event</div>
+													</div>
+													<div class="fc-bg"></div>
+													<div class="fc-resizer"></div>
+												</a></div>
+											</td>
+											<td>
+												<div class="fc-event-container"></div>
+											</td>
+											<td>
+												<div class="fc-event-container"></div>
+											</td>
+											<td>
+												<div class="fc-event-container"><a
+														class="fc-time-grid-event fc-event fc-start fc-end fc-draggable fc-resizable"
+														style="top: 461px; bottom: -549px; z-index: 1; left: 0%; right: 0%; margin-right: 20px;">
+													<div class="fc-content">
+														<div class="fc-time" data-start="10:30"
+															 data-full="10:30 AM - 12:30 PM"><span>10:30 - 12:30</span>
+														</div>
+														<div class="fc-title">Meeting</div>
+													</div>
+													<div class="fc-bg"></div>
+													<div class="fc-resizer"></div>
+												</a><a class="fc-time-grid-event fc-event fc-start fc-end fc-draggable fc-resizable"
+													   style="top: 527px; bottom: -615px; z-index: 2; left: 50%; right: 0%;">
+													<div class="fc-content">
+														<div class="fc-time" data-start="12:00" data-full="12:00 PM">
+															<span>12:00</span></div>
+														<div class="fc-title">Lunch</div>
+													</div>
+													<div class="fc-bg"></div>
+													<div class="fc-resizer"></div>
+												</a><a class="fc-time-grid-event fc-event fc-start fc-end fc-draggable fc-resizable"
+													   style="top: 637px; bottom: -725px; z-index: 1; left: 0%; right: 0%;">
+													<div class="fc-content">
+														<div class="fc-time" data-start="2:30" data-full="2:30 PM">
+															<span>2:30</span></div>
+														<div class="fc-title">Meeting</div>
+													</div>
+													<div class="fc-bg"></div>
+													<div class="fc-resizer"></div>
+												</a><a class="fc-time-grid-event fc-event fc-start fc-end fc-draggable fc-resizable"
+													   style="top: 769px; bottom: -857px; z-index: 1; left: 0%; right: 0%;">
+													<div class="fc-content">
+														<div class="fc-time" data-start="5:30" data-full="5:30 PM">
+															<span>5:30</span></div>
+														<div class="fc-title">Happy Hour</div>
+													</div>
+													<div class="fc-bg"></div>
+													<div class="fc-resizer"></div>
+												</a><a class="fc-time-grid-event fc-event fc-start fc-end fc-draggable fc-resizable"
+													   style="top: 879px; bottom: -967px; z-index: 1; left: 0%; right: 0%;">
+													<div class="fc-content">
+														<div class="fc-time" data-start="8:00" data-full="8:00 PM">
+															<span>8:00</span></div>
+														<div class="fc-title">Dinner</div>
+													</div>
+													<div class="fc-bg"></div>
+													<div class="fc-resizer"></div>
+												</a></div>
+											</td>
+											<td>
+												<div class="fc-event-container"><a
+														class="fc-time-grid-event fc-event fc-start fc-end fc-draggable fc-resizable"
+														style="top: 307px; bottom: -395px; z-index: 1; left: 0%; right: 0%;">
+													<div class="fc-content">
+														<div class="fc-time" data-start="7:00" data-full="7:00 AM">
+															<span>7:00</span></div>
+														<div class="fc-title">Birthday Party</div>
+													</div>
+													<div class="fc-bg"></div>
+													<div class="fc-resizer"></div>
+												</a></div>
+											</td>
+											<td>
+												<div class="fc-event-container"></div>
+											</td>
+											<td>
+												<div class="fc-event-container"></div>
+											</td>
+										</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</td>
+				</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+
+<div id="calendar" class="fc fc-ltr fc-unthemed">
+	<div class="fc-view-container" style="">
+		<div class="fc-view fc-agendaWeek-view fc-agenda-view">
+			<table>
+				<thead>
+				<tr>
+					<td class="fc-widget-header">
+						<div class="fc-row fc-widget-header">
+							<table>
+								<thead>
+								<tr>
+									<th class="fc-axis fc-widget-header" style="width: 49px;"></th>
+									<th class="fc-day-header fc-widget-header fc-sun">Sun</th>
+									<th class="fc-day-header fc-widget-header fc-mon">Mon</th>
+									<th class="fc-day-header fc-widget-header fc-tue">Tue</th>
+									<th class="fc-day-header fc-widget-header fc-wed">Wed</th>
+									<th class="fc-day-header fc-widget-header fc-thu">Thu</th>
+									<th class="fc-day-header fc-widget-header fc-fri">Fri</th>
+									<th class="fc-day-header fc-widget-header fc-sat">Sat</th>
+								</tr>
+								</thead>
+							</table>
+						</div>
+					</td>
+				</tr>
+				</thead>
+				<tbody>
+				<tr>
+					<td class="fc-widget-content">
+						<hr class="fc-widget-header">
+						<div class="fc-time-grid-container fc-scroller" style="height: 446px;">
+							<div class="fc-time-grid"><div class="fc-bg">
+								<table>
+									<tbody>
+									<tr>
+										<td class="fc-axis fc-widget-content" style="width: 49px;"></td>
+										<td class="fc-day fc-widget-content fc-sun fc-past" data-date="2014-11-09"></td>
+										<td class="fc-day fc-widget-content fc-mon fc-past" data-date="2014-11-10"></td>
+										<td class="fc-day fc-widget-content fc-tue fc-past" data-date="2014-11-11"></td>
+										<td class="fc-day fc-widget-content fc-wed fc-past" data-date="2014-11-12"></td>
+										<td class="fc-day fc-widget-content fc-thu fc-past" data-date="2014-11-13"></td>
+										<td class="fc-day fc-widget-content fc-fri fc-past" data-date="2014-11-14"></td>
+										<td class="fc-day fc-widget-content fc-sat fc-past" data-date="2014-11-15"></td>
+									</tr>
+									</tbody>
+								</table>
+							</div>
+								<div class="fc-slats">
+									<table>
+										<tbody>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"><span>12am</span>
+											</td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>1am</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>2am</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>3am</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>4am</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>5am</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>6am</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>7am</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>8am</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>9am</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"><span>10am</span>
+											</td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"><span>11am</span>
+											</td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"><span>12pm</span>
+											</td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>1pm</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>2pm</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>3pm</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>4pm</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>5pm</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>6pm</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>7pm</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>8pm</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>9pm</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"><span>10pm</span>
+											</td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"><span>11pm</span>
+											</td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										</tbody>
+									</table>
+								</div>
+								<hr class="fc-widget-header" style="display: none;">
+								<div class="fc-content-skeleton">
+									<table>
+										<tbody>
+										<tr>
+											<td class="fc-axis" style="width:49px"></td>
+											<td>
+												<div class="fc-event-container"><a
+														class="fc-time-grid-event fc-event fc-start fc-end fc-draggable fc-resizable"
+														style="top: 703px; bottom: -791px; z-index: 1; left: 0%; right: 0%;">
+													<div class="fc-content">
+														<div class="fc-time" data-start="4:00" data-full="4:00 PM">
+															<span>4:00</span></div>
+														<div class="fc-title">Repeating Event</div>
+													</div>
+													<div class="fc-bg"></div>
+													<div class="fc-resizer"></div>
+												</a></div>
+											</td>
+											<td>
+												<div class="fc-event-container"></div>
+											</td>
+											<td>
+												<div class="fc-event-container"></div>
+											</td>
+											<td>
+												<div class="fc-event-container"><a
+														class="fc-time-grid-event fc-event fc-start fc-end fc-draggable fc-resizable"
+														style="top: 461px; bottom: -549px; z-index: 1; left: 0%; right: 0%; margin-right: 20px;">
+													<div class="fc-content">
+														<div class="fc-time" data-start="10:30"
+															 data-full="10:30 AM - 12:30 PM"><span>10:30 - 12:30</span>
+														</div>
+														<div class="fc-title">Meeting</div>
+													</div>
+													<div class="fc-bg"></div>
+													<div class="fc-resizer"></div>
+												</a><a class="fc-time-grid-event fc-event fc-start fc-end fc-draggable fc-resizable"
+													   style="top: 527px; bottom: -615px; z-index: 2; left: 50%; right: 0%;">
+													<div class="fc-content">
+														<div class="fc-time" data-start="12:00" data-full="12:00 PM">
+															<span>12:00</span></div>
+														<div class="fc-title">Lunch</div>
+													</div>
+													<div class="fc-bg"></div>
+													<div class="fc-resizer"></div>
+												</a><a class="fc-time-grid-event fc-event fc-start fc-end fc-draggable fc-resizable"
+													   style="top: 637px; bottom: -725px; z-index: 1; left: 0%; right: 0%;">
+													<div class="fc-content">
+														<div class="fc-time" data-start="2:30" data-full="2:30 PM">
+															<span>2:30</span></div>
+														<div class="fc-title">Meeting</div>
+													</div>
+													<div class="fc-bg"></div>
+													<div class="fc-resizer"></div>
+												</a><a class="fc-time-grid-event fc-event fc-start fc-end fc-draggable fc-resizable"
+													   style="top: 769px; bottom: -857px; z-index: 1; left: 0%; right: 0%;">
+													<div class="fc-content">
+														<div class="fc-time" data-start="5:30" data-full="5:30 PM">
+															<span>5:30</span></div>
+														<div class="fc-title">Happy Hour</div>
+													</div>
+													<div class="fc-bg"></div>
+													<div class="fc-resizer"></div>
+												</a><a class="fc-time-grid-event fc-event fc-start fc-end fc-draggable fc-resizable"
+													   style="top: 879px; bottom: -967px; z-index: 1; left: 0%; right: 0%;">
+													<div class="fc-content">
+														<div class="fc-time" data-start="8:00" data-full="8:00 PM">
+															<span>8:00</span></div>
+														<div class="fc-title">Dinner</div>
+													</div>
+													<div class="fc-bg"></div>
+													<div class="fc-resizer"></div>
+												</a></div>
+											</td>
+											<td>
+												<div class="fc-event-container"><a
+														class="fc-time-grid-event fc-event fc-start fc-end fc-draggable fc-resizable"
+														style="top: 307px; bottom: -395px; z-index: 1; left: 0%; right: 0%;">
+													<div class="fc-content">
+														<div class="fc-time" data-start="7:00" data-full="7:00 AM">
+															<span>7:00</span></div>
+														<div class="fc-title">Birthday Party</div>
+													</div>
+													<div class="fc-bg"></div>
+													<div class="fc-resizer"></div>
+												</a></div>
+											</td>
+											<td>
+												<div class="fc-event-container"></div>
+											</td>
+											<td>
+												<div class="fc-event-container"></div>
+											</td>
+										</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</td>
+				</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+
+<div id="calendar" class="fc fc-ltr fc-unthemed">
+	<div class="fc-view-container" style="">
+		<div class="fc-view fc-agendaWeek-view fc-agenda-view">
+			<table>
+				<thead>
+				<tr>
+					<td class="fc-widget-header">
+						<div class="fc-row fc-widget-header">
+							<table>
+								<thead>
+								<tr>
+									<th class="fc-axis fc-widget-header" style="width: 49px;"></th>
+									<th class="fc-day-header fc-widget-header fc-sun">Sun</th>
+									<th class="fc-day-header fc-widget-header fc-mon">Mon</th>
+									<th class="fc-day-header fc-widget-header fc-tue">Tue</th>
+									<th class="fc-day-header fc-widget-header fc-wed">Wed</th>
+									<th class="fc-day-header fc-widget-header fc-thu">Thu</th>
+									<th class="fc-day-header fc-widget-header fc-fri">Fri</th>
+									<th class="fc-day-header fc-widget-header fc-sat">Sat</th>
+								</tr>
+								</thead>
+							</table>
+						</div>
+					</td>
+				</tr>
+				</thead>
+				<tbody>
+				<tr>
+					<td class="fc-widget-content">
+						<hr class="fc-widget-header">
+						<div class="fc-time-grid-container fc-scroller" style="height: 446px;">
+							<div class="fc-time-grid"><div class="fc-bg">
+								<table>
+									<tbody>
+									<tr>
+										<td class="fc-axis fc-widget-content" style="width: 49px;"></td>
+										<td class="fc-day fc-widget-content fc-sun fc-past" data-date="2014-11-09"></td>
+										<td class="fc-day fc-widget-content fc-mon fc-past" data-date="2014-11-10"></td>
+										<td class="fc-day fc-widget-content fc-tue fc-past" data-date="2014-11-11"></td>
+										<td class="fc-day fc-widget-content fc-wed fc-past" data-date="2014-11-12"></td>
+										<td class="fc-day fc-widget-content fc-thu fc-past" data-date="2014-11-13"></td>
+										<td class="fc-day fc-widget-content fc-fri fc-past" data-date="2014-11-14"></td>
+										<td class="fc-day fc-widget-content fc-sat fc-past" data-date="2014-11-15"></td>
+									</tr>
+									</tbody>
+								</table>
+							</div>
+								<div class="fc-slats">
+									<table>
+										<tbody>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"><span>12am</span>
+											</td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>1am</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>2am</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>3am</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>4am</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>5am</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>6am</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>7am</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>8am</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>9am</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"><span>10am</span>
+											</td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"><span>11am</span>
+											</td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"><span>12pm</span>
+											</td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>1pm</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>2pm</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>3pm</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>4pm</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>5pm</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>6pm</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>7pm</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>8pm</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>9pm</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"><span>10pm</span>
+											</td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"><span>11pm</span>
+											</td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										</tbody>
+									</table>
+								</div>
+								<hr class="fc-widget-header" style="display: none;">
+								<div class="fc-content-skeleton">
+									<table>
+										<tbody>
+										<tr>
+											<td class="fc-axis" style="width:49px"></td>
+											<td>
+												<div class="fc-event-container"><a
+														class="fc-time-grid-event fc-event fc-start fc-end fc-draggable fc-resizable"
+														style="top: 703px; bottom: -791px; z-index: 1; left: 0%; right: 0%;">
+													<div class="fc-content">
+														<div class="fc-time" data-start="4:00" data-full="4:00 PM">
+															<span>4:00</span></div>
+														<div class="fc-title">Repeating Event</div>
+													</div>
+													<div class="fc-bg"></div>
+													<div class="fc-resizer"></div>
+												</a></div>
+											</td>
+											<td>
+												<div class="fc-event-container"></div>
+											</td>
+											<td>
+												<div class="fc-event-container"></div>
+											</td>
+											<td>
+												<div class="fc-event-container"><a
+														class="fc-time-grid-event fc-event fc-start fc-end fc-draggable fc-resizable"
+														style="top: 461px; bottom: -549px; z-index: 1; left: 0%; right: 0%; margin-right: 20px;">
+													<div class="fc-content">
+														<div class="fc-time" data-start="10:30"
+															 data-full="10:30 AM - 12:30 PM"><span>10:30 - 12:30</span>
+														</div>
+														<div class="fc-title">Meeting</div>
+													</div>
+													<div class="fc-bg"></div>
+													<div class="fc-resizer"></div>
+												</a><a class="fc-time-grid-event fc-event fc-start fc-end fc-draggable fc-resizable"
+													   style="top: 527px; bottom: -615px; z-index: 2; left: 50%; right: 0%;">
+													<div class="fc-content">
+														<div class="fc-time" data-start="12:00" data-full="12:00 PM">
+															<span>12:00</span></div>
+														<div class="fc-title">Lunch</div>
+													</div>
+													<div class="fc-bg"></div>
+													<div class="fc-resizer"></div>
+												</a><a class="fc-time-grid-event fc-event fc-start fc-end fc-draggable fc-resizable"
+													   style="top: 637px; bottom: -725px; z-index: 1; left: 0%; right: 0%;">
+													<div class="fc-content">
+														<div class="fc-time" data-start="2:30" data-full="2:30 PM">
+															<span>2:30</span></div>
+														<div class="fc-title">Meeting</div>
+													</div>
+													<div class="fc-bg"></div>
+													<div class="fc-resizer"></div>
+												</a><a class="fc-time-grid-event fc-event fc-start fc-end fc-draggable fc-resizable"
+													   style="top: 769px; bottom: -857px; z-index: 1; left: 0%; right: 0%;">
+													<div class="fc-content">
+														<div class="fc-time" data-start="5:30" data-full="5:30 PM">
+															<span>5:30</span></div>
+														<div class="fc-title">Happy Hour</div>
+													</div>
+													<div class="fc-bg"></div>
+													<div class="fc-resizer"></div>
+												</a><a class="fc-time-grid-event fc-event fc-start fc-end fc-draggable fc-resizable"
+													   style="top: 879px; bottom: -967px; z-index: 1; left: 0%; right: 0%;">
+													<div class="fc-content">
+														<div class="fc-time" data-start="8:00" data-full="8:00 PM">
+															<span>8:00</span></div>
+														<div class="fc-title">Dinner</div>
+													</div>
+													<div class="fc-bg"></div>
+													<div class="fc-resizer"></div>
+												</a></div>
+											</td>
+											<td>
+												<div class="fc-event-container"><a
+														class="fc-time-grid-event fc-event fc-start fc-end fc-draggable fc-resizable"
+														style="top: 307px; bottom: -395px; z-index: 1; left: 0%; right: 0%;">
+													<div class="fc-content">
+														<div class="fc-time" data-start="7:00" data-full="7:00 AM">
+															<span>7:00</span></div>
+														<div class="fc-title">Birthday Party</div>
+													</div>
+													<div class="fc-bg"></div>
+													<div class="fc-resizer"></div>
+												</a></div>
+											</td>
+											<td>
+												<div class="fc-event-container"></div>
+											</td>
+											<td>
+												<div class="fc-event-container"></div>
+											</td>
+										</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</td>
+				</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+
+<div id="calendar" class="fc fc-ltr fc-unthemed">
+	<div class="fc-view-container" style="">
+		<div class="fc-view fc-agendaWeek-view fc-agenda-view">
+			<table>
+				<thead>
+				<tr>
+					<td class="fc-widget-header">
+						<div class="fc-row fc-widget-header">
+							<table>
+								<thead>
+								<tr>
+									<th class="fc-axis fc-widget-header" style="width: 49px;"></th>
+									<th class="fc-day-header fc-widget-header fc-sun">Sun</th>
+									<th class="fc-day-header fc-widget-header fc-mon">Mon</th>
+									<th class="fc-day-header fc-widget-header fc-tue">Tue</th>
+									<th class="fc-day-header fc-widget-header fc-wed">Wed</th>
+									<th class="fc-day-header fc-widget-header fc-thu">Thu</th>
+									<th class="fc-day-header fc-widget-header fc-fri">Fri</th>
+									<th class="fc-day-header fc-widget-header fc-sat">Sat</th>
+								</tr>
+								</thead>
+							</table>
+						</div>
+					</td>
+				</tr>
+				</thead>
+				<tbody>
+				<tr>
+					<td class="fc-widget-content">
+						<hr class="fc-widget-header">
+						<div class="fc-time-grid-container fc-scroller" style="height: 446px;">
+							<div class="fc-time-grid"><div class="fc-bg">
+								<table>
+									<tbody>
+									<tr>
+										<td class="fc-axis fc-widget-content" style="width: 49px;"></td>
+										<td class="fc-day fc-widget-content fc-sun fc-past" data-date="2014-11-09"></td>
+										<td class="fc-day fc-widget-content fc-mon fc-past" data-date="2014-11-10"></td>
+										<td class="fc-day fc-widget-content fc-tue fc-past" data-date="2014-11-11"></td>
+										<td class="fc-day fc-widget-content fc-wed fc-past" data-date="2014-11-12"></td>
+										<td class="fc-day fc-widget-content fc-thu fc-past" data-date="2014-11-13"></td>
+										<td class="fc-day fc-widget-content fc-fri fc-past" data-date="2014-11-14"></td>
+										<td class="fc-day fc-widget-content fc-sat fc-past" data-date="2014-11-15"></td>
+									</tr>
+									</tbody>
+								</table>
+							</div>
+								<div class="fc-slats">
+									<table>
+										<tbody>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"><span>12am</span>
+											</td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>1am</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>2am</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>3am</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>4am</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>5am</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>6am</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>7am</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>8am</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>9am</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"><span>10am</span>
+											</td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"><span>11am</span>
+											</td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"><span>12pm</span>
+											</td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>1pm</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>2pm</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>3pm</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>4pm</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>5pm</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>6pm</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>7pm</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>8pm</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>9pm</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"><span>10pm</span>
+											</td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"><span>11pm</span>
+											</td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										</tbody>
+									</table>
+								</div>
+								<hr class="fc-widget-header" style="display: none;">
+								<div class="fc-content-skeleton">
+									<table>
+										<tbody>
+										<tr>
+											<td class="fc-axis" style="width:49px"></td>
+											<td>
+												<div class="fc-event-container"><a
+														class="fc-time-grid-event fc-event fc-start fc-end fc-draggable fc-resizable"
+														style="top: 703px; bottom: -791px; z-index: 1; left: 0%; right: 0%;">
+													<div class="fc-content">
+														<div class="fc-time" data-start="4:00" data-full="4:00 PM">
+															<span>4:00</span></div>
+														<div class="fc-title">Repeating Event</div>
+													</div>
+													<div class="fc-bg"></div>
+													<div class="fc-resizer"></div>
+												</a></div>
+											</td>
+											<td>
+												<div class="fc-event-container"></div>
+											</td>
+											<td>
+												<div class="fc-event-container"></div>
+											</td>
+											<td>
+												<div class="fc-event-container"><a
+														class="fc-time-grid-event fc-event fc-start fc-end fc-draggable fc-resizable"
+														style="top: 461px; bottom: -549px; z-index: 1; left: 0%; right: 0%; margin-right: 20px;">
+													<div class="fc-content">
+														<div class="fc-time" data-start="10:30"
+															 data-full="10:30 AM - 12:30 PM"><span>10:30 - 12:30</span>
+														</div>
+														<div class="fc-title">Meeting</div>
+													</div>
+													<div class="fc-bg"></div>
+													<div class="fc-resizer"></div>
+												</a><a class="fc-time-grid-event fc-event fc-start fc-end fc-draggable fc-resizable"
+													   style="top: 527px; bottom: -615px; z-index: 2; left: 50%; right: 0%;">
+													<div class="fc-content">
+														<div class="fc-time" data-start="12:00" data-full="12:00 PM">
+															<span>12:00</span></div>
+														<div class="fc-title">Lunch</div>
+													</div>
+													<div class="fc-bg"></div>
+													<div class="fc-resizer"></div>
+												</a><a class="fc-time-grid-event fc-event fc-start fc-end fc-draggable fc-resizable"
+													   style="top: 637px; bottom: -725px; z-index: 1; left: 0%; right: 0%;">
+													<div class="fc-content">
+														<div class="fc-time" data-start="2:30" data-full="2:30 PM">
+															<span>2:30</span></div>
+														<div class="fc-title">Meeting</div>
+													</div>
+													<div class="fc-bg"></div>
+													<div class="fc-resizer"></div>
+												</a><a class="fc-time-grid-event fc-event fc-start fc-end fc-draggable fc-resizable"
+													   style="top: 769px; bottom: -857px; z-index: 1; left: 0%; right: 0%;">
+													<div class="fc-content">
+														<div class="fc-time" data-start="5:30" data-full="5:30 PM">
+															<span>5:30</span></div>
+														<div class="fc-title">Happy Hour</div>
+													</div>
+													<div class="fc-bg"></div>
+													<div class="fc-resizer"></div>
+												</a><a class="fc-time-grid-event fc-event fc-start fc-end fc-draggable fc-resizable"
+													   style="top: 879px; bottom: -967px; z-index: 1; left: 0%; right: 0%;">
+													<div class="fc-content">
+														<div class="fc-time" data-start="8:00" data-full="8:00 PM">
+															<span>8:00</span></div>
+														<div class="fc-title">Dinner</div>
+													</div>
+													<div class="fc-bg"></div>
+													<div class="fc-resizer"></div>
+												</a></div>
+											</td>
+											<td>
+												<div class="fc-event-container"><a
+														class="fc-time-grid-event fc-event fc-start fc-end fc-draggable fc-resizable"
+														style="top: 307px; bottom: -395px; z-index: 1; left: 0%; right: 0%;">
+													<div class="fc-content">
+														<div class="fc-time" data-start="7:00" data-full="7:00 AM">
+															<span>7:00</span></div>
+														<div class="fc-title">Birthday Party</div>
+													</div>
+													<div class="fc-bg"></div>
+													<div class="fc-resizer"></div>
+												</a></div>
+											</td>
+											<td>
+												<div class="fc-event-container"></div>
+											</td>
+											<td>
+												<div class="fc-event-container"></div>
+											</td>
+										</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</td>
+				</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+
+<div id="calendar" class="fc fc-ltr fc-unthemed">
+	<div class="fc-view-container" style="">
+		<div class="fc-view fc-agendaWeek-view fc-agenda-view">
+			<table>
+				<thead>
+				<tr>
+					<td class="fc-widget-header">
+						<div class="fc-row fc-widget-header">
+							<table>
+								<thead>
+								<tr>
+									<th class="fc-axis fc-widget-header" style="width: 49px;"></th>
+									<th class="fc-day-header fc-widget-header fc-sun">Sun</th>
+									<th class="fc-day-header fc-widget-header fc-mon">Mon</th>
+									<th class="fc-day-header fc-widget-header fc-tue">Tue</th>
+									<th class="fc-day-header fc-widget-header fc-wed">Wed</th>
+									<th class="fc-day-header fc-widget-header fc-thu">Thu</th>
+									<th class="fc-day-header fc-widget-header fc-fri">Fri</th>
+									<th class="fc-day-header fc-widget-header fc-sat">Sat</th>
+								</tr>
+								</thead>
+							</table>
+						</div>
+					</td>
+				</tr>
+				</thead>
+				<tbody>
+				<tr>
+					<td class="fc-widget-content">
+						<hr class="fc-widget-header">
+						<div class="fc-time-grid-container fc-scroller" style="height: 446px;">
+							<div class="fc-time-grid"><div class="fc-bg">
+								<table>
+									<tbody>
+									<tr>
+										<td class="fc-axis fc-widget-content" style="width: 49px;"></td>
+										<td class="fc-day fc-widget-content fc-sun fc-past" data-date="2014-11-09"></td>
+										<td class="fc-day fc-widget-content fc-mon fc-past" data-date="2014-11-10"></td>
+										<td class="fc-day fc-widget-content fc-tue fc-past" data-date="2014-11-11"></td>
+										<td class="fc-day fc-widget-content fc-wed fc-past" data-date="2014-11-12"></td>
+										<td class="fc-day fc-widget-content fc-thu fc-past" data-date="2014-11-13"></td>
+										<td class="fc-day fc-widget-content fc-fri fc-past" data-date="2014-11-14"></td>
+										<td class="fc-day fc-widget-content fc-sat fc-past" data-date="2014-11-15"></td>
+									</tr>
+									</tbody>
+								</table>
+							</div>
+								<div class="fc-slats">
+									<table>
+										<tbody>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"><span>12am</span>
+											</td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>1am</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>2am</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>3am</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>4am</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>5am</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>6am</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>7am</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>8am</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>9am</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"><span>10am</span>
+											</td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"><span>11am</span>
+											</td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"><span>12pm</span>
+											</td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>1pm</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>2pm</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>3pm</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>4pm</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>5pm</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>6pm</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>7pm</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>8pm</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>9pm</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"><span>10pm</span>
+											</td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"><span>11pm</span>
+											</td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										</tbody>
+									</table>
+								</div>
+								<hr class="fc-widget-header" style="display: none;">
+								<div class="fc-content-skeleton">
+									<table>
+										<tbody>
+										<tr>
+											<td class="fc-axis" style="width:49px"></td>
+											<td>
+												<div class="fc-event-container"><a
+														class="fc-time-grid-event fc-event fc-start fc-end fc-draggable fc-resizable"
+														style="top: 703px; bottom: -791px; z-index: 1; left: 0%; right: 0%;">
+													<div class="fc-content">
+														<div class="fc-time" data-start="4:00" data-full="4:00 PM">
+															<span>4:00</span></div>
+														<div class="fc-title">Repeating Event</div>
+													</div>
+													<div class="fc-bg"></div>
+													<div class="fc-resizer"></div>
+												</a></div>
+											</td>
+											<td>
+												<div class="fc-event-container"></div>
+											</td>
+											<td>
+												<div class="fc-event-container"></div>
+											</td>
+											<td>
+												<div class="fc-event-container"><a
+														class="fc-time-grid-event fc-event fc-start fc-end fc-draggable fc-resizable"
+														style="top: 461px; bottom: -549px; z-index: 1; left: 0%; right: 0%; margin-right: 20px;">
+													<div class="fc-content">
+														<div class="fc-time" data-start="10:30"
+															 data-full="10:30 AM - 12:30 PM"><span>10:30 - 12:30</span>
+														</div>
+														<div class="fc-title">Meeting</div>
+													</div>
+													<div class="fc-bg"></div>
+													<div class="fc-resizer"></div>
+												</a><a class="fc-time-grid-event fc-event fc-start fc-end fc-draggable fc-resizable"
+													   style="top: 527px; bottom: -615px; z-index: 2; left: 50%; right: 0%;">
+													<div class="fc-content">
+														<div class="fc-time" data-start="12:00" data-full="12:00 PM">
+															<span>12:00</span></div>
+														<div class="fc-title">Lunch</div>
+													</div>
+													<div class="fc-bg"></div>
+													<div class="fc-resizer"></div>
+												</a><a class="fc-time-grid-event fc-event fc-start fc-end fc-draggable fc-resizable"
+													   style="top: 637px; bottom: -725px; z-index: 1; left: 0%; right: 0%;">
+													<div class="fc-content">
+														<div class="fc-time" data-start="2:30" data-full="2:30 PM">
+															<span>2:30</span></div>
+														<div class="fc-title">Meeting</div>
+													</div>
+													<div class="fc-bg"></div>
+													<div class="fc-resizer"></div>
+												</a><a class="fc-time-grid-event fc-event fc-start fc-end fc-draggable fc-resizable"
+													   style="top: 769px; bottom: -857px; z-index: 1; left: 0%; right: 0%;">
+													<div class="fc-content">
+														<div class="fc-time" data-start="5:30" data-full="5:30 PM">
+															<span>5:30</span></div>
+														<div class="fc-title">Happy Hour</div>
+													</div>
+													<div class="fc-bg"></div>
+													<div class="fc-resizer"></div>
+												</a><a class="fc-time-grid-event fc-event fc-start fc-end fc-draggable fc-resizable"
+													   style="top: 879px; bottom: -967px; z-index: 1; left: 0%; right: 0%;">
+													<div class="fc-content">
+														<div class="fc-time" data-start="8:00" data-full="8:00 PM">
+															<span>8:00</span></div>
+														<div class="fc-title">Dinner</div>
+													</div>
+													<div class="fc-bg"></div>
+													<div class="fc-resizer"></div>
+												</a></div>
+											</td>
+											<td>
+												<div class="fc-event-container"><a
+														class="fc-time-grid-event fc-event fc-start fc-end fc-draggable fc-resizable"
+														style="top: 307px; bottom: -395px; z-index: 1; left: 0%; right: 0%;">
+													<div class="fc-content">
+														<div class="fc-time" data-start="7:00" data-full="7:00 AM">
+															<span>7:00</span></div>
+														<div class="fc-title">Birthday Party</div>
+													</div>
+													<div class="fc-bg"></div>
+													<div class="fc-resizer"></div>
+												</a></div>
+											</td>
+											<td>
+												<div class="fc-event-container"></div>
+											</td>
+											<td>
+												<div class="fc-event-container"></div>
+											</td>
+										</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</td>
+				</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+
+<div id="calendar" class="fc fc-ltr fc-unthemed">
+	<div class="fc-view-container" style="">
+		<div class="fc-view fc-agendaWeek-view fc-agenda-view">
+			<table>
+				<thead>
+				<tr>
+					<td class="fc-widget-header">
+						<div class="fc-row fc-widget-header">
+							<table>
+								<thead>
+								<tr>
+									<th class="fc-axis fc-widget-header" style="width: 49px;"></th>
+									<th class="fc-day-header fc-widget-header fc-sun">Sun</th>
+									<th class="fc-day-header fc-widget-header fc-mon">Mon</th>
+									<th class="fc-day-header fc-widget-header fc-tue">Tue</th>
+									<th class="fc-day-header fc-widget-header fc-wed">Wed</th>
+									<th class="fc-day-header fc-widget-header fc-thu">Thu</th>
+									<th class="fc-day-header fc-widget-header fc-fri">Fri</th>
+									<th class="fc-day-header fc-widget-header fc-sat">Sat</th>
+								</tr>
+								</thead>
+							</table>
+						</div>
+					</td>
+				</tr>
+				</thead>
+				<tbody>
+				<tr>
+					<td class="fc-widget-content">
+						<hr class="fc-widget-header">
+						<div class="fc-time-grid-container fc-scroller" style="height: 446px;">
+							<div class="fc-time-grid"><div class="fc-bg">
+								<table>
+									<tbody>
+									<tr>
+										<td class="fc-axis fc-widget-content" style="width: 49px;"></td>
+										<td class="fc-day fc-widget-content fc-sun fc-past" data-date="2014-11-09"></td>
+										<td class="fc-day fc-widget-content fc-mon fc-past" data-date="2014-11-10"></td>
+										<td class="fc-day fc-widget-content fc-tue fc-past" data-date="2014-11-11"></td>
+										<td class="fc-day fc-widget-content fc-wed fc-past" data-date="2014-11-12"></td>
+										<td class="fc-day fc-widget-content fc-thu fc-past" data-date="2014-11-13"></td>
+										<td class="fc-day fc-widget-content fc-fri fc-past" data-date="2014-11-14"></td>
+										<td class="fc-day fc-widget-content fc-sat fc-past" data-date="2014-11-15"></td>
+									</tr>
+									</tbody>
+								</table>
+							</div>
+								<div class="fc-slats">
+									<table>
+										<tbody>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"><span>12am</span>
+											</td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>1am</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>2am</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>3am</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>4am</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>5am</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>6am</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>7am</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>8am</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>9am</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"><span>10am</span>
+											</td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"><span>11am</span>
+											</td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"><span>12pm</span>
+											</td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>1pm</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>2pm</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>3pm</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>4pm</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>5pm</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>6pm</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>7pm</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>8pm</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;">
+												<span>9pm</span></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"><span>10pm</span>
+											</td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr>
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"><span>11pm</span>
+											</td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										<tr class="fc-minor">
+											<td class="fc-axis fc-time fc-widget-content" style="width: 49px;"></td>
+											<td class="fc-widget-content"></td>
+										</tr>
+										</tbody>
+									</table>
+								</div>
+								<hr class="fc-widget-header" style="display: none;">
+								<div class="fc-content-skeleton">
+									<table>
+										<tbody>
+										<tr>
+											<td class="fc-axis" style="width:49px"></td>
+											<td>
+												<div class="fc-event-container"><a
+														class="fc-time-grid-event fc-event fc-start fc-end fc-draggable fc-resizable"
+														style="top: 703px; bottom: -791px; z-index: 1; left: 0%; right: 0%;">
+													<div class="fc-content">
+														<div class="fc-time" data-start="4:00" data-full="4:00 PM">
+															<span>4:00</span></div>
+														<div class="fc-title">Repeating Event</div>
+													</div>
+													<div class="fc-bg"></div>
+													<div class="fc-resizer"></div>
+												</a></div>
+											</td>
+											<td>
+												<div class="fc-event-container"></div>
+											</td>
+											<td>
+												<div class="fc-event-container"></div>
+											</td>
+											<td>
+												<div class="fc-event-container"><a
+														class="fc-time-grid-event fc-event fc-start fc-end fc-draggable fc-resizable"
+														style="top: 461px; bottom: -549px; z-index: 1; left: 0%; right: 0%; margin-right: 20px;">
+													<div class="fc-content">
+														<div class="fc-time" data-start="10:30"
+															 data-full="10:30 AM - 12:30 PM"><span>10:30 - 12:30</span>
+														</div>
+														<div class="fc-title">Meeting</div>
+													</div>
+													<div class="fc-bg"></div>
+													<div class="fc-resizer"></div>
+												</a><a class="fc-time-grid-event fc-event fc-start fc-end fc-draggable fc-resizable"
+													   style="top: 527px; bottom: -615px; z-index: 2; left: 50%; right: 0%;">
+													<div class="fc-content">
+														<div class="fc-time" data-start="12:00" data-full="12:00 PM">
+															<span>12:00</span></div>
+														<div class="fc-title">Lunch</div>
+													</div>
+													<div class="fc-bg"></div>
+													<div class="fc-resizer"></div>
+												</a><a class="fc-time-grid-event fc-event fc-start fc-end fc-draggable fc-resizable"
+													   style="top: 637px; bottom: -725px; z-index: 1; left: 0%; right: 0%;">
+													<div class="fc-content">
+														<div class="fc-time" data-start="2:30" data-full="2:30 PM">
+															<span>2:30</span></div>
+														<div class="fc-title">Meeting</div>
+													</div>
+													<div class="fc-bg"></div>
+													<div class="fc-resizer"></div>
+												</a><a class="fc-time-grid-event fc-event fc-start fc-end fc-draggable fc-resizable"
+													   style="top: 769px; bottom: -857px; z-index: 1; left: 0%; right: 0%;">
+													<div class="fc-content">
+														<div class="fc-time" data-start="5:30" data-full="5:30 PM">
+															<span>5:30</span></div>
+														<div class="fc-title">Happy Hour</div>
+													</div>
+													<div class="fc-bg"></div>
+													<div class="fc-resizer"></div>
+												</a><a class="fc-time-grid-event fc-event fc-start fc-end fc-draggable fc-resizable"
+													   style="top: 879px; bottom: -967px; z-index: 1; left: 0%; right: 0%;">
+													<div class="fc-content">
+														<div class="fc-time" data-start="8:00" data-full="8:00 PM">
+															<span>8:00</span></div>
+														<div class="fc-title">Dinner</div>
+													</div>
+													<div class="fc-bg"></div>
+													<div class="fc-resizer"></div>
+												</a></div>
+											</td>
+											<td>
+												<div class="fc-event-container"><a
+														class="fc-time-grid-event fc-event fc-start fc-end fc-draggable fc-resizable"
+														style="top: 307px; bottom: -395px; z-index: 1; left: 0%; right: 0%;">
+													<div class="fc-content">
+														<div class="fc-time" data-start="7:00" data-full="7:00 AM">
+															<span>7:00</span></div>
+														<div class="fc-title">Birthday Party</div>
+													</div>
+													<div class="fc-bg"></div>
+													<div class="fc-resizer"></div>
+												</a></div>
+											</td>
+											<td>
+												<div class="fc-event-container"></div>
+											</td>
+											<td>
+												<div class="fc-event-container"></div>
+											</td>
+										</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</td>
+				</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
 </div>
 <div data-lazy-background="http://devrama.com/static/devrama-slider/images/4247776023_81a3f048ca_b.png">
 </div>
