@@ -54,17 +54,17 @@
     }
   }
   for ($a = 0; $a < 10; $a++) {
-    echo "<table>";
+    echo '<table>';
       for ($b = 0; $b < 10; $b++) {
-      echo "<tr>";
+      echo '<tr>';
         for ($c = 0; $c < 10; $c++) {
-          echo "<td>";
+          echo '<td id="' . $a . $b . $c . '">';
           echo $a . $b . $c;
-          echo "</td>";
+          echo '</td>';
         }
-      echo "</tr>";
+      echo '</tr>';
       }
-    echo "</table>";
+    echo '</table>';
   }
   
 ?>
