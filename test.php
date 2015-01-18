@@ -73,6 +73,8 @@ $ALLOW_DIFF = 1;
 function find_course_combination(&$potential_courses, $curr_index, $credits, &$selected) {
     if($credits <= $ALLOW_DIFF or (0-credits <= $ALLOW_DIFF)){
       array_push($solutions, $selected);
+      echo "I FIND A SOLUTION!";
+      echo "<br>"; //new line
       return;
     }
     
@@ -80,6 +82,7 @@ function find_course_combination(&$potential_courses, $curr_index, $credits, &$s
     
     for ($i = $curr_index + 1 ; $i <= count($potential_courses); $i++) {
       array_push($selected, $potential_courses[i]);
+      echo "now pushing: "; var_dump($potential_courses[i]); echo "<br>"; //new line
       find_course_combination($potential_courses, $i, $creidts - $potential_courses[i]->credit, $selected);
       array_pop($selected);
     }  //end for
@@ -149,7 +152,7 @@ $allCourse = array(c1, c2, c3, c4);
 $temp_sol;
 
 
-echo "update3"; echo "<br>"; //new line
+echo "update"; echo "<br>"; //new line
 
 find_course_combination($allCourse, -1, 4, $temp_sol);
 debug_solutions();
