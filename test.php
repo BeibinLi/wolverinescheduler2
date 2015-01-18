@@ -7,7 +7,7 @@
 <?php echo 'hello world';
 echo "<br>"; //new line
 
-echo "update"; echo "<br>"; //new line
+echo "update2"; echo "<br>"; //new line
 
 ?>
 
@@ -320,7 +320,7 @@ $temp_sol = array();
 
 
 
-find_course_combination($allCourse, -1, 12, $temp_sol);
+find_course_combination($allCourse, -1, 8, $temp_sol);
 echo "THE SOLUTION IS: "; var_dump($solutions);
 
 for($i=0; $i < count($solutions); $i++){
