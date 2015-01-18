@@ -433,17 +433,11 @@ if(!empty($_POST)) {
 		
 		
 			var result = "<?php echo $bigstring; ?>"
-			// var test_result = "<?php echo $test_var; ?>"
-			// alert(test_result);
 			alert(result);
 			
-			// alert(result[0][0])
 			
-			// alert(JSON.parse(result));
 			
-			// alert(result[0]);
 			
-			// alert(result[0][0])
 			$('#calendar').fullCalendar({
 				header: {
 					left: 'prev,next today',
@@ -495,6 +489,8 @@ if(!empty($_POST)) {
 						start: '2014-11-28'
 					}
 				]
+				events.push({title: 'Mhacks Party',
+					start: '2014-11-12T07:00:00'});
 			});
 		});
 	</script>
