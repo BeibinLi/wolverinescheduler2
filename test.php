@@ -108,10 +108,10 @@ function isOnSameDay($L1, $L2) {
     $L1_arr = str_split($L1);
     $L2_arr = str_split($L2);
     foreach ($L1_arr as &$c1) { // TODO horrible efficiency
-//         foreach ($L1_arr as &$c2) {
-//             if ($c1 == $c2)
-//                 return True;
-//         }
+        foreach ($L1_arr as &$c2) {
+            if ($c1 == $c2)
+                return True;
+        }
     }
     return False;
 }
@@ -311,7 +311,7 @@ for($i=0; $i < count($solutions); $i++){
 
 
 
-echo "update2"; echo "<br>"; //new line
+echo "update3"; echo "<br>"; //new line
 
 
 ?>
