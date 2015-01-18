@@ -129,14 +129,15 @@ function debug_solutions()
     for($i=0; $i < count($solutions); $i++){
         $total_credit = 0;
         for($j=0; $j < count($solutions[i]); $j++){
-            echo << $solutions[$i][$j]->coursename; echo " ";
+            // echo << $solutions[$i][$j]->coursename; echo " ";
         //     $total_credit = $total_credit + $solutions[i][j]->credit;
         }
         echo "total: " << $total_credit ; echo "<br>"; //new line
     }
 }
 echo "update"; echo "<br>"; //new line
-
+$cs = new Course("EECS 280", 4);
+echo cs;
 
 
 ?>
