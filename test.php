@@ -235,7 +235,7 @@ for($i=0; $i < count($solutions); $i++){
     $schedule = array(); //not necessary!
     find_time($solutions[$i], -1, $dumb);
     
-//     // debug_schedule();
+    debug_schedule();
 }
 
 // debug_solutions();
