@@ -294,7 +294,7 @@ function debug_schedule(){
         }
 	// var_dump($bigstring);  echo "<br>";
     
-    echo "Possible schedules:"; echo "<br>";
+    echo "Possible schedules:"; echo "<br><br>";
     for($i=0; $i<count($schedule); $i++){
         echo "Schedule: "; echo $count; echo "<br>";
         for($j=0; $j<count($schedule[$i]); $j++){
