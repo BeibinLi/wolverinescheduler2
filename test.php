@@ -229,9 +229,9 @@ for($i=0; $i < count($solutions); $i++){
     }
     echo "total: "; echo $total_credits; echo "<br>";
     
-    $dumb;
-    $schedule = array();
-    find_time($solutions[$i], -1, $dumb);
+    $dumb = array();
+    $schedule = array(); //not necessary!
+    // find_time($solutions[$i], -1, $dumb);
     
     // debug_schedule();
 }
