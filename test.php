@@ -151,7 +151,7 @@ function debug_solutions()
             echo $course->coursename; echo " ";
             $total_credit += $course->credit;
         }
-        echo "total: " << $total_credit ; echo "<br>"; //new line
+        echo "total: "; $total_credit ; echo "<br>"; //new line
     }
 }
 
