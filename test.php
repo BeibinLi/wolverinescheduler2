@@ -212,6 +212,8 @@ function debug_schedule(){
     
     echo "Here are the sections:"; echo "<br>";
     $count = 1;
+    var_dump(schedule);
+    
     for($i=0; $i<count($schedule); $i++){
         echo "Schedule: "; echo $count; echo "<br>";
         for($j=0; $j<count($schedule[$i]); $j++){
