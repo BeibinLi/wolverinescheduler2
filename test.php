@@ -210,7 +210,7 @@ $bigstring;
 function print_one_schedule($aschedule) {
     $out = array();
     
-    $out[0] = str_repeat('&nbsp;', 10) . "Monday". str_repeat('&nbsp;', 9).   "Tuesday". str_repeat('&nbsp;', 9).   
+    $out[0] = str_repeat('&nbsp;', 12) . "Monday". str_repeat('&nbsp;', 9).   "Tuesday". str_repeat('&nbsp;', 9).   
     "Wednesday". str_repeat('&nbsp;', 9).   "Thursday". str_repeat('&nbsp;', 9).   "Friday";
     for($i = 1; $i < 10; $i++){
     	$out[$i] = array();
@@ -234,7 +234,7 @@ function print_one_schedule($aschedule) {
     //Print out
     echo "<br>";
     echo $out[0]; echo "<br>"; 
-    echo "----------------------------------------------------------------------------------------------------------------------";
+    echo "------------------------------------------------------------------------------------------------------------";
     echo "<br>"; 
     for($i = 1; $i < count($out); $i++){
     	for($j=0; $j < count($out[$i]); $j++){
