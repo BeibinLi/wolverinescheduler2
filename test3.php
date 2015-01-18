@@ -39,13 +39,7 @@
       die(var_dump($e));
     }
   }
-  
-  while(sqlsrv_fetch($courses)) {
-    $coursename = sqlsrv_get_field( $courses, 0);
-    echo "$coursename : ";
-    $credits = sqlsrv_get_field( $courses, 1);
-    echo "$credits\r\n";
-  }
+
   foreach($courses as $course) {
     echo $course['coursename'];
     echo $course['credits'];
