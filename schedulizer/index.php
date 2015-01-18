@@ -287,11 +287,7 @@ function debug_schedule(){
             $lect = $schedule[$i][$j];
             echo $lect->coursename; echo ": "; 
             print_time( $lect->start_time ); echo " - "; print_time( $lect->end_time);
-<<<<<<< HEAD
-            echo "   "; echo $lect->days; echo "<br>";
-=======
             echo "   "; echo str_replace("R", "Th", str_replace("T", "Tu", $lect->days)); echo "<br>";
->>>>>>> 9ac9dfd8f8ad167dd8b851ef13ef96ed2e42dc28
         }
         echo "<br>"; echo "<br>"; echo "<br>";
         $count++;
@@ -315,13 +311,9 @@ if(!empty($_POST)) {
   $inputs = array();
   for ($i = 1; $i < 6; $i++) {
     try {
-      $dpt = $_POST['dept_in' . $i];
-      $coursenum = $_POST['num_in' . $i];
-<<<<<<< HEAD
+      $dpt = trim($_POST['dept_in' . $i]);
+      $coursenum = trim($_POST['num_in' . $i]);
       $coursename = $dpt . " " . $coursenum;
-=======
-      $coursename = trim($dpt . " " . $coursenum);
->>>>>>> 9ac9dfd8f8ad167dd8b851ef13ef96ed2e42dc28
       array_push($inputs, $coursename);
     }
     catch(Exception $e) {
