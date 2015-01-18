@@ -209,14 +209,14 @@ $bigstring;
 function print_one_schedule($aschedule) {
     $out = array();
     
-    $out[0] = str_repeat('&nbsp;', 12) . "Monday". str_repeat('&nbsp;', 9).   "Tuesday". str_repeat('&nbsp;', 9).   
+    $title = str_repeat('&nbsp;', 12) . "Monday". str_repeat('&nbsp;', 9).   "Tuesday". str_repeat('&nbsp;', 9).   
     "Wednesday". str_repeat('&nbsp;', 9).   "Thursday". str_repeat('&nbsp;', 9).   "Friday";
     for($i = 1; $i < 10; $i++){
     	$out[$i] = array();
     	$out[$i][0] = (string)($i + 7);
-    	// for($j=1; $j<6;$j++){
-    	// 	$out[i][j] = "";
-    	// }
+    	for($j=1; $j<6;$j++){
+    		$out[i][j] = " ";
+    	}
     }
     
     //Core, set up
@@ -235,11 +235,11 @@ function print_one_schedule($aschedule) {
     
     //Print out
     echo "<br>";
-    echo $out[0]; echo "<br>"; 
+    echo $title; echo "<br>"; 
     echo "------------------------------------------------------------------------------------------------------------";
     echo "<br>"; 
     for($i = 1; $i < count($out); $i++){
-    	for($j=0; $j < count($out[$i]); $j++){
+    	for($j=0; $j < 6; $j++){
     		if($i == 1 and $j == 0){
     			echo "08";
     		}else if( $i == 2 and $j == 0){
