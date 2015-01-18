@@ -229,7 +229,7 @@ function print_one_schedule($aschedule) {
     	}
     }
     
-    //var_dump($out);
+    var_dump($out);
     
     //Print out
     echo "<br>";
@@ -242,6 +242,8 @@ function print_one_schedule($aschedule) {
     			echo "08";
     		}else if($out[$i][$j] == 9){
     			echo "09";
+    		}else if(strlen($out[$i][$j]) < 4){
+    			echo  str_repeat('&nbsp;', 8);
     		}else{
     			echo $out[$i][$j]; 
     		}
