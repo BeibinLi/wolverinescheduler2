@@ -41,7 +41,7 @@ class Course{
     }
 }
 
-$eecs = new Course(4, "EECS 280");
+// $eecs = new Course(4, "EECS 280");
 
 
 /*
