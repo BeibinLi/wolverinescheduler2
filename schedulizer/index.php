@@ -273,20 +273,67 @@ function print_time($time)
     }
 }
 $bigstring;
+
+function print_one_schedule($aschedule) {
+    $out = array();
+    
+    $out[0] = str_repeat('&nbsp;', 12) . "Monday". str_repeat('&nbsp;', 9).   "Tuesday". str_repeat('&nbsp;', 9).   
+    "Wednesday". str_repeat('&nbsp;', 9).   "Thursday". str_repeat('&nbsp;', 9).   "Friday";
+    for($i = 1; $i < 10; $i++){
+    	$out[$i] = array();
+    	$out[$i][0] = $i + 7;
+    }
+    
+    //Core, set up
+    foreach($aschedule as $lec){
+    	$s_arr = str_split((string)$lec->days);
+    	foreach($s_arr as $c){
+    		if($c = "M") $out[(int)$lec->start_time - 7][1] = $lec->coursename;
+    		if($c = "T") $out[(int)$lec->start_time - 7][2] = $lec->coursename;
+    		if($c = "W") $out[(int)$lec->start_time - 7][3] = $lec->coursename;
+    		if($c = "R") $out[(int)$lec->start_time - 7][4] = $lec->coursename;
+    		if($c = "F") $out[(int)$lec->start_time - 7][5] = $lec->coursename;
+    	}
+    }
+    
+    //var_dump($out);
+    
+    //Print out
+    echo "<br>";
+    echo $out[0]; echo "<br>"; 
+    echo "------------------------------------------------------------------------------------------------------------";
+    echo "<br>"; 
+    for($i = 1; $i < count($out); $i++){
+    	for($j=0; $j < count($out[$i]); $j++){
+    		if($out[$i][$j] == 8){
+    			echo "08";
+    		}else if($out[$i][$j] == 9){
+    			echo "09";
+    		}else{
+    			echo $out[$i][$j]; 
+    		}
+    		echo  str_repeat('&nbsp;', 7);
+    	}
+    	echo "<br>";
+    }
+}
+
 function debug_schedule(){
         echo "<br>";
     global $solutions;
     global $schedule;
     
-    //var_dump($schedule);
+    var_dump($schedule);
     
     global $bigstring;
     
+    echo "Here are the possibe solutions:"; echo "<br>";
     $count = 1;
     if( count($schedule) == 0 || $schedule[0] == NULL ){
-    	echo "No possible schedules."; echo "<br><br>";
+    	echo "Ooops! No Output! Try difference courses"; echo "<br>";
     	return;
     }
+
 	$i = 0;  echo "<br>";
 	for($j=0; $j<count($schedule[$i]); $j++){
             $lect = $schedule[$i][$j];
@@ -294,7 +341,6 @@ function debug_schedule(){
         }
 	// var_dump($bigstring);  echo "<br>";
     
-    echo "Possible schedules:"; echo "<br><br>";
     for($i=0; $i<count($schedule); $i++){
         echo "Schedule: "; echo $count; echo "<br>";
         for($j=0; $j<count($schedule[$i]); $j++){
@@ -303,12 +349,15 @@ function debug_schedule(){
             print_time( $lect->start_time ); echo " - "; print_time( $lect->end_time);
             echo "   "; echo $lect->days; echo "<br>";
         }
+        print_one_schedule($schedule[$i]);
+
         echo "<br>"; echo "<br>"; echo "<br>";
         $count++;
     }
     
     echo "<br>";
 }
+
 
 $host = "tcp:rd4vxrj1mk.database.windows.net";
 $user = "SQLAdmin";
