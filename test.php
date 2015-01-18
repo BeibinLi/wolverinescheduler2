@@ -39,6 +39,8 @@ class Course{
     public $coursename;
     // public $lectures;
     
+    function __construct(){}
+    
     public function set($a1,$a2){
         echo 'Course created: ';
         $this->credit = $a1;
