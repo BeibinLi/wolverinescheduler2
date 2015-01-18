@@ -56,20 +56,20 @@ Released : 20120902
 <td><input id="num_in1" type="text" class="class_in" name="num_in1" value="101" onclick="changeValueNum()" style="font-family: 'Abel', Arial; color:#CCCCCC" /></td>
 </tr>
 <tr>
-<td><input id="dept_in2" type="text" class="class_in" name="dept_in2" style="font-family: 'Abel', Arial; color:#FFFFFF" /></td>
-<td><input id="num_in2" type="text" class="class_in" name="num_in2" style="font-family: 'Abel', Arial; color:#FFFFFF" /></td>
+<td><input id="dept_in2" type="text" class="class_in" name="dept_in2" style="font-family: 'Abel', Arial; color:#CCCCCC" /></td>
+<td><input id="num_in2" type="text" class="class_in" name="num_in2" style="font-family: 'Abel', Arial; color:#CCCCCC" /></td>
 </tr>
 <tr>
-<td><input id="dept_in3" type="text" class="class_in" name="dept_in3" style="font-family: 'Abel', Arial; color:#FFFFFF" /></td>
-<td><input id="num_in3" type="text" class="class_in" name="num_in3" style="font-family: 'Abel', Arial; color:#FFFFFF" /></td>
+<td><input id="dept_in3" type="text" class="class_in" name="dept_in3" style="font-family: 'Abel', Arial; color:#CCCCCC" /></td>
+<td><input id="num_in3" type="text" class="class_in" name="num_in3" style="font-family: 'Abel', Arial; color:#CCCCCC" /></td>
 </tr>
 <tr>
-<td><input id="dept_in4" type="text" class="class_in" name="dept_in4" style="font-family: 'Abel', Arial; color:#FFFFFF" /></td>
-<td><input id="num_in4" type="text" class="class_in" name="num_in4" style="font-family: 'Abel', Arial; color:#FFFFFF" /></td>
+<td><input id="dept_in4" type="text" class="class_in" name="dept_in4" style="font-family: 'Abel', Arial; color:#CCCCCC" /></td>
+<td><input id="num_in4" type="text" class="class_in" name="num_in4" style="font-family: 'Abel', Arial; color:#CCCCCC" /></td>
 </tr>
 <tr>
-<td><input id="dept_in5" type="text" class="class_in" name="dept_in5" style="font-family: 'Abel', Arial; color:#FFFFFF" /></td>
-<td><input id="num_in5" type="text" class="class_in" name="num_in5" style="font-family: 'Abel', Arial; color:#FFFFFF" /></td>
+<td><input id="dept_in5" type="text" class="class_in" name="dept_in5" style="font-family: 'Abel', Arial; color:#CCCCCC" /></td>
+<td><input id="num_in5" type="text" class="class_in" name="num_in5" style="font-family: 'Abel', Arial; color:#CCCCCC" /></td>
 <!-- <td><input id="add_button" type="image" class="add" src="images/math-add-icon.png" style="width:35px; height:35px"> </td> -->
 </tr>
 </table>
@@ -77,15 +77,32 @@ Released : 20120902
 </form>
 </center>
 <?php
-$temp = $_POST['dept_in1'];
-echo $temp;
-$temp = $_POST['dept_in2'];
-echo $temp;
-$temp = $_POST['num_in3'];
-echo $temp;
-$temp = $_POST['num_in5'];
-echo $temp;
-?>
+if(!empty($_POST)) {
+  for ($i = 1; $i < 6; $i++) {
+    try {
+      $dpt = $_POST['dept_in' . $i];
+      $coursenum = $_POST['num_in' . $i];
+      $coursename = $dpt . " " . $coursenum;
+      $sql_select = 'SELECT *
+        FROM courses C, lectures L
+        WHERE C.coursename = ? AND C.coursename = L.coursename';
+      $stmt = $conn->prepare($sql_select);
+      $stmt->bindValue(1, $coursename);
+      $stmt->execute();
+      $courses = $stmt->fetchAll();
+      if(count($courses) > 0) {
+        foreach($courses as $course) {
+          echo "<br >";
+          echo "Start: " . $course['starttime'] . ", End: " . $course['endtime'] . $course['days'];
+          }
+        }
+      }
+      catch(Exception $e) {
+        die(var_dump($e));
+      }
+    }
+  }
+  ?>
 <!--
 <form id="addbar" style="width:80%" action="" method="post">
 <h2>Department
