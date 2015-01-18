@@ -58,7 +58,7 @@ Released : 20120902
 <div id="page">
 <div id="addingcourse">
 <div id="add_new_course">
-<h1>Enter Your Course</h1>
+<h1>Enter Your Courses</h1>
 </div>
 <center>
 <form id="addbar" action="/schedulizer/index.php" method="post" enctype="multipart/form-data">
