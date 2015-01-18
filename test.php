@@ -215,13 +215,28 @@ function print_one_schedule($aschedule) {
     	$out[$i][0] = $i + 7;
     }
     
-    
+    //Core, set up
+    foreach($aschedule as $lec){
+    	$s_arr = str_split((string)$lec->days);
+    	foreach($s_arr as $c){
+    		if($c = "M") $out[$lec->start_time][1] = $lec->coursename;
+    		if($c = "T") $out[$lec->start_time][2] = $lec->coursename;
+    		if($c = "W") $out[$lec->start_time][3] = $lec->coursename;
+    		if($c = "R") $out[$lec->start_time][4] = $lec->coursename;
+    		if($c = "F") $out[$lec->start_time][5] = $lec->coursename;
+    	}
+    }
     
     //Print out
     echo $out[0]; echo "<br>";
     for($i = 1; $i < count($out); $i++){
     	for($j=0; $j < count($out[$i]); $j++){
-    		echo $out[i][j]; echo " ";
+    		if($out[$i][$j] == NULL){
+    			echo "        ";
+    		}else{
+    			echo $out[$i][$j]; 
+    		}
+    		echo " ";
     	}
     	echo "<br>";
     }
