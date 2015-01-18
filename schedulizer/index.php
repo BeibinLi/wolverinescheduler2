@@ -28,6 +28,9 @@ Released : 20120902
 	<script>
 
 		$(document).ready(function() {
+			var result = "<?php echo $schedule ?>"
+
+			alert(result);
 
 			$('#calendar').fullCalendar({
 				header: {
