@@ -389,9 +389,9 @@ if(!empty($_POST)) {
   $inputs = array();
   for ($i = 1; $i < 6; $i++) {
     try {
-      $dpt = $_POST['dept_in' . $i];
-      $coursenum = $_POST['num_in' . $i];
-      $coursename = trim($dpt . " " . $coursenum);
+      $dpt = trim($_POST['dept_in' . $i]);
+      $coursenum = trim($_POST['num_in' . $i]);
+      $coursename = $dpt . " " . $coursenum;
       array_push($inputs, $coursename);
     }
     catch(Exception $e) {
