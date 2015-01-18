@@ -31,7 +31,7 @@
       $dpt = $_POST['dpt'];
       $coursenum = $_POST['coursenum'];
       $coursename = $dpt . " " . $coursenum;
-      $sql_select = 'SELECT coursename, credits 
+      $sql_select = 'SELECT *
       FROM courses C, lectures L
       WHERE C.coursename = ? AND C.coursename = L.coursename';
       $stmt = $conn->prepare($sql_select);
@@ -43,7 +43,7 @@
           //echo "Course: " . $course['C.coursename'] . ", Credits: " . $course['C.credits'];
           echo "Lectures:";
           echo "\r\n";
-          echo "Start: " . $course['L.starttime'] . ", End: " . $course['endtime'] . 
+          echo "Start: " . $course['starttime'] . ", End: " . $course['endtime'] . 
             ", Location: " . $course['location'] . ", Spots Left: " . $course['capacity'] - $course['enrolled'] . 
             ", Instructor: " . $course['instructor'] . ", Days: " . $course['days'];
         }
