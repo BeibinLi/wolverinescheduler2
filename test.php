@@ -87,10 +87,11 @@ function find_course_combination(&$potential_courses, $curr_index, $credits, &$s
     
     for ($i = $curr_index + 1 ; $i < count($potential_courses); $i++) {
       echo $i; echo " ";  var_dump($potential_courses);
-      $course = $potential_courses[i];
-      foreach($potential_courses as $fuck){
-          echo $fuck->coursename; echo " ";
-      }
+      $course = $potential_courses[1];
+      
+    //   foreach($potential_courses as $fuck){
+    //       echo $fuck->coursename; echo " ";
+    //   } // the foreach function works! fuck
 
       echo "now pushing: "; var_dump($course); echo "<br>"; //new line
       array_push($selected, $course);
@@ -163,7 +164,7 @@ $allCourse = array($c1, $c2, $c3, $c4);
 $temp_sol = array();
 
 
-echo "update2"; echo "<br>"; //new line
+echo "update"; echo "<br>"; //new line
 
 find_course_combination($allCourse, -1, 4, $temp_sol);
 echo "THE SOLUTION IS: "; var_dump($solutions);
