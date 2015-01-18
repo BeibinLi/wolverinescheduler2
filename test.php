@@ -115,7 +115,9 @@ function hasConflict($L1, $L2){
 
 
 function hasConflictWithList($L, &$V){
-  for ($i = 0 ; $i <= count($V); $i++) {
+  if(count($V) == 0) return false;
+  
+  for ($i = 0 ; $i < count($V); $i++) {
     if(hasConflict($L, $V[$i])) return True;
   }    
   return False;
@@ -132,9 +134,9 @@ function find_time(&$course_list, $curr_index, &$curr_result){
     return;
   }
   
-  for ($i = $curr_index+1 ; $i <= count($course_list); $i++) {
+  for ($i = $curr_index+1 ; $i < count($course_list); $i++) {
     $temp_course = $course_list[$i];
-    for ($j = 0 ; $j <= count($temp_course->lectures); $j++) {
+    for ($j = 0 ; $j < count($temp_course->lectures); $j++) {
       if( hasConflictWithList($temp_course->lectures[$j], $curr_result) ) 
         continue;
       
