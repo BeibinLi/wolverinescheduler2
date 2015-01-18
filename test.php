@@ -237,10 +237,11 @@ for($i=0; $i < count($solutions); $i++){
 }
 
 debug_schedule();
+var_dump($schedule);
 
 
 
-echo "update"; echo "<br>"; //new line
+echo "update2"; echo "<br>"; //new line
 
 
 ?>
