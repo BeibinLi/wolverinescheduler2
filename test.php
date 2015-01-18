@@ -14,6 +14,7 @@ class Lecture{
     public $coursename;
     public $start_time;
     public $end_time;
+    public $days;
     
     function __construct() 
     { 
@@ -103,11 +104,22 @@ function find_course_combination(&$potential_courses, $curr_index, $credits, &$s
     }  //end for
 }
 
+function isOnSameDay($L1, $L2) {
+    $L1_arr = str_split($L1);
+    $L2_arr = str_split($L2);
+    foreach ($L1_arr as &$c1) { // TODO horrible efficiency
+        foreach $L1_arr as &$c2 {
+            if ($c1 == $c2)
+                return True;
+        }
+    }
+}
 
-function hasConflict($L1, $L2){
-//??? todo for monday? tuesday?
-  if($L1->start_time >= $L2->start_time and $L1->start_time < $L2->end_time) return True;
-  if($L2->start_time >= $L1->start_time and $L2->start_time < $L1->end_time) return True;
+function hasConflict($L1, $L2) {
+    if(isOnSameDay($L1, $L2) and $L1->start_time >= $L2->start_time and $L1->start_time < $L2->end_time)
+        return True;
+    if(isOnSameDay($L1, $L2) and $L2->start_time >= $L1->start_time and $L2->start_time < $L1->end_time)
+        return True;
   return False;
 }
 
