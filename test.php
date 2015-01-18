@@ -75,12 +75,12 @@ function abs($x){
 
 function find_course_combination(&$potential_courses, $curr_index, $credits, &$selected) {
     echo "find_course_comb inputs are: "; var_dump($potential_courses); var_dump($selected); echo "<br>";
-    if( abs($credits) < $ALLOW_DIFF ){
-      array_push($solutions, $selected);
-      echo "I FIND A SOLUTION!  "; var_dump($selected);
-      echo "<br>"; //new line
-      return;
-    }
+    // if( abs($credits) < $ALLOW_DIFF ){
+    //   array_push($solutions, $selected);
+    //   echo "I FIND A SOLUTION!  "; var_dump($selected);
+    //   echo "<br>"; //new line
+    //   return;
+    // }
     
     if($credits < 0) return;
     
