@@ -6,6 +6,9 @@
 
 <?php echo 'hello world';
 echo "<br>"; //new line
+
+echo "update1"; echo "<br>"; //new line
+
 ?>
 
 <?php
@@ -14,6 +17,7 @@ class Lecture{
     public $coursename;
     public $start_time;
     public $end_time;
+    public $days;
     
     function __construct() 
     { 
@@ -30,7 +34,18 @@ class Lecture{
         $this->start_time = $a2;
         $this->end_time = $a3;
     }
+    
+    function __construct4($a1,$a2,$a3,$a4){
+        // echo 'new Lecture created ';
+        $this->coursename = $a1;
+        $this->start_time = $a2;
+        $this->end_time = $a3;
+        $this->days = $a4;
+    }
 }
+
+// $demodemo = new Lecture("EECS 280", 9, 10, "MWF");
+// var_dump($demodemo);
 
 class Course{
     public $coursename;
@@ -60,7 +75,8 @@ class Course{
 
 // GLOBAL VARIABLES
 $solutions = array(); //2D array
-$schedule; //2D array
+$schedule = array(); //2D array
+$allCourse = array(); //array for Courses 
 
 function absolute_val($x){
     if($x > 0) return $x;
@@ -103,18 +119,32 @@ function find_course_combination(&$potential_courses, $curr_index, $credits, &$s
     }  //end for
 }
 
+function isOnSameDay($L1, $L2) {
+    $L1_arr = str_split($L1->days);
+    $L2_arr = str_split($L2->days);
+    foreach ($L1_arr as $c1) { // TODO horrible efficiency
+        foreach ($L1_arr as $c2) {
+            if ($c1 == $c2)
+                return True;
+        }
+    }
+    return False;
+}
 
-function hasConflict($L1, $L2){
-//??? todo for monday? tuesday?
-  if($L1->start_time >= $L2->start_time and $L1->start_time < $L2->end_time) return True;
-  if($L2->start_time >= $L1->start_time and $L2->start_time < $L1->end_time) return True;
+function hasConflict($L1, $L2) {
+    if(isOnSameDay($L1, $L2) and $L1->start_time >= $L2->start_time and $L1->start_time < $L2->end_time)
+        return True;
+    if(isOnSameDay($L1, $L2) and $L2->start_time >= $L1->start_time and $L2->start_time < $L1->end_time)
+        return True;
   return False;
 }
 
 
 
 function hasConflictWithList($L, &$V){
-  for ($i = 0 ; $i <= count($V); $i++) {
+  if(count($V) == 0) return false;
+  
+  for ($i = 0 ; $i < count($V); $i++) {
     if(hasConflict($L, $V[$i])) return True;
   }    
   return False;
@@ -131,9 +161,9 @@ function find_time(&$course_list, $curr_index, &$curr_result){
     return;
   }
   
-  for ($i = $curr_index+1 ; $i <= count($course_list); $i++) {
+  for ($i = $curr_index+1 ; $i < count($course_list); $i++) {
     $temp_course = $course_list[$i];
-    for ($j = 0 ; $j <= count($temp_course->lectures); $j++) {
+    for ($j = 0 ; $j < count($temp_course->lectures); $j++) {
       if( hasConflictWithList($temp_course->lectures[$j], $curr_result) ) 
         continue;
       
@@ -160,49 +190,175 @@ function debug_solutions()
         echo "total: "; echo $total_credit ; echo "<br>"; //new line
     }
 }
+function debug_schedule(){
+        echo "<br>";
+    global $solutions;
+    global $schedule;
+    
+    echo "Here is the sections:"; echo "<br>";
+    
+    for($i=0; $i<count($schedule); $i++){
+        echo "Schedule: ";
+        for($j=0; $j<count($schedule[$i]); $j++){
+            $lect = $schedule[$i][$j];
+            echo $lect->start_time; echo " ";
+        }
+        echo "<br>";
+    }
+    
+    echo "<br>";
+}
 
 
-//begin main
-$c1 = new Course("EECS 280", 4);
-$c2 = new Course("EECS 370", 4);
-$c3 = new Course("MATH 412", 3);
-$c4 = new Course("MATH 500", 3);
+// //begin main
+// $c1 = new Course("EECS 280", 4);
+// $c2 = new Course("EECS 370", 4);
+// $c3 = new Course("MATH 412", 3);
+// $c4 = new Course("MATH 500", 3);
 
-$L1 = new Lecture("EECS 280", 8, 9);
-$L2 = new Lecture("EECS 280", 9, 10);
+// $L1 = new Lecture("EECS 280", 8, 9);
+// $L2 = new Lecture("EECS 280", 9, 10);
 
-$c1->add($L1);
-$c1->add($L2);
-// var_dump($c1);
-// var_dump($c1->lectures);
+// $c1->add($L1);
+// $c1->add($L2);
+// // var_dump($c1);
+// // var_dump($c1->lectures);
 
-$L3 = new Lecture("EECS 370", 10, 11);
-$L4 = new Lecture("EECS 370", 12, 15);
-$c2->add($L3);
-$c2->add($L4);
+// $L3 = new Lecture("EECS 370", 10, 11);
+// $L4 = new Lecture("EECS 370", 12, 15);
+// $c2->add($L3);
+// $c2->add($L4);
 
-$L5 = new Lecture("MATH 412", 13, 15);
-$L6 = new Lecture("MATH 412", 8, 11);
-$c3->add($L5);
-$c3->add($L6);
+// $L5 = new Lecture("MATH 412", 13, 15);
+// $L6 = new Lecture("MATH 412", 8, 11);
+// $c3->add($L5);
+// $c3->add($L6);
 
-$L6 = new Lecture("MATH 500", 15, 16);
-$L7 = new Lecture("MATH 500", 10, 12);
-$L8 = new Lecture("MATH 500", 11, 14);
-$c4->add($L6);
-$c4->add($L7);
-$c4->add($L8);
+// $L6 = new Lecture("MATH 500", 15, 16);
+// $L7 = new Lecture("MATH 500", 10, 12);
+// $L8 = new Lecture("MATH 500", 11, 14);
+// $c4->add($L6);
+// $c4->add($L7);
+// $c4->add($L8);
 
 
-$allCourse = array($c1, $c2, $c3, $c4);
+//START READING USER INPUT
+
+$inputs = array("EECS 281", "EECS 183", "STATS 250", "PSYH 111", "EECS 482");
+
+
+// START SQL FETCH
+error_reporting(-1);
+ini_set('display_errors', true);
+echo "Hello World!";
+
+$server = "tcp:rd4vxrj1mk.database.windows.net";
+$user = "SQLAdmin";
+$pwd = "Mhacks12345";
+$db = "MHacks2015";
+
+$conn = sqlsrv_connect($server, array("UID"=>$user, "PWD"=>$pwd, "Database"=>$db));
+
+if($conn === false){
+	echo "Failure!";
+} else {
+	// echo "Success!";
+}
+
+
+
+foreach($inputs as $course_name){
+    $sql = "SELECT credits
+    FROM courses
+    WHERE coursename = '" . $course_name . "';";
+
+    $stmt = sqlsrv_query( $conn, $sql);
+    if( $stmt === false ) {
+        echo "Query failed!";
+    } else {
+        // echo "Query successful";
+    }
+
+ 	var_dump($stmt);
+ 	
+	// Make the first (and in this case, only) row of the result set available for reading.
+    if( sqlsrv_fetch( $stmt ) ) {
+	// Get the row fields. Field indeces start at 0 and must be retrieved in order.
+	// Retrieving row fields by name is not supported by sqlsrv_get_field.
+	$num_credit = sqlsrv_get_field( $stmt, 0);
+	$new_course = new Course($course_name, $num_credit);
+	    
+	$sql = "SELECT starttime, endtime, days 
+    	FROM lectures
+    	WHERE coursename = '" . $course_name . "';";
+
+	$stmt = sqlsrv_query( $conn, $sql);
+    	if( $stmt === false ) {
+            echo "Query failed!";
+    	} else {
+            echo "Query successful";
+    	}
+    	
+    	while( sqlsrv_fetch( $stmt ) ) {
+	    $start_time = sqlsrv_get_field( $stmt, 0);
+	    $end_time = sqlsrv_get_field( $stmt, 1);
+	    $days = sqlsrv_get_field( $stmt, 2);
+
+	    $new_lecture = new Lecture($course_name, $start_time, $end_time, $days); //?? todo for location
+	    $new_course->add($new_lecture);
+    	}
+	
+	array_push($allCourse, $new_course);
+     }
+}//end foreach inputs
+
+var_dump($allCourse);
+
+
+//$allCourse = array();
 $temp_sol = array();
 
 
-echo "update63"; echo "<br>"; //new line
 
-find_course_combination($allCourse, -1, 12, $temp_sol);
-// echo "THE SOLUTION IS: "; var_dump($solutions);
-debug_solutions();
+function max_credits(){
+   global $allCourse;
+   $total = 0;
+   foreach($allCourse as $oneCourse){
+   	$total += $oneCourse->credit;
+   }
+   
+   if($total > 18) return 18;
+   return $total - 1;
+}
+
+$student_credit = max_credits();
+
+
+find_course_combination($allCourse, -1, $student_credit, $temp_sol);
+echo "THE SOLUTION IS: "; var_dump($solutions);
+
+for($i=0; $i < count($solutions); $i++){
+    global $solutions;
+    global $schedule;
+    
+    $total_credits = 0;
+    for($j=0; $j<count($solutions[$i]); $j++){
+        $sch = $solutions[$i][$j];
+        $total_credits += $sch->credit;
+        // echo $sch->coursename; echo " ";
+    }
+    // echo "total: "; echo $total_credits; echo "<br>";
+    $dumb = array();
+
+    find_time($solutions[$i], -1, $dumb);
+}
+
+
+echo "<br>";
+
+debug_schedule();
+var_dump($schedule);
+
 
 ?>
 

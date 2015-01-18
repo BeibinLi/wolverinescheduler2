@@ -32,8 +32,8 @@
       $coursenum = $_POST['coursenum'];
       $coursename = $dpt . " " . $coursenum;
       $sql_select = 'SELECT *
-      FROM courses C, lectures L
-      WHERE C.coursename = ? AND C.coursename = L.coursename';
+        FROM courses C, lectures L
+        WHERE C.coursename = ? AND C.coursename = L.coursename';
       $stmt = $conn->prepare($sql_select);
       $stmt->bindValue(1, $coursename);
       $stmt->execute();
@@ -52,6 +52,21 @@
     catch(Exception $e) {
       die(var_dump($e));
     }
+  }
+  
+  echo "<br > <br >";
+  for ($a = 0; $a < 10; $a++) {
+    echo '<table>';
+      for ($b = 0; $b < 10; $b++) {
+      echo '<tr>';
+        for ($c = 0; $c < 10; $c++) {
+          echo '<td id="' . $a . $b . $c . '">';
+          echo $a . $b . $c;
+          echo '</td>';
+        }
+      echo '</tr>';
+      }
+    echo '</table>';
   }
   
 ?>
