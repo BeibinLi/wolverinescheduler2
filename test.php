@@ -74,7 +74,7 @@ $solutions; //2D array
 
 $ALLOW_DIFF = 1;
 
-/*
+
 func find_course_combination(&$potential_courses, $curr_index, $credits, &$selected) {
     if($credits <= $ALLOW_DIFF or (0-credits <= $ALLOW_DIFF)){
       array_push($solutions, $selected);
@@ -90,7 +90,7 @@ func find_course_combination(&$potential_courses, $curr_index, $credits, &$selec
     }  //end for
 }
 
-
+/*
 func hasConflict($L1, $L2){
 //??? todo for monday? tuesday?
   if($L1->start_time >= $L2->start_time and $L1->start_time < $L2->end_time) return True;
