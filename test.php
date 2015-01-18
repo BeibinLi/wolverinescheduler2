@@ -43,8 +43,24 @@ class Course{
         $this->credit = $cr;
         $this->coursename = $name;
     }
+    
+    function __construct() 
+    { 
+        $a = func_get_args(); 
+        $i = func_num_args(); 
+        if (method_exists($this,$f='__construct'.$i)) { 
+            call_user_func_array(array($this,$f),$a); 
+        } 
+    } 
+    
+    function __construct2($a1,$a2){
+        echo 'new Course created ';
+        $this->coursename = $a1;
+        $this->credit = $a2;
+    }
 }
-$cs = new Course();
+
+$cs = new Course("EECS 280", 4);
 $cs->set("EECS 280", 4);
 
 echo "updated3";
