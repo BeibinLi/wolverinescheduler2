@@ -4,7 +4,9 @@
 
 <h1> PHP page for algorithm </h1>
 
-<?php echo 'hello world'; ?>
+<?php echo 'hello world';
+echo "<br>";
+?>
 
 <?php
 
