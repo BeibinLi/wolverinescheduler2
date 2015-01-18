@@ -75,7 +75,7 @@ function absolute_val($x){
 }
 
 function find_course_combination(&$potential_courses, $curr_index, $credits, &$selected) {
-    // echo "find_course_comb inputs are: "; var_dump($potential_courses); var_dump($selected); echo "<br>";
+    echo "find_course_comb inputs are: "; var_dump($potential_courses); var_dump($selected); echo "<br>";
     if( absolute_val($credits) < $ALLOW_DIFF ){
       array_push($solutions, $selected);
       echo "I FIND A SOLUTION!  "; var_dump($selected);
@@ -86,12 +86,7 @@ function find_course_combination(&$potential_courses, $curr_index, $credits, &$s
     if($credits < 0) return;
     
     for ($i = $curr_index + 1 ; $i < count($potential_courses); $i++) {
-      echo $i; echo " ";  var_dump($potential_courses);
       $course = $potential_courses[$i];
-      
-    //   foreach($potential_courses as $fuck){
-    //       echo $fuck->coursename; echo " ";
-    //   } // the foreach function works! fuck
 
       echo "now pushing: "; var_dump($course); echo "<br>"; //new line
       array_push($selected, $course);
