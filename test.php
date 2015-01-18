@@ -13,6 +13,15 @@ class Lecture{
     public $start_time;
     public $end_time;
     
+    function __construct() 
+    { 
+        $a = func_get_args(); 
+        $i = func_num_args(); 
+        if (method_exists($this,$f='__construct'.$i)) { 
+            call_user_func_array(array($this,$f),$a); 
+        } 
+    } 
+    
     function __construct2($t1,$t2){
         echo "new Lecture created\r\n";
     }
@@ -26,6 +35,15 @@ class Course{
     public $credit;
     public $coursename;
     // public $lectures;
+    
+    function __construct() 
+    { 
+        $a = func_get_args(); 
+        $i = func_num_args(); 
+        if (method_exists($this,$f='__construct'.$i)) { 
+            call_user_func_array(array($this,$f),$a); 
+        } 
+    } 
     
     function __construct2($credit_in, $coursename_in){
         // $this->credit = $credit_in;
