@@ -24,7 +24,7 @@ class Lecture{
     
     function __construct2($a1,$a2){
         echo 'new Lecture created ';
-        echo '\r\n';
+        echo "\r"; echo "\n";
     }
 }
 
@@ -52,6 +52,7 @@ class Course{
         
         echo $a1; echo $a2;
         echo 'Course created: ';
+        echo $this->credit;
         echo $this->coursename;
     }
     
