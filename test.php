@@ -339,7 +339,11 @@ for($i=0; $i < count($solutions); $i++){
     find_time($solutions[$i], -1, $dumb);
 }
 
-// var_dump($schedule);
+var_dump($schedule);
+
+echo "<br>";
+
+debug_schedule();
 
 
 ?>
