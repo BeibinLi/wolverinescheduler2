@@ -35,6 +35,7 @@ class Lecture{
 class Course{
     public $coursename;
     public $credit;
+    public $lectures = array();
     
     function __construct() 
     { 
@@ -49,6 +50,11 @@ class Course{
         // echo 'new Course created ';
         $this->coursename = $a1;
         $this->credit = $a2;
+    }
+    
+    public function add($L){
+        array_push($this->lectures, $L);
+        // echo "ADD"; var_dump($this->lectures); echo "<br>";
     }
 }
 
@@ -66,16 +72,16 @@ function find_course_combination(&$potential_courses, $curr_index, $credits, &$s
     global $solutions;
     global $schedule;
     
-    echo "find_course_comb inputs are: "; var_dump($potential_courses); 
-          echo "<br>"; //new line
-    echo "input credit is: "; echo $credits;     echo " abs: "; echo absolute_val($credits); echo "<br>";
-    echo "selected array is: "; var_dump($selected); echo "<br>";
+    // echo "find_course_comb inputs are: "; var_dump($potential_courses); 
+    //       echo "<br>"; //new line
+    // echo "input credit is: "; echo $credits;     echo " abs: "; echo absolute_val($credits); echo "<br>";
+    // echo "selected array is: "; var_dump($selected); echo "<br>";
     
 
     if( absolute_val($credits) < 2){
       array_push($solutions, $selected);
-      echo "I FIND A SOLUTION!  "; var_dump($selected);
-      echo "<br>"; //new line
+    //   echo "I FIND A SOLUTION!  "; var_dump($selected);
+    //   echo "<br>"; //new line
       return;
     }
     
@@ -84,12 +90,12 @@ function find_course_combination(&$potential_courses, $curr_index, $credits, &$s
     for ($i = $curr_index + 1 ; $i < count($potential_courses); $i++) {
       $course = $potential_courses[$i];
 
-      echo "now pushing: "; var_dump($course); echo "<br>"; //new line
+    //   echo "now pushing: "; var_dump($course); echo "<br>"; //new line
       array_push($selected, $course);
       
       $remain_credit = $credits - $course->credit;
-      echo "Remaining Credit! Fuck: "; echo $remain_credit; echo " Course->Credit: "; echo $course->credit; 
-          echo "input credit is: "; echo $credits; echo "<br>";
+    //   echo "Remaining Credit! Fuck: "; echo $remain_credit; echo " Course->Credit: "; echo $course->credit; 
+    //       echo "input credit is: "; echo $credits; echo "<br>";
 
       
       find_course_combination($potential_courses, $i, $remain_credit, $selected);
@@ -151,7 +157,7 @@ function debug_solutions()
             echo $course->coursename; echo " ";
             $total_credit += $course->credit;
         }
-        echo "total: " << $total_credit ; echo "<br>"; //new line
+        echo "total: "; echo $total_credit ; echo "<br>"; //new line
     }
 }
 
@@ -162,14 +168,40 @@ $c2 = new Course("EECS 370", 4);
 $c3 = new Course("MATH 412", 3);
 $c4 = new Course("MATH 500", 3);
 
+$L1 = new Lecture("EECS 280", 8, 9);
+$L2 = new Lecture("EECS 280", 9, 10);
+
+$c1->add($L1);
+$c1->add($L2);
+// var_dump($c1);
+// var_dump($c1->lectures);
+
+$L3 = new Lecture("EECS 370", 10, 11);
+$L4 = new Lecture("EECS 370", 12, 15);
+$c2->add($L3);
+$c2->add($L4);
+
+$L5 = new Lecture("MATH 412", 13, 15);
+$L6 = new Lecture("MATH 412", 8, 11);
+$c3->add($L5);
+$c3->add($L6);
+
+$L6 = new Lecture("MATH 500", 15, 16);
+$L7 = new Lecture("MATH 500", 10, 12);
+$L8 = new Lecture("MATH 500", 11, 14);
+$c4->add($L6);
+$c4->add($L7);
+$c4->add($L8);
+
+
 $allCourse = array($c1, $c2, $c3, $c4);
 $temp_sol = array();
 
 
-echo "update2"; echo "<br>"; //new line
+echo "update63"; echo "<br>"; //new line
 
 find_course_combination($allCourse, -1, 12, $temp_sol);
-echo "THE SOLUTION IS: "; var_dump($solutions);
+// echo "THE SOLUTION IS: "; var_dump($solutions);
 debug_solutions();
 
 ?>
