@@ -32,17 +32,9 @@ class Lecture{
     }
 }
 
-// $lec = new Lecture("EECS 381", 3, 5);
-
-
 class Course{
     public $coursename;
     public $credit;
-    
-    // public function set($name, $cr){
-    //     $this->credit = $cr;
-    //     $this->coursename = $name;
-    // }
     
     function __construct() 
     { 
@@ -63,8 +55,6 @@ class Course{
 
 $solutions = array(); //2D array
 
-
-
 function absolute_val($x){
     if($x > 0) return $x;
     $zero = 0;
@@ -72,6 +62,8 @@ function absolute_val($x){
 }
 
 function find_course_combination(&$potential_courses, $curr_index, $credits, &$selected) {
+    global $solutions;
+    
     echo "find_course_comb inputs are: "; var_dump($potential_courses); 
           echo "<br>"; //new line
     echo "input credit is: "; echo $credits;     echo " abs: "; echo absolute_val($credits); echo "<br>";
@@ -124,6 +116,8 @@ function hasConflictWithList($L, &$V){
 
 
 function find_time(&$course_list, $curr_index, &$curr_result){
+   global $solutions;
+
   if(count($course_list) == count($curr_result)) {
     array_push($schedule, $curr_result);  
     return;
@@ -144,6 +138,8 @@ function find_time(&$course_list, $curr_index, &$curr_result){
 
 function debug_solutions()
 {
+        global $solutions;
+
     for($i=0; $i < count($solutions); $i++){
         $total_credit = 0;
         for($j=0; $j < count($solutions[$i]); $j++){
