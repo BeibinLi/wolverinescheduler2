@@ -282,10 +282,9 @@ function debug_schedule(){
     
     global $bigstring;
     
-    echo "Here are the sections:"; echo "<br>";
     $count = 1;
     if( count($schedule) == 0 || $schedule[0] == NULL ){
-    	echo "Wrong! No Output!"; echo "<br>";
+    	echo "No possible schedules."; echo "<br>";
     	return;
     }
 	$i = 0;  echo "<br>";
@@ -295,6 +294,7 @@ function debug_schedule(){
         }
 	// var_dump($bigstring);  echo "<br>";
     
+    echo "Possible schedules:"; echo "<br>";
     for($i=0; $i<count($schedule); $i++){
         echo "Schedule: "; echo $count; echo "<br>";
         for($j=0; $j<count($schedule[$i]); $j++){
@@ -432,7 +432,7 @@ if(!empty($_POST)) {
 		
 		
 		
-			var result = "<?php echo $bigstring; ?>"
+			// var result = "<?php echo $schedule; ?>"
 			// var test_result = "<?php echo $test_var; ?>"
 			// alert(test_result);
 			// alert(result[0]);
