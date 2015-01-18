@@ -53,9 +53,8 @@ class Course{
     }
     
     public function add($L){
-        
         array_push($this->lectures, $L);
-        echo "ADD"; var_dump($this->lectures); echo "<br>";
+        // echo "ADD"; var_dump($this->lectures); echo "<br>";
     }
 }
 
@@ -174,19 +173,25 @@ $L2 = new Lecture("EECS 280", 9, 10);
 
 $c1->add($L1);
 $c1->add($L2);
-var_dump($c1);
+// var_dump($c1);
 // var_dump($c1->lectures);
 
 $L3 = new Lecture("EECS 370", 10, 11);
 $L4 = new Lecture("EECS 370", 12, 15);
+$c2->add($L3);
+$c2->add($L4);
 
 $L5 = new Lecture("MATH 412", 13, 15);
 $L6 = new Lecture("MATH 412", 8, 11);
+$c3->add($L5);
+$c3->add($L6);
 
 $L6 = new Lecture("MATH 500", 15, 16);
 $L7 = new Lecture("MATH 500", 10, 12);
 $L8 = new Lecture("MATH 500", 11, 14);
-
+$c4->add($L6);
+$c4->add($L7);
+$c4->add($L8);
 
 
 $allCourse = array($c1, $c2, $c3, $c4);
