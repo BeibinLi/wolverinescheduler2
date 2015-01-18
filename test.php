@@ -225,10 +225,10 @@ find_course_combination($allCourse, -1, 12, $temp_sol);
 
 for($i=0; $i < count($solutions); $i++){
     $total_credits = 0;
-    // for($j=0; $j<count($solutions[$i]); $j++){
-    //     $sch = $solutions[$i][$j];
-    //     echo $sch->coursename; echo " ";
-    // }
+    for($j=0; $j<count($solutions[$i]); $j++){
+        $sch = $solutions[$i][$j];
+        echo $sch->coursename; echo " ";
+    }
     // echo "total: "; echo $total_credits; echo "<br>";
     
     // $dumb = array();
@@ -240,7 +240,7 @@ for($i=0; $i < count($solutions); $i++){
 
 // debug_solutions();
 
-echo "update2"; echo "<br>"; //new line
+echo "update3"; echo "<br>"; //new line
 
 
 ?>
