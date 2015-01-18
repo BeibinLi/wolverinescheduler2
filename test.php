@@ -224,6 +224,9 @@ find_course_combination($allCourse, -1, 12, $temp_sol);
 // echo "THE SOLUTION IS: "; var_dump($solutions);
 
 for($i=0; $i < count($solutions); $i++){
+    global $solutions;
+    global $schedule;
+    
     $total_credits = 0;
     for($j=0; $j<count($solutions[$i]); $j++){
         $sch = $solutions[$i][$j];
@@ -241,7 +244,7 @@ var_dump($schedule);
 
 
 
-echo "update2"; echo "<br>"; //new line
+echo "update3"; echo "<br>"; //new line
 
 
 ?>
