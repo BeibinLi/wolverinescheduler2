@@ -279,7 +279,7 @@ foreach($inputs as $course_name){
         // echo "Query successful";
     }
 
- 	var_dump($stmt);
+ 	// var_dump($stmt);
  	
 	// Make the first (and in this case, only) row of the result set available for reading.
     if( sqlsrv_fetch( $stmt ) ) {
@@ -312,7 +312,7 @@ foreach($inputs as $course_name){
      }
 }//end foreach inputs
 
-var_dump($allCourse);
+// var_dump($allCourse);
 
 
 //$allCourse = array();
@@ -335,7 +335,7 @@ $student_credit = max_credits();
 
 
 find_course_combination($allCourse, -1, $student_credit, $temp_sol);
-echo "THE SOLUTION IS: "; var_dump($solutions);
+// echo "THE SOLUTION IS: "; var_dump($solutions);
 
 for($i=0; $i < count($solutions); $i++){
     global $solutions;
@@ -357,7 +357,7 @@ for($i=0; $i < count($solutions); $i++){
 echo "<br>";
 
 debug_schedule();
-var_dump($schedule);
+// var_dump($schedule);
 
 
 ?>
