@@ -54,7 +54,7 @@
     }
   }
   
-  echo "<td > <td >";
+  echo "<br > <br >";
   for ($a = 0; $a < 10; $a++) {
     echo '<table>';
       for ($b = 0; $b < 10; $b++) {
