@@ -285,7 +285,7 @@ function debug_schedule(){
         echo "Schedule: "; echo $count; echo "<br>";
         for($j=0; $j<count($schedule[$i]); $j++){
             $lect = $schedule[$i][$j];
-            echo $lect->coursename; echo ": "; 
+            echo strtoupper($lect->coursename); echo ": "; 
             print_time( $lect->start_time ); echo " - "; print_time( $lect->end_time);
             echo "   "; echo $lect->days; echo "<br>";
         }
