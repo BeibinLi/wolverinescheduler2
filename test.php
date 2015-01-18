@@ -13,12 +13,12 @@ class Lecture{
     public $start_time;
     public $end_time;
     
-    function __construct(){
+    function __construct2($t1,$t2){
         echo "new Lecture created\r\n";
     }
 }
 
-$lec = new Lecture();
+$lec = new Lecture(1, 2);
 
 
 
