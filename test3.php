@@ -26,13 +26,13 @@
   
   if(!empty($_POST)) {
     try {
-      $dpt = $_POST['dpt'];
-      $coursenum = $_POST['coursenum'];
-      $coursename = $dpt . " " . $coursenum;
+      //$dpt = $_POST['dpt'];
+      //$coursenum = $_POST['coursenum'];
+      //$coursename = $dpt . " " . $coursenum;
       $sql_select = "SELECT coursename, credits FROM MHacks2015
-      WHERE coursename = ?";
-      $stmt = $conn->prepare($sql_select);
-      $stmt->bindValue(1, $coursename);
+      WHERE coursename = 'EECS281'";
+      //$stmt = $conn->prepare($sql_select);
+      //$stmt->bindValue(1, $coursename);
       $courses = $stmt->fetchAll();
     }
     catch(Exception $e) {
