@@ -69,7 +69,7 @@ $solutions; //2D array
 $ALLOW_DIFF = 1;
 
 
-echo "update2";
+echo "update3";
 
 function find_course_combination(&$potential_courses, $curr_index, $credits, &$selected) {
     if($credits <= $ALLOW_DIFF or (0-credits <= $ALLOW_DIFF)){
@@ -79,11 +79,11 @@ function find_course_combination(&$potential_courses, $curr_index, $credits, &$s
     
     if($credits < 0) return;
     
-    // for ($i = $curr_index + 1 ; $i <= count($potential_courses); $i++) {
-    //   array_push($selected, $potential_courses[i]);
-    //   find_course_combination($potential_courses, $i, $creidts - $potential_courses[i]->credit, $selected);
-    //   array_pop($selected);
-    // }  //end for
+    for ($i = $curr_index + 1 ; $i <= count($potential_courses); $i++) {
+      array_push($selected, $potential_courses[i]);
+      find_course_combination($potential_courses, $i, $creidts - $potential_courses[i]->credit, $selected);
+      array_pop($selected);
+    }  //end for
 }
 
 /*
