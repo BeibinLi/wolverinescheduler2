@@ -46,6 +46,10 @@
     $credits = sqlsrv_get_field( $courses, 1);
     echo "$credits\r\n";
   }
+  foreach($courses as $course) {
+    echo $course['coursename'];
+    echo $course['credits'];
+  }
 ?>
 
 </body>
