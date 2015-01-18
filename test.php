@@ -210,8 +210,8 @@ $bigstring;
 function print_one_schedule($aschedule) {
     $out = array();
     
-    $out[0] = str_repeat('&nbsp;', 6) . "Monday". str_repeat('&nbsp;', 5).   "Tuesday". str_repeat('&nbsp;', 5).   
-    "Wednesday". str_repeat('&nbsp;', 5).   "Thursday". str_repeat('&nbsp;', 5).   "Friday";
+    $out[0] = str_repeat('&nbsp;', 10) . "Monday". str_repeat('&nbsp;', 9).   "Tuesday". str_repeat('&nbsp;', 9).   
+    "Wednesday". str_repeat('&nbsp;', 9).   "Thursday". str_repeat('&nbsp;', 9).   "Friday";
     for($i = 1; $i < 12; $i++){
     	$out[$i] = array();
     	$out[$i][0] = $i + 7;
@@ -241,7 +241,7 @@ function print_one_schedule($aschedule) {
     		// }else{
     			echo $out[$i][$j]; 
     		// }
-    		echo  str_repeat('&nbsp;', 3);
+    		echo  str_repeat('&nbsp;', 7);
     	}
     	echo "<br>";
     }
@@ -268,8 +268,7 @@ function debug_schedule(){
             $lect = $schedule[$i][$j];
             $bigstring = $bigstring . $lect->coursename . ", "  . $lect->start_time . ", ". $lect->end_time . ", " . $lect->days . ";";
         }
-	var_dump($bigstring);  echo "<br>";
-	print_one_schedule($schedule[0]);
+	// var_dump($bigstring);  echo "<br>";
     
     for($i=0; $i<count($schedule); $i++){
         echo "Schedule: "; echo $count; echo "<br>";
@@ -279,6 +278,8 @@ function debug_schedule(){
             print_time( $lect->start_time ); echo " - "; print_time( $lect->end_time);
             echo "   "; echo $lect->days; echo "<br>";
         }
+        print_one_schedule($schedule[$i]);
+
         echo "<br>"; echo "<br>"; echo "<br>";
         $count++;
     }
