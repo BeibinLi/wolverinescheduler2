@@ -223,8 +223,8 @@ $temp_sol = array();
 find_course_combination($allCourse, -1, 12, $temp_sol);
 // echo "THE SOLUTION IS: "; var_dump($solutions);
 
-// for($i=0; $i < count($solutions); $i++){
-//     $total_credits = 0;
+for($i=0; $i < count($solutions); $i++){
+    $total_credits = 0;
     // for($j=0; $j<count($solutions[$i]); $j++){
     //     $sch = $solutions[$i][$j];
     //     echo $sch->coursename; echo " ";
@@ -236,11 +236,11 @@ find_course_combination($allCourse, -1, 12, $temp_sol);
 //     // find_time($solutions[$i], -1, $dumb);
     
 //     // debug_schedule();
-// }
+}
 
 // debug_solutions();
 
-echo "update"; echo "<br>"; //new line
+echo "update2"; echo "<br>"; //new line
 
 
 ?>
