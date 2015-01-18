@@ -28,7 +28,8 @@ Released : 20120902
 	<script>
 
 		$(document).ready(function() {
-			var result = "<?php echo json_encode($schedule) ?>"
+		
+			var result = "<?php echo json_encode($schedule); ?>"
 
 			alert(result[0]);
 			
