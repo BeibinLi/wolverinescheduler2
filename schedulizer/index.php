@@ -28,9 +28,11 @@ Released : 20120902
 	<script>
 
 		$(document).ready(function() {
-			var result = "<?php echo $schedule ?>"
+			var result = "<?php echo json_encode($schedule) ?>"
 
-			alert(result[0][0]);
+			alert(result);
+			
+			alert(JSON.parse(result));
 
 			$('#calendar').fullCalendar({
 				header: {
