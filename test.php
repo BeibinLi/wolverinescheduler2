@@ -77,7 +77,7 @@ function absolute_val($x){
 function find_course_combination(&$potential_courses, $curr_index, $credits, &$selected) {
     echo "find_course_comb inputs are: "; var_dump($potential_courses); 
           echo "<br>"; //new line
-    echo "input credit is: "; echo $credits; echo "<br>";
+    echo "input credit is: "; echo $credits;     echo "abs: "; echo absolute_val($credits); echo "<br>";
     echo "selected array is: "; var_dump($selected); echo "<br>";
     
     if( absolute_val($credits) < $ALLOW_DIFF ){
