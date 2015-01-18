@@ -8,18 +8,6 @@ Description: A two-column, fixed-width design with dark color scheme.
 Version : 1.0
 Released : 20120902
 -->
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta name="keywords" content="" />
-<meta name="description" content="" />
-<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<title>Emerald by FCT</title>
-<link href='http://fonts.googleapis.com/css?family=Abel' rel='stylesheet' type='text/css'>
-<link href="style.css" rel="stylesheet" type="text/css" media="screen" />
-<script type="text/javascript" src="jquery/jquery-1.11.2.min.js"></script>
-<script type="text/javascript" src="jquery/jquery.devrama.slider-0.9.4.js"></script>
-<script type="text/javascript" src="js/list.js"></script>
-
 
 <?php error_reporting(-1); ?>
 <?php ini_set('display_errors', true); ?>
@@ -344,6 +332,18 @@ if(!empty($_POST)) {
   // var_dump($schedule);
 }
 ?>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>Emerald by FCT</title>
+<link href='http://fonts.googleapis.com/css?family=Abel' rel='stylesheet' type='text/css'>
+<link href="style.css" rel="stylesheet" type="text/css" media="screen" />
+<script type="text/javascript" src="jquery/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="jquery/jquery.devrama.slider-0.9.4.js"></script>
+<script type="text/javascript" src="js/list.js"></script>
 
 	<link href="fullcalendar.css" rel="stylesheet">
 	<link href="fullcalendar.print.css" rel="stylesheet" media="print">
