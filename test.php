@@ -270,7 +270,7 @@ if($conn === false){
 foreach($inputs as $course_name){
     $sql = "SELECT credits
     FROM courses
-    WHERE coursename = " . $course_name . ";";
+    WHERE coursename = '" . $course_name . "';";
 
     $stmt = sqlsrv_query( $conn, $sql);
     if( $stmt === false ) {
