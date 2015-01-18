@@ -25,7 +25,7 @@ $lec = new Lecture();
 class Course{
     public $credit;
     public $coursename;
-    public $lectures = array{}
+    public $lectures;
     
     function __construct($credit_in, $coursename_in){
         $this->credit = $credit_in;
