@@ -71,7 +71,7 @@ $ALLOW_DIFF = 1;
 
 echo "update";
 
-func find_course_combination(&$potential_courses, $curr_index, $credits, &$selected) {
+function find_course_combination(&$potential_courses, $curr_index, $credits, &$selected) {
     // if($credits <= $ALLOW_DIFF or (0-credits <= $ALLOW_DIFF)){
     //   array_push($solutions, $selected);
     //   return;
@@ -87,7 +87,7 @@ func find_course_combination(&$potential_courses, $curr_index, $credits, &$selec
 }
 
 /*
-func hasConflict($L1, $L2){
+function hasConflict($L1, $L2){
 //??? todo for monday? tuesday?
   if($L1->start_time >= $L2->start_time and $L1->start_time < $L2->end_time) return True;
   if($L2->start_time >= $L1->start_time and $L2->start_time < $L1->end_time) return True;
@@ -96,14 +96,14 @@ func hasConflict($L1, $L2){
 
 $schedule = array{} //2D array
 
-func hasConflictWithList($L, &$V){
+function hasConflictWithList($L, &$V){
   for ($i = 0 ; $i <= count($V); $i++) {
     if(hasConflict($L, $V[i])) return True;
   }    
   return False;
 }
 
-func find_time(&$course_list, $curr_index, &$curr_result){
+function find_time(&$course_list, $curr_index, &$curr_result){
   if(count($course_list) == count($curr_result)) {
     array_push($schedule, $curr_result);  
     return;
