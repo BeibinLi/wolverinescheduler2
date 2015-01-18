@@ -26,9 +26,140 @@ Released : 20120902
 	<script src="moment.min.js"></script>
 	<script src="jquery.min.js"></script>
 	<script>
-
 		$(document).ready(function() {
-			<?php error_reporting(-1); ?>
+			// var result = "<?php echo $schedule; ?>"
+			// var test_result = "<?php echo $test_var; ?>"
+			// alert(test_result);
+			// alert(result[0]);
+			
+			// alert(result[0][0])
+			
+			// alert(JSON.parse(result));
+			
+			// alert(result[0]);
+			
+			// alert(result[0][0])
+			$('#calendar').fullCalendar({
+				header: {
+					left: 'prev,next today',
+					center: 'title',
+					right: 'month,agendaWeek,agendaDay'
+				},
+				defaultDate: '2014-11-12',
+				editable: true,
+				eventLimit: true, // allow "more" link when too many events
+				events: [
+					{
+						id: 999,
+						title: 'Repeating Event',
+						start: '2014-11-09T16:00:00'
+					},
+					{
+						id: 999,
+						title: 'Repeating Event',
+						start: '2014-11-16T16:00:00'
+					},
+					{
+						title: 'Meeting',
+						start: '2014-11-12T10:30:00',
+						end: '2014-11-12T12:30:00'
+					},
+					{
+						title: 'Lunch',
+						start: '2014-11-12T12:00:00'
+					},
+					{
+						title: 'Meeting',
+						start: '2014-11-12T14:30:00'
+					},
+					{
+						title: 'Happy Hour',
+						start: '2014-11-12T17:30:00'
+					},
+					{
+						title: 'Dinner',
+						start: '2014-11-12T20:00:00'
+					},
+					{
+						title: 'Birthday Party',
+						start: '2014-11-13T07:00:00'
+					},
+					{
+						title: 'Click for Google',
+						url: 'http://google.com/',
+						start: '2014-11-28'
+					}
+				]
+			});
+		});
+	</script>
+	<style>
+		#calendar {
+			max-width: 900px;
+			margin: 0 auto;
+		}
+	</style>
+
+
+</head>
+<body>
+<div id="wrapper">
+<div id="header-wrapper" class="container">
+<div id="header" class="container">
+<div id="logo">
+<img src="images/Untitled-4.png" width="230">
+</div>
+<div id="menu">
+<ul>
+<li class="current_page_item"><a href="#">Homepage</a></li>
+<li><a href="#">Blog</a></li>
+<li><a href="#">Photos</a></li>
+<li><a href="#">About</a></li>
+<li><a href="#">Contact</a></li>
+</ul>
+</div>
+</div>
+<div><img src="images/img03.png" width="1000" height="40" alt="" /></div>
+</div>
+<!-- end #header -->
+<div id="page">
+<div id="addingcourse">
+<div id="add_new_course">
+<h1>Add New Course</h1>
+</div>
+<center>
+<form id="addbar" action="/schedulizer/index.php" method="post" enctype="multipart/form-data">
+<table style="width:70%; padding-bottom:15px">
+<tr style="font-size:1.4em; font-family: 'Abel', sans-serif;">
+<td>Department</td>
+<td>Course Number</td>
+</tr><tr>
+<td><input id="dept_in1" type="text" class="class_in" name="dept_in1" value="<?php echo $_POST["dept_in1"]; ?>" onclick="changeValueDept()" style="font-family: 'Abel', Arial; color:#000000" /></td>
+<td><input id="num_in1" type="text" class="class_in" name="num_in1" value="<?php echo $_POST["num_in1"]; ?>" onclick="changeValueNum()" style="font-family: 'Abel', Arial; color:#000000" /></td>
+</tr>
+<tr>
+<td><input id="dept_in2" type="text" class="class_in" name="dept_in2" value="<?php echo $_POST["dept_in2"]; ?>" style="font-family: 'Abel', Arial; color:#000000" /></td>
+<td><input id="num_in2" type="text" class="class_in" name="num_in2" value="<?php echo $_POST["num_in2"]; ?>" style="font-family: 'Abel', Arial; color:#000000" /></td>
+</tr>
+<tr>
+<td><input id="dept_in3" type="text" class="class_in" name="dept_in3" value="<?php echo $_POST["dept_in3"]; ?>" style="font-family: 'Abel', Arial; color:#000000" /></td>
+<td><input id="num_in3" type="text" class="class_in" name="num_in3" value="<?php echo $_POST["num_in3"]; ?>" style="font-family: 'Abel', Arial; color:#000000" /></td>
+</tr>
+<tr>
+<td><input id="dept_in4" type="text" class="class_in" name="dept_in4" value="<?php echo $_POST["dept_in4"]; ?>" style="font-family: 'Abel', Arial; color:#000000" /></td>
+<td><input id="num_in4" type="text" class="class_in" name="num_in4" value="<?php echo $_POST["num_in4"]; ?>" style="font-family: 'Abel', Arial; color:#000000" /></td>
+</tr>
+<tr>
+<td><input id="dept_in5" type="text" class="class_in" name="dept_in5" value="<?php echo $_POST["dept_in5"]; ?>" style="font-family: 'Abel', Arial; color:#000000" /></td>
+<td><input id="num_in5" type="text" class="class_in" name="num_in5" value="<?php echo $_POST["num_in5"]; ?>" style="font-family: 'Abel', Arial; color:#000000" /></td>
+<!-- <td><input id="add_button" type="image" class="add" src="images/math-add-icon.png" style="width:35px; height:35px"> </td> -->
+</tr>
+</table>
+<input id="schedule_button" type="submit" value="CLICK TO SCHEDULE" style="background-color: #FFD700; width:40%; height: 50px;margin:0px; border:0px; font-size:1.6em; font-family: 'Abel', Arial; font-weight:bold" ></input>
+</form>
+</center>
+
+<?php error_reporting(-1); ?>
 <?php ini_set('display_errors', true); ?>
 
 <?php
@@ -62,10 +193,8 @@ class Lecture{
         $this->days = $a4;
     }
 }
-
 // $demodemo = new Lecture("EECS 280", 9, 10, "MWF");
 // var_dump($demodemo);
-
 class Course{
     public $coursename;
     public $credit;
@@ -91,19 +220,16 @@ class Course{
         // echo "ADD"; var_dump($this->lectures); echo "<br>";
     }
 }
-
 // GLOBAL VARIABLES
 $solutions = array(); //2D array
 $schedule = array(); //2D array
 $allCourse = array(); //array for Courses 
 $test_var = 1002;
-
 function absolute_val($x){
     if($x > 0) return $x;
     $zero = 0;
     return $zero - $x;
 }
-
 function find_course_combination(&$potential_courses, $curr_index, $credits, &$selected) {
     global $solutions;
     global $schedule;
@@ -113,7 +239,6 @@ function find_course_combination(&$potential_courses, $curr_index, $credits, &$s
     // echo "input credit is: "; echo $credits;     echo " abs: "; echo absolute_val($credits); echo "<br>";
     // echo "selected array is: "; var_dump($selected); echo "<br>";
     
-
     if( absolute_val($credits) < 3){
       array_push($solutions, $selected);
     //   echo "I FIND A SOLUTION!  "; var_dump($selected);
@@ -125,20 +250,17 @@ function find_course_combination(&$potential_courses, $curr_index, $credits, &$s
     
     for ($i = $curr_index + 1 ; $i < count($potential_courses); $i++) {
       $course = $potential_courses[$i];
-
     //   echo "now pushing: "; var_dump($course); echo "<br>"; //new line
       array_push($selected, $course);
       
       $remain_credit = $credits - $course->credit;
     //   echo "Remaining Credit! Fuck: "; echo $remain_credit; echo " Course->Credit: "; echo $course->credit; 
     //       echo "input credit is: "; echo $credits; echo "<br>";
-
       
       find_course_combination($potential_courses, $i, $remain_credit, $selected);
       array_pop($selected);
     }  //end for
 }
-
 function isOnSameDay($L1, $L2) {
     $L1_arr = str_split((string)$L1->days);
     $L2_arr = str_split((string)$L2->days);
@@ -150,7 +272,6 @@ function isOnSameDay($L1, $L2) {
     }
     return False;
 }
-
 function hasConflict($L1, $L2) {
     if(isOnSameDay($L1, $L2) and $L1->start_time >= $L2->start_time and $L1->start_time < $L2->end_time)
         return True;
@@ -158,9 +279,6 @@ function hasConflict($L1, $L2) {
         return True;
   return False;
 }
-
-
-
 function hasConflictWithList($L, &$V){
   if(count($V) == 0) return false;
   
@@ -169,9 +287,6 @@ function hasConflictWithList($L, &$V){
   }    
   return False;
 }
-
-
-
 function find_time(&$course_list, $curr_index, &$curr_result){
     global $solutions;
     global $schedule;
@@ -193,7 +308,6 @@ function find_time(&$course_list, $curr_index, &$curr_result){
     }
   }
 }
-
 function debug_solutions()
 {
     echo "<br>";
@@ -210,8 +324,6 @@ function debug_solutions()
         echo "total: "; echo $total_credit ; echo "<br>"; //new line
     }
 }
-
-
 function print_time($time)
 {
     $add = $time + 0.6;
@@ -224,38 +336,18 @@ function print_time($time)
     	echo ":30";
     }
 }
-
-
-$bigstring;
 function debug_schedule(){
         echo "<br>";
     global $solutions;
     global $schedule;
-    
-    var_dump($schedule);
-    
-    global $bigstring;
-    
-    echo "Here are the sections:"; echo "<br>";
     $count = 1;
-    if( count($schedule) == 0 || $schedule[0] == NULL ){
-    	echo "Wrong! No Output!"; echo "<br>";
-    	return;
-    }
-	$i = 0;  echo "<br>";
-	for($j=0; $j<count($schedule[$i]); $j++){
-            $lect = $schedule[$i][$j];
-            $bigstring = $bigstring . $lect->coursename . ", "  . $lect->start_time . ", ". $lect->end_time . ", " . $lect->days . ";";
-        }
-	var_dump($bigstring);  echo "<br>";
-    
-    for($i=0; $i<count($schedule); $i++){
-        echo "Schedule: "; echo $count; echo "<br>";
+    for($i=0; $i < min(count($schedule), 10); $i++){
+        echo "Schedule "; echo $count; echo ":<br>";
         for($j=0; $j<count($schedule[$i]); $j++){
             $lect = $schedule[$i][$j];
             echo $lect->coursename; echo ": "; 
             print_time( $lect->start_time ); echo " - "; print_time( $lect->end_time);
-            echo "   "; echo $lect->days; echo "<br>";
+            echo "   "; echo str_replace("R", "Th", str_replace("T", "Tu", $lect->days)); echo "<br>";
         }
         echo "<br>"; echo "<br>"; echo "<br>";
         $count++;
@@ -263,8 +355,6 @@ function debug_schedule(){
     
     echo "<br>";
 }
-
-
 $host = "tcp:rd4vxrj1mk.database.windows.net";
 $user = "SQLAdmin";
 $pwd = "Mhacks12345";
@@ -370,120 +460,8 @@ if(!empty($_POST)) {
   debug_schedule();
   // var_dump($schedule);
 }
-
 // CHANGE SCHEDULE TO A STRING?
-
-
 ?>
-			var result = "<?php echo $bigstring; ?>"
-			// var test_result = "<?php echo $test_var; ?>"
-			// alert(test_result);
-			// alert(result[0]);
-			
-			// alert(result[0][0])
-			
-			// alert(JSON.parse(result));
-			
-			// alert(result[0]);
-			
-			// alert(result[0][0])
-			tempEvent = [];
-			var size = <?php count($schedule)?>;
-			alert(size);
-			for(var i=0;i<size;i++)
-			{
-				var coursename = <?php $schedule[$i][$j]->coursename ?>;
-				alert(coursename);
-            			var coursestart =  <?php $schedule[$i][$j]->start_time ?>;
-            			var courseend =  <?php $schedule[$i][$j]->end_time ?>;
-            			var day;
-            			//if()
-				tempEvent[i] = [coursename,'2014-11-12T'+coursestart+':00:00'];
-			}
-			$('#calendar').fullCalendar({
-				header: {
-					left: 'prev,next today',
-					center: 'title',
-					right: 'month,agendaWeek,agendaDay'
-				},
-				defaultDate: '2014-11-12',
-				editable: true,
-				eventLimit: true, // allow "more" link when too many events
-				events: tempEvent
-			});
-
-		});
-
-	</script>
-	<style>
-
-		#calendar {
-			max-width: 900px;
-			margin: 0 auto;
-		}
-
-	</style>
-
-
-</head>
-<body>
-<div id="wrapper">
-<div id="header-wrapper" class="container">
-<div id="header" class="container">
-<div id="logo">
-<img src="images/Untitled-4.png" width="230">
-</div>
-<div id="menu">
-<ul>
-<li class="current_page_item"><a href="#">Homepage</a></li>
-<li><a href="#">Blog</a></li>
-<li><a href="#">Photos</a></li>
-<li><a href="#">About</a></li>
-<li><a href="#">Contact</a></li>
-</ul>
-</div>
-</div>
-<div><img src="images/img03.png" width="1000" height="40" alt="" /></div>
-</div>
-<!-- end #header -->
-<div id="page">
-<div id="addingcourse">
-<div id="add_new_course">
-<h1>Add New Course</h1>
-</div>
-<center>
-<form id="addbar" action="/schedulizer/index.php" method="post" enctype="multipart/form-data">
-<table style="width:70%; padding-bottom:15px">
-<tr style="font-size:1.4em; font-family: 'Abel', sans-serif;">
-<td>Department</td>
-<td>Course Number</td>
-</tr><tr>
-<td><input id="dept_in1" type="text" class="class_in" name="dept_in1" value="<?php $varx = isset($_POST["dept_in1"]) ? $_POST["dept_in1"] : ""; echo $varx; ?>" onclick="changeValueDept()" style="font-family: 'Abel', Arial; color:#000000" /></td>
-<td><input id="num_in1" type="text" class="class_in" name="num_in1" value="<?php $varx = isset($_POST["num_in1"]) ? $_POST["num_in1"] : ""; echo $varx; ?>" onclick="changeValueNum()" style="font-family: 'Abel', Arial; color:#000000" /></td>
-</tr>
-<tr>
-<td><input id="dept_in2" type="text" class="class_in" name="dept_in2" value="<?php $varx = isset($_POST["dept_in2"]) ? $_POST["dept_in2"] : ""; echo $varx; ?>" style="font-family: 'Abel', Arial; color:#000000" /></td>
-<td><input id="num_in2" type="text" class="class_in" name="num_in2" value="<?php $varx = isset($_POST["num_in2"]) ? $_POST["num_in2"] : ""; echo $varx; ?>" style="font-family: 'Abel', Arial; color:#000000" /></td>
-</tr>
-<tr>
-<td><input id="dept_in3" type="text" class="class_in" name="dept_in3" value="<?php $varx = isset($_POST["dept_in3"]) ? $_POST["dept_in3"] : ""; echo $varx; ?>" style="font-family: 'Abel', Arial; color:#000000" /></td>
-<td><input id="num_in3" type="text" class="class_in" name="num_in3" value="<?php $varx = isset($_POST["num_in3"]) ? $_POST["num_in3"] : ""; echo $varx; ?>" style="font-family: 'Abel', Arial; color:#000000" /></td>
-</tr>
-<tr>
-<td><input id="dept_in4" type="text" class="class_in" name="dept_in4" value="<?php $varx = isset($_POST["dept_in4"]) ? $_POST["dept_in4"] : ""; echo $varx; ?>" style="font-family: 'Abel', Arial; color:#000000" /></td>
-<td><input id="num_in4" type="text" class="class_in" name="num_in4" value="<?php $varx = isset($_POST["num_in4"]) ? $_POST["num_in4"] : ""; echo $varx; ?>" style="font-family: 'Abel', Arial; color:#000000" /></td>
-</tr>
-<tr>
-<td><input id="dept_in5" type="text" class="class_in" name="dept_in5" value="<?php $varx = isset($_POST["dept_in5"]) ? $_POST["dept_in5"] : ""; echo $varx; ?>" style="font-family: 'Abel', Arial; color:#000000" /></td>
-<td><input id="num_in5" type="text" class="class_in" name="num_in5" value="<?php $varx = isset($_POST["num_in5"]) ? $_POST["num_in5"] : ""; echo $varx; ?>" style="font-family: 'Abel', Arial; color:#000000" /></td>
-<!-- <td><input id="add_button" type="image" class="add" src="images/math-add-icon.png" style="width:35px; height:35px"> </td> -->
-</tr>
-</table>
-<input id="schedule_button" type="submit" value="CLICK TO SCHEDULE" style="background-color: #FFD700; width:40%; height: 50px;margin:0px; border:0px; font-size:1.6em; font-family: 'Abel', Arial; font-weight:bold" ></input>
-</form>
-</center>
-
-
 
 <!--
 <form id="addbar" style="width:80%" action="" method="post">
