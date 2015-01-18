@@ -278,7 +278,6 @@ function debug_schedule(){
     global $solutions;
     global $schedule;
     
-    echo "Here are the sections:"; echo "<br>";
     $count = 1;
     for($i=0; $i<min(count($schedule), 10); $i++){
         echo "Schedule: "; echo $count; echo "<br>";
@@ -322,7 +321,6 @@ if(!empty($_POST)) {
   // START SQL FETCH
   error_reporting(-1);
   ini_set('display_errors', true);
-  echo "Hello World!";
   $server = "tcp:rd4vxrj1mk.database.windows.net";
   $user = "SQLAdmin";
   $pwd = "Mhacks12345";
