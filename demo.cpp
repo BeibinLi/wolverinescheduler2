@@ -19,7 +19,7 @@ struct Lecture{
         else return in+12;
     }
     
-    double start_time;
+    double start_time;  // TODO add day (M/Tu/W/Th/F)
     double end_time;
 //    string location;
 
@@ -56,7 +56,7 @@ void find_course_combination(const vector<Course>& potential_courses, int curr_i
                              int credits,
                              vector<Course>& selected)
 // credits = number of remaining credits we could take. This value could be negative.
-// curr_index should be -1 when first called. it represent the courses we already took
+// curr_index should be -1 when first called. it represents the courses we already took
 // into consideration in potential_courses
 {
     if( abs(credits) <= ALLOW_DIFF ){
