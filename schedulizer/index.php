@@ -30,7 +30,8 @@ Released : 20120902
 		$(document).ready(function() {
 		
 			var result = "<?php echo json_encode($schedule); ?>"
-
+			var test_result = "<?php echo json_encode($test_var); ?>"
+			alert(test_result);
 			alert(result[0]);
 			
 			alert(result[0][0])
@@ -233,6 +234,7 @@ class Course{
 $solutions = array(); //2D array
 $schedule = array(); //2D array
 $allCourse = array(); //array for Courses 
+$test_var = 1002;
 
 function absolute_val($x){
     if($x > 0) return $x;
