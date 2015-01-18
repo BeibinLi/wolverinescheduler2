@@ -103,9 +103,9 @@ function hasConflictWithList($L, &$V){
   return False;
 }
 
-echo "update4";
+echo "update5";
 
-/*
+
 function find_time(&$course_list, $curr_index, &$curr_result){
   if(count($course_list) == count($curr_result)) {
     array_push($schedule, $curr_result);  
@@ -126,7 +126,6 @@ function find_time(&$course_list, $curr_index, &$curr_result){
 }
 
 
-*/
 ?>
 
 </body>
