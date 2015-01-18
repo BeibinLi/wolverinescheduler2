@@ -14,7 +14,7 @@
 
 <?php
   $host = "tcp:yjjy54mc4i.database.windows.net";
-  $user = "SQLAdmin@yjjy54mc4i";
+  $user = "SQLAdmin";
   $pwd = "Mhacks12345";
   $db = "MHacks2015";
   
