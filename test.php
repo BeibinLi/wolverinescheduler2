@@ -218,7 +218,7 @@ function debug_schedule(){
     
     echo "Here are the sections:"; echo "<br>";
     $count = 1;
-    if(count($schedule)){
+    if( count($schedule) == 0 ){
     	echo "Wrong! No Output!"; echo "<br>";
     	return;
     }
