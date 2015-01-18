@@ -69,7 +69,6 @@ $solutions; //2D array
 $ALLOW_DIFF = 1;
 
 
-echo "update3";
 
 function find_course_combination(&$potential_courses, $curr_index, $credits, &$selected) {
     if($credits <= $ALLOW_DIFF or (0-credits <= $ALLOW_DIFF)){
@@ -96,7 +95,7 @@ function hasConflict($L1, $L2){
 
 $schedule; //2D array
 
-/*
+
 function hasConflictWithList($L, &$V){
   for ($i = 0 ; $i <= count($V); $i++) {
     if(hasConflict($L, $V[i])) return True;
@@ -104,6 +103,9 @@ function hasConflictWithList($L, &$V){
   return False;
 }
 
+echo "update4";
+
+/*
 function find_time(&$course_list, $curr_index, &$curr_result){
   if(count($course_list) == count($curr_result)) {
     array_push($schedule, $curr_result);  
