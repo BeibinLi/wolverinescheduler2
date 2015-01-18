@@ -47,11 +47,11 @@ class Course{
     } 
     
     function __construct2($credit_in, $coursename_in){
-        $this->credit = $credit_in;
-        $this->coursename = $coursename_in
+        // $this->credit = $credit_in;
+        // $this->coursename = $coursename_in
         
         echo "Course created: ";
-        echo $this->coursename;
+        // echo $this->coursename;
         echo "\r\n";
     }
     
