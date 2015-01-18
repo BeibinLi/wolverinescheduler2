@@ -116,7 +116,15 @@ Released : 20120902
 <div id="logo">
 <img src="images/Untitled-4.png" width="230">
 </div>
-
+<div id="menu">
+<ul>
+<li class="current_page_item"><a href="#">Homepage</a></li>
+<li><a href="#">Blog</a></li>
+<li><a href="#">Photos</a></li>
+<li><a href="#">About</a></li>
+<li><a href="#">Contact</a></li>
+</ul>
+</div>
 </div>
 <div><img src="images/img03.png" width="1000" height="40" alt="" /></div>
 </div>
@@ -362,7 +370,7 @@ function debug_schedule(){
 
     $count = 1;
     for($i=0; $i < min(count($schedule), 10); $i++){
-    	if ((bool)$schedule == False) break;
+    	if (!isset($schedule)) break;
         echo "Schedule "; echo $count; echo ":<br>";
         for($j=0; $j<count($schedule[$i]); $j++){
             $lect = $schedule[$i][$j];
