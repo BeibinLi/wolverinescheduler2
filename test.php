@@ -22,7 +22,7 @@ class Lecture{
         } 
     } 
     
-    function __construct2($a1,$a2,$a3){
+    function __construct3($a1,$a2,$a3){
         echo 'new Lecture created ';
         $this->coursename = $a1;
         $this->start_time = $a2;
