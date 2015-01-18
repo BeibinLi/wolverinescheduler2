@@ -17,7 +17,6 @@ class Lecture{
     public $coursename;
     public $start_time;
     public $end_time;
-    public $days;
     
     function __construct() 
     { 
@@ -248,7 +247,7 @@ function print_one_schedule($aschedule) {
     		// }else if( strlen($out[$i][$j]) < 4 ){
     		// 	echo  str_repeat('&nbsp;', 8);
     		}else{
-    			echo (string)$out[$i][$j]; 
+    		    echo $out[$i][$j]; var_dump($out[$i][$j]); 
     		}
     		echo  str_repeat('&nbsp;', 7);
     	}
@@ -300,7 +299,7 @@ function debug_schedule(){
 
 //START READING USER INPUT
 
-$inputs = array( "EECS 281", "EECS 183", "STATS 250");
+$inputs = array( "EECS 281", "EECS 183", "STATS 250", "EECS 482");
 // $inputs = array(" ");
 
 // START SQL FETCH
