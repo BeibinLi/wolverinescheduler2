@@ -35,6 +35,7 @@
       WHERE coursename = ?';
       $stmt = $conn->prepare($sql_select);
       $stmt->bindValue(1, $coursename);
+      $stmt->execute();
       $courses = $stmt->fetchAll();
       if(count($courses) > 0) {
         foreach($courses as $course) {
