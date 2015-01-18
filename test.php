@@ -220,11 +220,11 @@ function print_one_schedule($aschedule) {
     foreach($aschedule as $lec){
     	$s_arr = str_split((string)$lec->days);
     	foreach($s_arr as $c){
-    		if($c = "M") $out[(int)$lec->start_time][1] = $lec->coursename;
-    		if($c = "T") $out[(int)$lec->start_time][2] = $lec->coursename;
-    		if($c = "W") $out[(int)$lec->start_time][3] = $lec->coursename;
-    		if($c = "R") $out[(int)$lec->start_time][4] = $lec->coursename;
-    		if($c = "F") $out[(int)$lec->start_time][5] = $lec->coursename;
+    		if($c = "M") $out[(int)$lec->start_time - 7][1] = $lec->coursename;
+    		if($c = "T") $out[(int)$lec->start_time - 7][2] = $lec->coursename;
+    		if($c = "W") $out[(int)$lec->start_time - 7][3] = $lec->coursename;
+    		if($c = "R") $out[(int)$lec->start_time - 7][4] = $lec->coursename;
+    		if($c = "F") $out[(int)$lec->start_time - 7][5] = $lec->coursename;
     	}
     }
     
@@ -240,7 +240,7 @@ function print_one_schedule($aschedule) {
     		// }else{
     			echo $out[$i][$j]; 
     		// }
-    		echo " ";
+    		echo  str_repeat('&nbsp;', 3);
     	}
     	echo "<br>";
     }
