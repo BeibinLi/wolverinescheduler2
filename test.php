@@ -38,6 +38,9 @@ class Course{
     public $coursename;
 
 }
+$cs = new Course();
+
+echo "updated";
 
 
 /*
