@@ -321,7 +321,7 @@ $temp_sol = array();
 
 
 find_course_combination($allCourse, -1, 12, $temp_sol);
-// echo "THE SOLUTION IS: "; var_dump($solutions);
+echo "THE SOLUTION IS: "; var_dump($solutions);
 
 for($i=0; $i < count($solutions); $i++){
     global $solutions;
