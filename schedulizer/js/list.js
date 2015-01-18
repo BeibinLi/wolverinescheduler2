@@ -18,16 +18,7 @@ var arr = [];
 
 
     window.onload = function storeWord(dept, num) {
-        dept = dept.trim();
-        num = num.trim();
-        var name = dept + num;
-        for (var i = 0; i < arr.length; ++i) {
-            if (name == arr[i]) {
-                alert("This course is already in the list.");
-                return;
-            }
-        }
-        arr.push(name);
+
         document.getElementById("addbar").onsubmit = function (e) {
             var newRow, i;
             e = e || window.event;
@@ -43,9 +34,20 @@ var arr = [];
                     newRow += "<td>" + this.elements[i].value + "</td>";
                 }
             }
+            var name = dept + num;
+            for (i = 0; i < arr.length; ++i) {
+                if (name == arr[i]) {
+                    alert("This course is already in the list.");
+                    return;
+                }
+            }
+            arr.push(name);
             document.getElementById("course_table").innerHTML += newRow + "</tr>";
+
             return false;
+
         };
+
     }
    /*
 function storeWord(dept,num) {
