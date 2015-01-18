@@ -27,6 +27,7 @@
   
   //if(!empty($_POST)) {
     try {
+      echo "'testing'";
       //$dpt = $_POST['dpt'];
       //$coursenum = $_POST['coursenum'];
       //$coursename = $dpt . " " . $coursenum;
