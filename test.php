@@ -7,7 +7,7 @@
 <?php echo 'hello world';
 echo "<br>"; //new line
 
-echo "update1"; echo "<br>"; //new line
+echo "update2"; echo "<br>"; //new line
 
 ?>
 
@@ -218,7 +218,7 @@ function debug_schedule(){
     
     echo "Here are the sections:"; echo "<br>";
     $count = 1;
-    if( count($schedule) == 0 ){
+    if( count($schedule) == 0 || $schedule[0] == NULL ){
     	echo "Wrong! No Output!"; echo "<br>";
     	return;
     }
