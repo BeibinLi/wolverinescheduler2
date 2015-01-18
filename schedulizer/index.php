@@ -81,6 +81,17 @@ Released : 20120902
 <?php ini_set('display_errors', true); ?>
 
 <?php
+$host = "tcp:rd4vxrj1mk.database.windows.net";
+$user = "SQLAdmin";
+$pwd = "Mhacks12345";
+$db = "MHacks2015";
+try {
+  $conn = new PDO( "sqlsrv:Server= $host ; Database = $db ", $user, $pwd);
+  $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
+} catch(Exception $e){
+  die(var_dump($e));
+}
+// Based on form data, make a query to the database
 if(!empty($_POST)) {
   echo "POST not empty";
   for ($i = 1; $i < 6; $i++) {
