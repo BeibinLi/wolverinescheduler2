@@ -14,7 +14,7 @@
 $server = "tcp:rd4vxrj1mk.database.windows.net";
 $user = "SQLAdmin";
 $pwd = "Mhacks12345";
-$db = "School";
+$db = "MHacks2015";
 
 $conn = sqlsrv_connect($server, array("UID"=>$user, "PWD"=>$pwd, "Database"=>$db));
 
@@ -24,13 +24,15 @@ if($conn === false){
 	echo "Success!";
 }
 
-$sql = "SELECT * FROM test;";
+$sql = "SELECT coursename, credits
+FROM courses
+WHERE credits = 4;";
 
 $stmt = sqlsrv_query( $conn, $sql);
 if( $stmt === false ) {
      echo "Query failed!";
 } else {
-	echo "Query successful";
+     echo "Query successful";
 }
 
 // Make the first (and in this case, only) row of the result set available for reading.
@@ -40,10 +42,10 @@ if( sqlsrv_fetch( $stmt ) === false) {
 
 // Get the row fields. Field indeces start at 0 and must be retrieved in order.
 // Retrieving row fields by name is not supported by sqlsrv_get_field.
-$name = sqlsrv_get_field( $stmt, 1);
+$name = sqlsrv_get_field( $stmt, 0);
 echo "$name: ";
 
-$comment = sqlsrv_get_field( $stmt, 2);
+$comment = sqlsrv_get_field( $stmt, 1);
 echo $comment;
 
 ?>
