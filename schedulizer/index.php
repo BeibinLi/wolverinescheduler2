@@ -436,9 +436,7 @@ if(!empty($_POST)) {
 			alert(result);
 			
 			
-			
-			
-			$('#calendar').fullCalendar({
+			bigObj = {
 				header: {
 					left: 'prev,next today',
 					center: 'title',
@@ -489,9 +487,10 @@ if(!empty($_POST)) {
 						start: '2014-11-28'
 					}
 				]
-				events.push({title: 'Mhacks Party',
+			}
+			bigObj["events"].push({title: 'Mhacks Party',
 					start: '2014-11-12T07:00:00'});
-			});
+			$('#calendar').fullCalendar(bigObj);
 		});
 	</script>
 
