@@ -94,7 +94,7 @@ function find_course_combination(&$potential_courses, $curr_index, $credits, &$s
     // echo "selected array is: "; var_dump($selected); echo "<br>";
     
 
-    if( absolute_val($credits) < 2){
+    if( absolute_val($credits) < 3){
       array_push($solutions, $selected);
     //   echo "I FIND A SOLUTION!  "; var_dump($selected);
     //   echo "<br>"; //new line
@@ -201,7 +201,7 @@ function debug_schedule(){
         echo "Schedule: ";
         for($j=0; $j<count($schedule[$i]); $j++){
             $lect = $schedule[$i][$j];
-            echo $lect->start_time; echo " ";
+            echo $lect->start_time; echo "  ";
         }
         echo "<br>";
     }
@@ -296,7 +296,7 @@ foreach($inputs as $course_name){
     	if( $stmt === false ) {
             echo "Query failed!";
     	} else {
-            echo "Query successful";
+            //echo "Query successful";
     	}
     	
     	while( sqlsrv_fetch( $stmt ) ) {
