@@ -458,7 +458,7 @@ if(!empty($_POST)) {
 <td>Department</td>
 <td>Course Number</td>
 </tr><tr>
-<td><input id="dept_in1" type="text" class="class_in" name="dept_in1" value="<?php isset($_POST["dept_in1"]) ? echo $_POST["dept_in1"]; ?>" onclick="changeValueDept()" style="font-family: 'Abel', Arial; color:#000000" /></td>
+<td><input id="dept_in1" type="text" class="class_in" name="dept_in1" value="<?php isset($_POST["dept_in1"]) ? echo $_POST["dept_in1"] : echo "" ?>" onclick="changeValueDept()" style="font-family: 'Abel', Arial; color:#000000" /></td>
 <td><input id="num_in1" type="text" class="class_in" name="num_in1" value="<?php echo $_POST["num_in1"]; ?>" onclick="changeValueNum()" style="font-family: 'Abel', Arial; color:#000000" /></td>
 </tr>
 <tr>
