@@ -65,9 +65,6 @@ $solutions = array(); //2D array
 
 
 
-(int)$ALLOW_DIFF = 2;
-
-
 function absolute_val($x){
     if($x > 0) return $x;
     $zero = 0;
@@ -80,9 +77,8 @@ function find_course_combination(&$potential_courses, $curr_index, $credits, &$s
     echo "input credit is: "; echo $credits;     echo " abs: "; echo absolute_val($credits); echo "<br>";
     echo "selected array is: "; var_dump($selected); echo "<br>";
     
-    echo "ALLOW_diff "; echo (int)$ALLOW_DIFF;
-    
-    if( absolute_val($credits) < (int)$ALLOW_DIFF ){
+
+    if( absolute_val($credits) < 2){
       array_push($solutions, $selected);
       echo "I FIND A SOLUTION!  "; var_dump($selected);
       echo "<br>"; //new line
