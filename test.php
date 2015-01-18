@@ -137,7 +137,7 @@ function debug_solutions()
 }
 echo "update"; echo "<br>"; //new line
 $cs = new Course("EECS 280", 4);
-echo cs;
+echo $cs;
 
 
 ?>
