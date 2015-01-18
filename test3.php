@@ -44,7 +44,7 @@
           //echo "Course: " . $course['C.coursename'] . ", Credits: " . $course['C.credits'];
           echo "<br >";
           echo "Start: " . $course['starttime'] . ", End: " . $course['endtime'] . 
-            ", Location: " . $course['location'] . ", Capacity: " . $course['capacity'] . 
+            ", Location: " . $course['location'] . ", Spots Left: " . ($course['capacity'] - $course['enrolled']) . 
             ", Instructor: " . $course['instructor'] . ", Days: " . $course['days'];
         }
       }
