@@ -81,22 +81,6 @@ Released : 20120902
 <?php ini_set('display_errors', true); ?>
 
 <?php
-
-<!DOCTYPE html>
-<html>
-<body>
-
-<h1> PHP page for algorithm </h1>
-
-<?php echo 'hello world';
-echo "<br>"; //new line
-
-echo "update1"; echo "<br>"; //new line
-
-?>
-
-<?php
-
 class Lecture{
     public $coursename;
     public $start_time;
