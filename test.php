@@ -7,7 +7,7 @@
 <?php echo 'hello world';
 echo "<br>"; //new line
 
-echo "update2"; echo "<br>"; //new line
+echo "update3"; echo "<br>"; //new line
 
 ?>
 
@@ -302,7 +302,7 @@ foreach($inputs as $course_name){
     	while( sqlsrv_fetch( $stmt ) ) {
 	    $start_time = sqlsrv_get_field( $stmt, 0);
 	    $end_time = sqlsrv_get_field( $stmt, 1);
-	    $days = sqlsrv_get_field( $stmt, 2);
+	    (string)$days = sqlsrv_get_field( $stmt, 2);
 
 	    $new_lecture = new Lecture($course_name, $start_time, $end_time, $days); //?? todo for location
 	    $new_course->add($new_lecture);
