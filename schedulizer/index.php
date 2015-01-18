@@ -284,7 +284,7 @@ function debug_schedule(){
     
     $count = 1;
     if( count($schedule) == 0 || $schedule[0] == NULL ){
-    	echo "No possible schedules."; echo "<br>";
+    	echo "No possible schedules."; echo "<br><br>";
     	return;
     }
 	$i = 0;  echo "<br>";
@@ -432,10 +432,10 @@ if(!empty($_POST)) {
 		
 		
 		
-			var result = "<?php echo $result; ?>"
+			// var result = "<?php echo $schedule; ?>"
 			// var test_result = "<?php echo $test_var; ?>"
 			// alert(test_result);
-			alert(result);
+			// alert(result[0]);
 			
 			// alert(result[0][0])
 			
