@@ -32,8 +32,8 @@
       $coursenum = $_POST['coursenum'];
       $coursename = $dpt . " " . $coursenum;
       $sql_select = 'SELECT *
-      FROM courses C, lectures L
-      WHERE C.coursename = ? AND C.coursename = L.coursename';
+        FROM courses C, lectures L
+        WHERE C.coursename = ? AND C.coursename = L.coursename';
       $stmt = $conn->prepare($sql_select);
       $stmt->bindValue(1, $coursename);
       $stmt->execute();
