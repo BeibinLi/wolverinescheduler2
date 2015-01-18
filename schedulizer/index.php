@@ -354,13 +354,9 @@ if(!empty($_POST)) {
   // var_dump($schedule);
 }
 ?>
-		
-		
-		
-		
-		
-			<?php $test_var = 21897; ?>
-			var result = "<?php echo json_encode($schedule); ?>"
+
+
+			var result = "<?php echo $schedule; ?>"
 			var test_result = "<?php echo $test_var; ?>"
 			alert(test_result);
 			alert(result[0]);
