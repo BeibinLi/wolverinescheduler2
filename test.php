@@ -12,10 +12,12 @@ class Lecture{
     public $end_time;
     
     function __construct(){
-        
+        echo "new Lecture created\r\n";
     }
     
 }
+
+$lec = new Lecture();
 
 class Course{
     public $credit;
