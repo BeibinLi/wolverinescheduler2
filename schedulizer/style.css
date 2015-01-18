@@ -1,0 +1,236 @@
+
+/*
+Design by Free CSS Templates
+http://www.freecsstemplates.org
+Released for free under a Creative Commons Attribution 2.5 License
+*/
+
+body {
+	margin: 0;
+	padding: 0;
+	background: #C5DA99 url(images/300563-frederika.jpg);
+	background-size:100%;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	color: #FFFFF0;
+}
+
+#header
+{
+	border-radius:10px;
+}
+h1{
+	margin: 0;
+	padding: 0;
+	font-weight: normal;
+	font-family: 'Abel', sans-serif;
+	color: #FFFFF0;
+}
+
+h2{
+	color: #FFFFF0;
+	margin:0px;
+	padding:0px;
+}
+#my-slide
+{
+	padding-top:20px;
+}
+input[type=text] 
+{
+  font: normal 200% Arial, Helvetica, sans-serif;
+}
+.add
+{
+  height: 40px;
+  width: 40px;
+}
+#schedule_button
+{
+	border-radius:5px;
+}
+.class_in
+{
+	border-radius:5px;
+}
+#wrapper {
+	padding-top: 50px;
+}
+
+.container {
+	width: 1000px;
+	margin: 0px auto;
+}
+
+#calendar
+{
+	padding-top:20px;
+}
+/* Header */
+
+#header-wrapper {
+	overflow: hidden;
+	height: 140px;
+}
+
+#header {
+	width: 900px;
+	height: 100px;
+	margin: 0 auto;
+	padding: 0px 50px;
+	background: url(images/img02.jpg) repeat;
+}
+
+/* Logo */
+
+#logo {
+	float: left;
+	width: 300px;
+	margin: 0;
+	padding: 0;
+	color: #FFFFFF;
+}
+
+#logo h1 {
+	line-height: 100px;
+	letter-spacing: -2px;
+	text-transform: lowercase;
+	font-size: 3.8em;
+}
+
+#logo h1 a {
+	color: #FFFFFF;
+	text-shadow: 1px 1px 0px rgba(0,0,0,.2);
+}
+
+#logo img
+{
+	padding-top:15px;
+}
+
+#logo p a {
+	color: #8E8E8E;
+}
+
+#logo a {
+	border: none;
+	background: none;
+	text-decoration: none;
+	color: #000000;
+}
+
+/* Splash */
+
+#splash {
+	width: 960px;
+	height: 300px;
+	margin: 0px auto;
+}
+
+/* Search */
+
+#search {
+	float: right;
+	width: 280px;
+	height: 60px;
+	padding: 20px 0px 0px 0px;
+}
+
+#search form {
+	height: 41px;
+	margin: 0;
+	padding: 10px 0 0 20px;
+}
+
+#search fieldset {
+	margin: 0;
+	padding: 0;
+	border: none;
+}
+
+#search-text {
+	width: 170px;
+	padding: 6px 5px 2px 5px;
+	border: 1px solid #E7EBED;
+	background: #FFFFFF;
+	text-transform: lowercase;
+	font: normal 11px Arial, Helvetica, sans-serif;
+	color: #5D781D;
+}
+
+
+/* Menu */
+
+#menu {
+	float: right;
+	width: 500px;
+	height: 90px;
+	margin: 0 auto;
+	padding: 0;
+}
+
+#menu ul {
+	float: right;
+	margin: 0;
+	padding: 0px 0px 0px 0px;
+	list-style: none;
+	line-height: normal;
+}
+
+#menu li {
+	float: left;
+}
+
+#menu a {
+	display: block;
+	line-height: 100px;
+	margin-right: 1px;
+	padding: 0px 20px 0px 20px;
+	text-decoration: none;
+	text-align: center;
+	text-shadow: 1px 1px 0px rgba(0,0,0,.2);
+	text-transform: uppercase;
+	font-family: 'Abel', sans-serif;
+	font-size: 16px;
+	font-weight: 300;
+	color: #FFFFFF;
+	border: none;
+}
+
+#menu a:hover, #menu .current_page_item a {
+	text-decoration: none;
+	color: #FFFFFF;
+}
+
+/* Page */
+
+#page {
+	width: 900px;
+	margin: 0 auto;
+	padding: 30px 50px;
+	background: #FFFFFF;
+        background-color: rgba(0,0,0,.5);
+	border-radius:10px;
+}
+/* Content */
+
+#caltable td
+{
+	margin: 0;
+
+        text-align: center;
+	border-collapse: collapse;
+	outline: 1px solid #e3e3e3;
+}
+
+#caltable th
+{
+	margin: 0;
+
+        text-align: center;
+	border-collapse: collapse;
+	outline: 1px solid #e3e3e3;
+}
+
+
+
