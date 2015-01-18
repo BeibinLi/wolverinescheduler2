@@ -3,10 +3,11 @@
 <html>
 <body>
 
+<iframe name="formSending"></iframe>
 <form method="post" action="index.php" enctype="multipart/form-data" >
   Department <input type="text" name="dpt" id="dpt"/></br>
   Course Number <input type="text" name="coursenum" id="coursenum"/></br>
-  <input type="submit" name="submit" value="Submit" />
+  <input type="submit" name="submit" value="Submit" target="formSending" />
 </form>
 
 <?php error_reporting(-1); ?>
