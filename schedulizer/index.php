@@ -54,8 +54,8 @@ Released   : 20120902
                 <td>Department</td>
                 <td>Course Number</td>
             </tr><tr>
-                <td><input id="dept_in" type="text" class="class_in" value="ENGR" onclick="changeValueDept()" style="font-family: 'Abel', Arial; color:#CCCCCC" /></td>
-                <td><input id="num_in" type="text" class="class_in" value="101" onclick="changeValueNum()" style="font-family: 'Abel', Arial; color:#CCCCCC" /></td>
+                <td><input id="dept_in" type="text" class="class_in" name="deptN" value="ENGR" onclick="changeValueDept()" style="font-family: 'Abel', Arial; color:#CCCCCC" /></td>
+                <td><input id="num_in" type="text" class="class_in" name="numN" value="101" onclick="changeValueNum()" style="font-family: 'Abel', Arial; color:#CCCCCC" /></td>
                 <td><input id="add_button" type="image" class="add" src="images/math-add-icon.png" style="width:35px; height:35px"></td>
             </tr>
           </table>
@@ -426,5 +426,58 @@ Released   : 20120902
 	<!-- end #page -->
 </div>
 <!-- end #footer -->
+
+<?php
+	$result = babyFunction();	//TODO
+	$temp_row=array_fill(0,5,"");
+	$timetable=array_fill(0,30,$temp_row);
+
+	class Index {
+		public $row;	// day
+		public $col;	// time
+
+		function __construct($row_in, $col_in) {
+			$this->row = $row_in;
+			$this->col = $col_in;
+		}
+	}
+
+	$indexes = array();
+
+	foreach($result as &$solution){	// for each solution
+		foreach($solution as &$lec){	// for each lecture
+			
+			$days_arr = str_split($lec->days);
+			foreach($days_arr as &$day) {
+				switch($day) {
+					case "M":break;
+					case "T":break;
+					case "W":break;
+					case "R":break;
+					case "F":break;
+					default: break;
+				}
+
+
+				$time_diff = $end_col-$start_col;
+				$timetable[0][$start_col*2] = "course";
+				$timetable[0][$end_col*2] = "end";
+				for($z = 0; $z < $time_diff-1; $z++)
+				{
+					$temp_arr[0][$z+$start] = "fill";
+				}
+			}
+		}
+	}
+	a array_fill(int)
+	result;
+	for ($x = 0; $x <= 10; $x++) {
+		for ($x = 0; $x <= row_max; $x++) {
+			for ($x = 0; $x <= col; $x++) {
+				...
+			} 
+		} 
+    } 
+?>
 </body>
 </html>

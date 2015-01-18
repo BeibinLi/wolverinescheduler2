@@ -27,7 +27,7 @@ Released   : 20120902
 	<div id="header-wrapper" class="container">
 	<div id="header" class="container">
 		<div id="logo">
-			<img src="images/Untitled-4.png" width="230"> />
+			<img src="images/Untitled-4.png" width="230"> 
 		</div>
 		<div id="menu">
 			<ul>
@@ -49,18 +49,40 @@ Released   : 20120902
         </div>
         <center>
         <form id="addbar" action="" method="post">
-          <table style="width:70%">
+          <table style="width:70%; padding-bottom:15px">
             <tr style="font-size:1.4em; font-family: 'Abel', sans-serif;">
                 <td>Department</td>
                 <td>Course Number</td>
             </tr><tr>
-                <td><input id="dept_in" type="text" class="class_in" value="ENGR" onclick="changeValueDept()" style="font-family: 'Abel', Arial; color:#CCCCCC" /></td>
-                <td><input id="num_in" type="text" class="class_in" value="101" onclick="changeValueNum()" style="font-family: 'Abel', Arial; color:#CCCCCC" /></td>
-                <td><input id="add_button" type="image" class="add" src="images/math-add-icon.png" style="width:35px; height:35px"> /></td>
+                <td><input id="dept_in" type="text" class="class_in" name="dept1" value="ENGR" onclick="changeValueDept()" style="font-family: 'Abel', Arial; color:#CCCCCC" /></td>
+                <td><input id="num_in" type="text" class="class_in" name="num1" value="101" onclick="changeValueNum()" style="font-family: 'Abel', Arial; color:#CCCCCC" /></td>
+            </tr>
+            <tr>
+                <td><input id="Text1" type="text" class="class_in" name="dept2" style="font-family: 'Abel', Arial; color:#CCCCCC" /></td>
+                <td><input id="Text2" type="text" class="class_in" style="font-family: 'Abel', Arial; color:#CCCCCC" /></td>
+            </tr>
+            <tr>
+                <td><input id="Text3" type="text" class="class_in" style="font-family: 'Abel', Arial; color:#CCCCCC" /></td>
+                <td><input id="Text4" type="text" class="class_in" style="font-family: 'Abel', Arial; color:#CCCCCC" /></td>
+            </tr>
+            <tr>
+                <td><input id="Text5" type="text" class="class_in" style="font-family: 'Abel', Arial; color:#CCCCCC" /></td>
+                <td><input id="Text6" type="text" class="class_in" style="font-family: 'Abel', Arial; color:#CCCCCC" /></td>
+            </tr>
+            <tr>
+                <td><input id="Text7" type="text" class="class_in" style="font-family: 'Abel', Arial; color:#CCCCCC" /></td>
+                <td><input id="Text8" type="text" class="class_in" style="font-family: 'Abel', Arial; color:#CCCCCC" /></td>
+           <!--     <td><input id="add_button" type="image" class="add" src="images/math-add-icon.png" style="width:35px; height:35px"> </td> -->
             </tr>
           </table>
+            <input id="schedule_button" type="button" value="CLICK TO SCHEDULE" style="background-color: #FFD700; width:40%; height: 50px;margin:0px; border:0px; font-size:1.6em; font-family: 'Abel', Arial; font-weight:bold" ></input>
          </form>
          </center>
+         <?php
+
+            $temp = $_POST['dept1'];
+            echo $temp;
+         ?>
         <!--
         <form id="addbar" style="width:80%" action="" method="post">
                 <h2>Department
@@ -95,9 +117,6 @@ Released   : 20120902
             </tr>
          </table>
          -->
-        <div id="schedule_btn_div" style="padding-top:25px" align="center">
-            <input id="schedule_button" type="button" value="CLICK TO SCHEDULE" style="background-color: #FFD700; width:40%; height: 50px;margin:0px; border:0px; font-size:1.6em; font-family: 'Abel', Arial; font-weight:bold" ></input>
-        </div>
         <div id="course_list">
             <table id="course_table"></table>
         </div>

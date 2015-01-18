@@ -16,7 +16,7 @@ var arr = [];
         list.appendChild(newRow);
     }
 
-
+    /*
     window.onload = function storeWord(dept, num) {
 
         document.getElementById("addbar").onsubmit = function (e) {
@@ -49,6 +49,7 @@ var arr = [];
         };
 
     }
+    */
    /*
 function storeWord(dept,num) {
         dept = dept.trim();
