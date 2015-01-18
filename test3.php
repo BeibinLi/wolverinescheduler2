@@ -25,6 +25,7 @@
     die(var_dump($e));
   }
   
+  // Based on form data, make a query to the database
   if(!empty($_POST)) {
     try {
       $dpt = $_POST['dpt'];
