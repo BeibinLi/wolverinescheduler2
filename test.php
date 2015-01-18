@@ -223,12 +223,12 @@ function debug_schedule(){
     	return;
     }
 
-	$i = 0;
+	$i = 0;  echo "<br>";
 	for($j=0; $j<count($schedule[$i]); $j++){
             $lect = $schedule[$i][$j];
-            $bigstring = $bigstring . ", " . $lect->coursename . ", "  . $lect->start_time . ", ". $lect->end_time . ", " . $lect->days . ";";
+            $bigstring = $bigstring . $lect->coursename . ", "  . $lect->start_time . ", ". $lect->end_time . ", " . $lect->days . ";";
         }
-	var_dump($bigstring);
+	var_dump($bigstring);  echo "<br>";
     
     for($i=0; $i<count($schedule); $i++){
         echo "Schedule: "; echo $count; echo "<br>";
