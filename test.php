@@ -229,11 +229,11 @@ function print_one_schedule($aschedule) {
     	}
     }
     
-    var_dump($out);
+    //var_dump($out);
     
     //Print out
     echo "<br>";
-    echo $out[0]; echo "<br>";
+    echo $out[0]; echo "<br>"; echo "-----------------------------------------------------------";
     for($i = 1; $i < count($out); $i++){
     	for($j=0; $j < count($out[$i]); $j++){
     		// if($out[$i][$j] == NULL){
