@@ -231,7 +231,7 @@ function print_one_schedule($aschedule) {
     	}
     }
     
-    var_dump($out);
+    //var_dump($out);
     
     //Print out
     echo "<br>";
