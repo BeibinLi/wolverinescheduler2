@@ -7,7 +7,7 @@
 <?php echo 'hello world';
 echo "<br>"; //new line
 
-echo "update5"; echo "<br>"; //new line
+echo "update"; echo "<br>"; //new line
 
 ?>
 
@@ -339,11 +339,11 @@ for($i=0; $i < count($solutions); $i++){
     find_time($solutions[$i], -1, $dumb);
 }
 
-var_dump($schedule);
 
 echo "<br>";
 
 debug_schedule();
+var_dump($schedule);
 
 
 ?>
