@@ -212,6 +212,10 @@ function debug_schedule(){
     
     echo "Here are the sections:"; echo "<br>";
     $count = 1;
+    if(count($schedule)){
+    	echo "Wrong! No Output!"; echo "<br>";
+    	return;
+    }
     var_dump(schedule);
     
     for($i=0; $i<count($schedule); $i++){
