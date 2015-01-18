@@ -250,7 +250,7 @@ function print_one_schedule($aschedule) {
     			echo  str_repeat('&nbsp;', 8);
     		}else{
     		    //echo $i; echo ","; echo $j;
-    		    echo $out[$i][$j]; 
+    		    echo strtoupper($out[$i][$j]); 
     		}
     		echo  str_repeat('&nbsp;', 14);
     	}
@@ -302,7 +302,7 @@ function debug_schedule(){
 
 //START READING USER INPUT
 
-$inputs = array( "EECS 281", "EECS 183", "MATH 217", "EECS 482");
+$inputs = array( "eecs 281", "eecs 183", "MATH 217", "EECS 482");
 // $inputs = array(" ");
 
 // START SQL FETCH
