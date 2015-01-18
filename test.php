@@ -36,18 +36,18 @@ $lec = new Lecture("EECS 381", 3, 5);
 
 
 class Course{
-    public $credit;
     public $coursename;
+    public $credit;
     
-    public function set($cr, $name){
+    public function set($name, $cr){
         $this->credit = $cr;
         $this->coursename = $name;
     }
 }
 $cs = new Course();
+$cs->set("EECS 280", 4);
 
-
-echo "updated2";
+echo "updated3";
 
 
 /*
