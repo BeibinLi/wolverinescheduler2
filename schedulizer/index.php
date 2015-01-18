@@ -277,8 +277,8 @@ $bigstring;
 function print_one_schedule($aschedule) {
     $out = array(); //2D
     
-    $title = str_repeat('&nbsp;', 12) . "MONDAY". str_repeat('&nbsp;', 8).   "TUESDAY". str_repeat('&nbsp;', 7).   
-    "WEDNESDAY". str_repeat('&nbsp;', 6).   "THRUSDAY". str_repeat('&nbsp;', 6).   "FRIDAY";
+    $title = str_repeat('&nbsp;', 12) . "MONDAY". str_repeat('&nbsp;', 8).   "TUESDAY". str_repeat('&nbsp;', 5).   
+    "WEDNESDAY". str_repeat('&nbsp;', 4).   "THRUSDAY". str_repeat('&nbsp;', 4).   "FRIDAY";
     for($i = 1; $i < 10; $i++){
     	$out[$i] = array(); // array of string
     	$out[$i][0] = (string)($i + 7);
