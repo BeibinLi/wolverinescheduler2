@@ -488,6 +488,7 @@ if(!empty($_POST)) {
 					}
 				]
 			}
+			alert(bigObj["events"][1]["title"]);
 			bigObj["events"].push({title: 'Mhacks Party',
 					start: '2014-11-12T07:00:00'});
 			$('#calendar').fullCalendar(bigObj);
