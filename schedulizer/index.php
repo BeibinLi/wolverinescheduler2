@@ -280,7 +280,7 @@ function debug_schedule(){
     
     echo "Here are the sections:"; echo "<br>";
     $count = 1;
-    for($i=0; $i<min(count($schedule), 7); $i++){
+    for($i=0; $i<min(count($schedule), 10); $i++){
         echo "Schedule: "; echo $count; echo "<br>";
         for($j=0; $j<count($schedule[$i]); $j++){
             $lect = $schedule[$i][$j];
