@@ -365,7 +365,7 @@ function debug_schedule(){
             $lect = $schedule[$i][$j];
             echo $lect->coursename; echo ": "; 
             print_time( $lect->start_time ); echo " - "; print_time( $lect->end_time);
-            echo "   "; echo str_replace("T$lect->days; echo "<br>";
+            echo "   "; echo str_replace("R", "Th", str_replace("T", "Tu", $lect->days)); echo "<br>";
         }
         echo "<br>"; echo "<br>"; echo "<br>";
         $count++;
