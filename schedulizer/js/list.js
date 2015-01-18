@@ -18,6 +18,16 @@ var arr = [];
 
 
     window.onload = function storeWord(dept, num) {
+        dept = dept.trim();
+        num = num.trim();
+        var name = dept + num;
+        for (var i = 0; i < arr.length; ++i) {
+            if (name == arr[i]) {
+                alert("This course is already in the list.");
+                return;
+            }
+        }
+        arr.push(name);
         document.getElementById("addbar").onsubmit = function (e) {
             var newRow, i;
             e = e || window.event;
