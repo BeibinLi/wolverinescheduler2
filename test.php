@@ -61,9 +61,11 @@ class Course{
 }
 
 $cs = new Course("EECS 280", 4);
-$cs->set("EECS 280", 4);
 
-echo "updated3";
+echo "<br>"; //new line
+echo $cs->coursename; echo $cs->credit; //new line
+
+echo "updated4";
 
 
 /*
