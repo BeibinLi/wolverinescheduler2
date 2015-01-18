@@ -35,6 +35,8 @@ if( $stmt === false ) {
      echo "Query successful";
 }
 
+echo "\n";
+
 // Make the first (and in this case, only) row of the result set available for reading.
 while( sqlsrv_fetch( $stmt ) ) {
 
@@ -42,9 +44,11 @@ while( sqlsrv_fetch( $stmt ) ) {
 	// Retrieving row fields by name is not supported by sqlsrv_get_field.
 	$name = sqlsrv_get_field( $stmt, 0);
 	echo "$name: ";
+	echo "\n";
 
 	$comment = sqlsrv_get_field( $stmt, 1);
 	echo $comment;
+	echo "\n";
 }
 
 
