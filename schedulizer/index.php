@@ -52,7 +52,7 @@ Released : 20120902
 <td>Department</td>
 <td>Course Number</td>
 </tr><tr>
-<td><input id="dept_in1" type="text" class="class_in" name="dept_in1" value="ENGR" onclick="changeValueDept()" style="font-family: 'Abel', Arial; color:#CCCCCC" /></td>
+<td><input id="dept_in1" type="text" class="class_in" name="dept_in1" value=<?php echo $_POST["dept_in2"]; ?> onclick="changeValueDept()" style="font-family: 'Abel', Arial; color:#CCCCCC" /></td>
 <td><input id="num_in1" type="text" class="class_in" name="num_in1" value="101" onclick="changeValueNum()" style="font-family: 'Abel', Arial; color:#CCCCCC" /></td>
 </tr>
 <tr>
