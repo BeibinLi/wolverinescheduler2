@@ -43,9 +43,11 @@ Released : 20120902
 			// alert(result[0][0])
 			tempEvent = [];
 			var size = <?php count($schedule)?>;
+			alert(size);
 			for(var i=0;i<size;i++)
 			{
 				var coursename = <?php $schedule[$i][$j]->coursename ?>;
+				alert(coursename);
             			var coursestart =  <?php $schedule[$i][$j]->start_time ?>;
             			var courseend =  <?php $schedule[$i][$j]->end_time ?>;
             			var day;
