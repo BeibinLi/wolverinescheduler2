@@ -192,6 +192,19 @@ function debug_solutions()
 }
 
 
+function print_time($time)
+{
+    $add = $time + 0.6;
+    echo (int)$time; 
+    
+    if((int)$add == (int)$time){
+    	// time o'clock
+    	echo ":00";
+    }else{
+    	echo ":30";
+    }
+}
+
 function debug_schedule(){
         echo "<br>";
     global $solutions;
@@ -204,8 +217,9 @@ function debug_schedule(){
         for($j=0; $j<count($schedule[$i]); $j++){
             $lect = $schedule[$i][$j];
             echo $lect->coursename; echo ": "; 
-            echo $lect->start_time; echo " - "; echo $lect->end_time;
-            echo "   "; echo (string)($lect->days); echo "<br>";
+            print_time( $lect->start_time ); echo " - "; print_time( $lect->end_time);
+            $days = $lect->days;
+            echo "   "; echo (string)days; echo "<br>";
         }
         echo "<br>"; echo "<br>"; echo "<br>";
         $count++;
