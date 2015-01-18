@@ -27,12 +27,11 @@
   
   //if(!empty($_POST)) {
     try {
-      echo "'testing'";
       //$dpt = $_POST['dpt'];
       //$coursenum = $_POST['coursenum'];
       //$coursename = $dpt . " " . $coursenum;
       $sql_select = "SELECT coursename, credits FROM courses
-      WHERE coursename = 'EECS281'";
+      WHERE coursename = 'EECS 281'";
       $stmt = $conn->query($sql_select);
       //$stmt->bindValue(1, $coursename);
       $courses = $stmt->fetchAll();
