@@ -7,7 +7,7 @@
 <?php echo 'hello world';
 echo "<br>"; //new line
 
-echo "update2"; echo "<br>"; //new line
+echo "update3"; echo "<br>"; //new line
 
 ?>
 
@@ -248,7 +248,7 @@ function print_one_schedule($aschedule) {
     		// }else if( strlen($out[$i][$j]) < 4 ){
     		// 	echo  str_repeat('&nbsp;', 8);
     		}else{
-    			echo $out[$i][$j]; 
+    			echo (string)$out[$i][$j]; 
     		}
     		echo  str_repeat('&nbsp;', 7);
     	}
