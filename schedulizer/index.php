@@ -432,10 +432,10 @@ if(!empty($_POST)) {
 		
 		
 		
-			// var result = "<?php echo $schedule; ?>"
+			var result = "<?php echo $result; ?>"
 			// var test_result = "<?php echo $test_var; ?>"
 			// alert(test_result);
-			// alert(result[0]);
+			alert(result);
 			
 			// alert(result[0][0])
 			
