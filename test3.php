@@ -31,21 +31,21 @@
       //$coursename = $dpt . " " . $coursenum;
       $sql_select = "SELECT coursename, credits FROM MHacks2015
       WHERE coursename = 'EECS281'";
-      //$stmt = $conn->prepare($sql_select);
+      $stmt = $conn->query($sql_select);
       //$stmt->bindValue(1, $coursename);
       $courses = $stmt->fetchAll();
+      if(count($courses) > 0) {
+        foreach($courses as $course) {
+          echo $course['coursename'];
+          echo $course['credits'];
+        }
+      }
     }
     catch(Exception $e) {
       die(var_dump($e));
     }
   }
   
-  if(count($courses) > 0) {
-    foreach($courses as $course) {
-      echo $course['coursename'];
-      echo $course['credits'];
-    }
-  }
 ?>
 
 </body>
