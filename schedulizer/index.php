@@ -73,11 +73,17 @@ Released : 20120902
 <!-- <td><input id="add_button" type="image" class="add" src="images/math-add-icon.png" style="width:35px; height:35px"> </td> -->
 </tr>
 </table>
-<input id="schedule_button" type="button" value="CLICK TO SCHEDULE" style="background-color: #FFD700; width:40%; height: 50px;margin:0px; border:0px; font-size:1.6em; font-family: 'Abel', Arial; font-weight:bold" ></input>
+<input id="schedule_button" type="submit" value="CLICK TO SCHEDULE" style="background-color: #FFD700; width:40%; height: 50px;margin:0px; border:0px; font-size:1.6em; font-family: 'Abel', Arial; font-weight:bold" ></input>
 </form>
 </center>
 <?php
-$temp = $_POST['dept1'];
+$temp = $_POST['dept_in1'];
+echo $temp;
+$temp = $_POST['dept_in2'];
+echo $temp;
+$temp = $_POST['num_in3'];
+echo $temp;
+$temp = $_POST['num_in5'];
 echo $temp;
 ?>
 <!--
