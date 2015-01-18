@@ -30,7 +30,7 @@
       //$coursenum = $_POST['coursenum'];
       //$coursename = $dpt . " " . $coursenum;
       $sql_select = "SELECT coursename, credits FROM MHacks2015
-      WHERE coursename = 'EECS281'";
+      WHERE coursename = ''EECS281''";
       $stmt = $conn->query($sql_select);
       //$stmt->bindValue(1, $coursename);
       $courses = $stmt->fetchAll();
