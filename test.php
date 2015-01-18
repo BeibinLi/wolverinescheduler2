@@ -37,24 +37,7 @@ class Course{
     public $credit;
     public $coursename;
 
-    function __construct(){
-        echo 'Course created: ';
-    }
-    
-    public function set($a1,$a2){
-        $this->credit = $a1;
-        $this->coursename = $a2
-        echo $this->credit;
-        echo $this->coursename;
-    }
-    
-    public function add($lec){
-        array_push($this->lectures, $lec);
-    }
 }
-
-$eecs = new Course();
-// $eecs->set("eecs 280", 4);
 
 
 /*
