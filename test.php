@@ -212,7 +212,7 @@ function print_one_schedule($aschedule) {
     
     $out[0] = str_repeat('&nbsp;', 10) . "Monday". str_repeat('&nbsp;', 9).   "Tuesday". str_repeat('&nbsp;', 9).   
     "Wednesday". str_repeat('&nbsp;', 9).   "Thursday". str_repeat('&nbsp;', 9).   "Friday";
-    for($i = 1; $i < 12; $i++){
+    for($i = 1; $i < 10; $i++){
     	$out[$i] = array();
     	$out[$i][0] = $i + 7;
     }
@@ -238,11 +238,13 @@ function print_one_schedule($aschedule) {
     echo "<br>"; 
     for($i = 1; $i < count($out); $i++){
     	for($j=0; $j < count($out[$i]); $j++){
-    		// if($out[$i][$j] == NULL){
-    		// 	echo "        ";
-    		// }else{
+    		if($out[$i][$j] == 8){
+    			echo "08";
+    		}else if($out[$i][$j] == 9){
+    			echo "09";
+    		}else{
     			echo $out[$i][$j]; 
-    		// }
+    		}
     		echo  str_repeat('&nbsp;', 7);
     	}
     	echo "<br>";
