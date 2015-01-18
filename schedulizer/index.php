@@ -94,9 +94,6 @@ Released : 20120902
 
 
 
-<script>
-		$(document).ready(function() {
-		
 		
 		<?php error_reporting(-1); ?>
 <?php ini_set('display_errors', true); ?>
@@ -420,6 +417,13 @@ if(!empty($_POST)) {
 }
 // CHANGE SCHEDULE TO A STRING?
 ?>
+
+
+
+
+<script>
+		$(document).ready(function() {
+		
 		
 		
 		
