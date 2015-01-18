@@ -36,17 +36,18 @@ if( $stmt === false ) {
 }
 
 // Make the first (and in this case, only) row of the result set available for reading.
-if( sqlsrv_fetch( $stmt ) === false) {
-     echo "No row";
+while( sqlsrv_fetch( $stmt ) ) {
+
+	// Get the row fields. Field indeces start at 0 and must be retrieved in order.
+	// Retrieving row fields by name is not supported by sqlsrv_get_field.
+	$name = sqlsrv_get_field( $stmt, 0);
+	echo "$name: ";
+
+	$comment = sqlsrv_get_field( $stmt, 1);
+	echo $comment;
 }
 
-// Get the row fields. Field indeces start at 0 and must be retrieved in order.
-// Retrieving row fields by name is not supported by sqlsrv_get_field.
-$name = sqlsrv_get_field( $stmt, 0);
-echo "$name: ";
 
-$comment = sqlsrv_get_field( $stmt, 1);
-echo $comment;
 
 ?>
 
