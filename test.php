@@ -232,15 +232,15 @@ for($i=0; $i < count($solutions); $i++){
     }
     echo "total: "; echo $total_credits; echo "<br>";
     $dumb = array();
-    $schedule = array(); //not necessary!
+
     find_time($solutions[$i], -1, $dumb);
-    
-    debug_schedule();
 }
 
-// debug_solutions();
+debug_schedule();
 
-echo "update5"; echo "<br>"; //new line
+
+
+echo "update"; echo "<br>"; //new line
 
 
 ?>
