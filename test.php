@@ -4,7 +4,7 @@
 
 <h1> PHP page for algorithm </h1>
 
-<?php echo "Hello World!\r\n"; ?>
+<?php echo "Hello World! \r\n"; ?>
 
 <?php
 
@@ -28,11 +28,11 @@ class Course{
     // public $lectures;
     
     function __construct2($credit_in, $coursename_in){
-        $this->credit = $credit_in;
-        $this->coursename = $coursename_in
+        // $this->credit = $credit_in;
+        // $this->coursename = $coursename_in
         
         echo "Course created: ";
-        echo $this->coursename;
+        // echo $this->coursename;
         echo "\r\n";
     }
     
