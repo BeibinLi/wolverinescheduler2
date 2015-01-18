@@ -212,6 +212,8 @@ function debug_schedule(){
     global $solutions;
     global $schedule;
     
+    var_dump($schedule);
+    
     global $bigstring;
     
     echo "Here are the sections:"; echo "<br>";
