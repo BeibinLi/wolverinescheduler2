@@ -13,7 +13,7 @@ Released : 20120902
 <meta name="keywords" content="" />
 <meta name="description" content="" />
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<title>Emerald by FCT</title>
+<title>Plan Your Semester</title>
 <link href='http://fonts.googleapis.com/css?family=Abel' rel='stylesheet' type='text/css'>
 <link href="style.css" rel="stylesheet" type="text/css" media="screen" />
 <script type="text/javascript" src="jquery/jquery-1.11.2.min.js"></script>
@@ -123,7 +123,7 @@ Released : 20120902
 <div id="page">
 <div id="addingcourse">
 <div id="add_new_course">
-<h1>Add New Course</h1>
+<h1>Enter Your Classes</h1>
 </div>
 <center>
 <form id="addbar" action="/schedulizer/index.php" method="post" enctype="multipart/form-data">
@@ -154,8 +154,6 @@ Released : 20120902
 </tr>
 </table>
 <input id="schedule_button" type="submit" value="CLICK TO SCHEDULE" style="background-color: #FFD700; width:40%; height: 50px;margin:0px; border:0px; font-size:1.6em; font-family: 'Abel', Arial; font-weight:bold" ></input>
-&nbsp;&nbsp;
-<input type="reset" value="RESET" style="border-radius:5px; background-color: #DDDDDD; width:10%; height: 50px;margin:0px; border:0px; font-size:1.6em; font-family: 'Abel', Arial; font-weight:bold">
 </form>
 </center>
 
@@ -362,12 +360,12 @@ function debug_schedule(){
     
     $count = 1;
     for($i=0; $i<min(count($schedule), 10); $i++){
-        echo "Schedule: "; echo $count; echo "<br>";
+        echo "Schedule "; echo $count; echo ":<br>";
         for($j=0; $j<count($schedule[$i]); $j++){
             $lect = $schedule[$i][$j];
             echo $lect->coursename; echo ": "; 
             print_time( $lect->start_time ); echo " - "; print_time( $lect->end_time);
-            echo "   "; echo $lect->days; echo "<br>";
+            echo "   "; echo str_replace("T$lect->days; echo "<br>";
         }
         echo "<br>"; echo "<br>"; echo "<br>";
         $count++;
@@ -394,7 +392,7 @@ if(!empty($_POST)) {
       $dpt = $_POST['dept_in' . $i];
       $coursenum = $_POST['num_in' . $i];
       $coursename = $dpt . " " . $coursenum;
-      array_push($inputs, $coursename);
+      array_push($inputs, trim($coursename));
     }
     catch(Exception $e) {
         die(var_dump($e));
