@@ -27,13 +27,13 @@
   
   if(!empty($_POST)) {
     try {
-      //$dpt = $_POST['dpt'];
-      //$coursenum = $_POST['coursenum'];
-      //$coursename = $dpt . " " . $coursenum;
+      $dpt = $_POST['dpt'];
+      $coursenum = $_POST['coursenum'];
+      $coursename = $dpt . " " . $coursenum;
       $sql_select = "SELECT coursename, credits FROM courses
-      WHERE coursename = 'EECS 281'";
-      $stmt = $conn->query($sql_select);
-      //$stmt->bindValue(1, $coursename);
+      WHERE coursename = '?'";
+      $stmt = $conn->prepare($sql_select);
+      $stmt->bindValue(1, $coursename);
       $courses = $stmt->fetchAll();
       if(count($courses) > 0) {
         foreach($courses as $course) {
