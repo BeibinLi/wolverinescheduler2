@@ -226,8 +226,8 @@ function debug_schedule(){
 	$i = 0;
 	for($j=0; $j<count($schedule[$i]); $j++){
             $lect = $schedule[$i][$j];
-            $bigstring = $bigstring . ", "; //. $lect->coursename . ", " . $lect->start_time . ", ".
-            //$lect->end_time) . ", " . $lect->days . ";";
+            $bigstring = $bigstring . ", "; . $lect->coursename . ", " . $lect->start_time . ", ".
+            $lect->end_time) . ", " . $lect->days . ";";
         }
 	var_dump($bigstring);
     
