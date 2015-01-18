@@ -13,23 +13,23 @@ class Lecture{
     public $start_time;
     public $end_time;
     
-    function __construct() 
-    { 
-        $a = func_get_args(); 
-        $i = func_num_args(); 
-        if (method_exists($this,$f='__construct'.$i)) { 
-            call_user_func_array(array($this,$f),$a); 
-        } 
-    } 
+    // function __construct() 
+    // { 
+    //     $a = func_get_args(); 
+    //     $i = func_num_args(); 
+    //     if (method_exists($this,$f='__construct'.$i)) { 
+    //         call_user_func_array(array($this,$f),$a); 
+    //     } 
+    // } 
     
-    function __construct2($a1,$a2){
-        echo 'new Lecture created ';
-        echo "\r"; echo "\n";
-    }
+    // function __construct2($a1,$a2){
+    //     echo 'new Lecture created ';
+    //     echo "\r"; echo "\n";
+    // }
 }
 
-$lec = new Lecture(1, 2);
-
+$lec = new Lecture(1, 2, 3);
+echo $lec->coursename; echo $lec->start_time; echo $lec->end_time;
 
 
 class Course{
