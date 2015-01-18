@@ -5,21 +5,38 @@
 <h1>My first PHP page</h1>
 
 <?php
-echo "Hello World!";
-echo "Baby" ;
 
+class Lecture{
+    public $coursename;
+    public $start_time;
+    public $end_time;
+    
+    function __construct(){
+        
+    }
+    
+}
 
-Server: rd4vxrj1mk.database.windows.net,1433 \r\nSQL 
-Database: School\r\nUser 
-Name: SQLAdmin\r\n\r\nPHP 
-Data Objects(PDO) 
-Sample Code:\r\n\r\ntry {\r\n   
-$conn = new PDO ( \"sqlsrv:server = tcp:rd4vxrj1mk.database.windows.net,1433; Database = School\", \"SQLAdmin\", \"{your_password_here}\");\r\n    
-$conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );\r\n}\r\ncatch ( PDOException $e ) 
-{\r\n   print( \"Error connecting to SQL Server.\" );\r\n   
-die(print_r($e));\r\n}\r\n\rSQL Server Extension Sample Code:\r\n\r\n
-$connectionInfo = array(\"UID\" => \"SQLAdmin@rd4vxrj1mk\", \"pwd\" => \"{your_password_here}\", \"Database\" => \"School\", \"LoginTimeout\" => 30, \"Encrypt\" => 1);\r\n$serverName = \"tcp:rd4vxrj1mk.database.windows.net,1433\";\r\n$conn = sqlsrv_connect($serverName, $connectionInfo);
+class Course{
+    public $credit;
+    public $coursename;
+    public $lectures = array{}
+    
+    function __construct($credit_in, $coursename_in){
+        $this->credit = $credit_in;
+        $this->coursename = $coursename_in
+        
+        echo "Course created: ";
+        echo $this->coursename;
+        echo "\r\n";
+    }
+    
+    function add($lec){
+        array_push($this->lectures, $lec);
+    }
+}
 
+$eecs = new Course(4, "EECS 280");
 
 $potential_courses = array{};
 
