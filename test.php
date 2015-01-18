@@ -50,15 +50,15 @@ class Course{
     
     function __construct2($a1,$a2){
         echo 'Course created: ';
-        // $this->credit = $a1;
-        // $this->coursename = $a2
+        $this->credit = $a1;
+        $this->coursename = $a2
         echo $this->credit;
         echo $this->coursename;
     }
     
-    public function add($lec){
-        array_push($this->lectures, $lec);
-    }
+    // public function add($lec){
+    //     array_push($this->lectures, $lec);
+    // }
 }
 
 $eecs = new Course(4, "EECS 280");
