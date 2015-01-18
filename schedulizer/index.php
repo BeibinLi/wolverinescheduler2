@@ -74,6 +74,7 @@ Released : 20120902
 </tr>
 </table>
 <input id="schedule_button" type="submit" value="CLICK TO SCHEDULE" style="background-color: #FFD700; width:40%; height: 50px;margin:0px; border:0px; font-size:1.6em; font-family: 'Abel', Arial; font-weight:bold" ></input>
+<input type="reset" value="Clear" style="background-color: #FFD700; width:10%; height: 50px;margin:0px; border:0px; font-size:1.6em; font-family: 'Abel', Arial; font-weight:bold">
 </form>
 </center>
 
