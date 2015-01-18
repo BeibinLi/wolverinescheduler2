@@ -359,7 +359,7 @@ if(!empty($_POST)) {
 		
 		
 		
-			var result = "<?php echo $bigstring; ?>"
+			// var result = "<?php echo $schedule; ?>"
 			// var test_result = "<?php echo $test_var; ?>"
 			// alert(test_result);
 			// alert(result[0]);
@@ -466,24 +466,24 @@ if(!empty($_POST)) {
 <td>Department</td>
 <td>Course Number</td>
 </tr><tr>
-<td><input id="dept_in1" type="text" class="class_in" name="dept_in1" value="<?php echo $_POST["dept_in1"]; ?>" onclick="changeValueDept()" style="font-family: 'Abel', Arial; color:#000000" /></td>
-<td><input id="num_in1" type="text" class="class_in" name="num_in1" value="<?php echo $_POST["num_in1"]; ?>" onclick="changeValueNum()" style="font-family: 'Abel', Arial; color:#000000" /></td>
+<td><input id="dept_in1" type="text" class="class_in" name="dept_in1" value="<?php $varx = isset($_POST["dept_in1"]) ? $_POST["dept_in1"] : ""; echo $varx; ?>" onclick="changeValueDept()" style="font-family: 'Abel', Arial; color:#000000" /></td>
+<td><input id="num_in1" type="text" class="class_in" name="num_in1" value="<?php $varx = isset($_POST["num_in1"]) ? $_POST["num_in1"] : ""; echo $varx; ?>" onclick="changeValueNum()" style="font-family: 'Abel', Arial; color:#000000" /></td>
 </tr>
 <tr>
-<td><input id="dept_in2" type="text" class="class_in" name="dept_in2" value="<?php echo $_POST["dept_in2"]; ?>" style="font-family: 'Abel', Arial; color:#000000" /></td>
-<td><input id="num_in2" type="text" class="class_in" name="num_in2" value="<?php echo $_POST["num_in2"]; ?>" style="font-family: 'Abel', Arial; color:#000000" /></td>
+<td><input id="dept_in2" type="text" class="class_in" name="dept_in2" value="<?php $varx = isset($_POST["dept_in2"]) ? $_POST["dept_in2"] : ""; echo $varx; ?>" style="font-family: 'Abel', Arial; color:#000000" /></td>
+<td><input id="num_in2" type="text" class="class_in" name="num_in2" value="<?php $varx = isset($_POST["num_in2"]) ? $_POST["num_in2"] : ""; echo $varx; ?>" style="font-family: 'Abel', Arial; color:#000000" /></td>
 </tr>
 <tr>
-<td><input id="dept_in3" type="text" class="class_in" name="dept_in3" value="<?php echo $_POST["dept_in3"]; ?>" style="font-family: 'Abel', Arial; color:#000000" /></td>
-<td><input id="num_in3" type="text" class="class_in" name="num_in3" value="<?php echo $_POST["num_in3"]; ?>" style="font-family: 'Abel', Arial; color:#000000" /></td>
+<td><input id="dept_in3" type="text" class="class_in" name="dept_in3" value="<?php $varx = isset($_POST["dept_in3"]) ? $_POST["dept_in3"] : ""; echo $varx; ?>" style="font-family: 'Abel', Arial; color:#000000" /></td>
+<td><input id="num_in3" type="text" class="class_in" name="num_in3" value="<?php $varx = isset($_POST["num_in3"]) ? $_POST["num_in3"] : ""; echo $varx; ?>" style="font-family: 'Abel', Arial; color:#000000" /></td>
 </tr>
 <tr>
-<td><input id="dept_in4" type="text" class="class_in" name="dept_in4" value="<?php echo $_POST["dept_in4"]; ?>" style="font-family: 'Abel', Arial; color:#000000" /></td>
-<td><input id="num_in4" type="text" class="class_in" name="num_in4" value="<?php echo $_POST["num_in4"]; ?>" style="font-family: 'Abel', Arial; color:#000000" /></td>
+<td><input id="dept_in4" type="text" class="class_in" name="dept_in4" value="<?php $varx = isset($_POST["dept_in4"]) ? $_POST["dept_in4"] : ""; echo $varx; ?>" style="font-family: 'Abel', Arial; color:#000000" /></td>
+<td><input id="num_in4" type="text" class="class_in" name="num_in4" value="<?php $varx = isset($_POST["num_in4"]) ? $_POST["num_in4"] : ""; echo $varx; ?>" style="font-family: 'Abel', Arial; color:#000000" /></td>
 </tr>
 <tr>
-<td><input id="dept_in5" type="text" class="class_in" name="dept_in5" value="<?php echo $_POST["dept_in5"]; ?>" style="font-family: 'Abel', Arial; color:#000000" /></td>
-<td><input id="num_in5" type="text" class="class_in" name="num_in5" value="<?php echo $_POST["num_in5"]; ?>" style="font-family: 'Abel', Arial; color:#000000" /></td>
+<td><input id="dept_in5" type="text" class="class_in" name="dept_in5" value="<?php $varx = isset($_POST["dept_in5"]) ? $_POST["dept_in5"] : ""; echo $varx; ?>" style="font-family: 'Abel', Arial; color:#000000" /></td>
+<td><input id="num_in5" type="text" class="class_in" name="num_in5" value="<?php $varx = isset($_POST["num_in5"]) ? $_POST["num_in5"] : ""; echo $varx; ?>" style="font-family: 'Abel', Arial; color:#000000" /></td>
 <!-- <td><input id="add_button" type="image" class="add" src="images/math-add-icon.png" style="width:35px; height:35px"> </td> -->
 </tr>
 </table>
