@@ -48,17 +48,15 @@ class Course{
         } 
     } 
     
-    function __construct2($a1, $a2){
-        // $this->credit = $a1;
-        // $this->coursename = $a2
-        
-        echo $a1; echo $a2;
+    function __construct2($a1,$a2){
         echo 'Course created: ';
+        $this->credit = $a1;
+        $this->coursename = $a2
         echo $this->credit;
         echo $this->coursename;
     }
     
-    function add($lec){
+    public function add($lec){
         array_push($this->lectures, $lec);
     }
 }
