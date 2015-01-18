@@ -136,7 +136,6 @@ function debug_solutions()
         echo "total: " << $total_credit ; echo "<br>"; //new line
     }
 }
-echo "update2"; echo "<br>"; //new line
 // var_dump($cs);
 
 
@@ -149,7 +148,10 @@ $c4 = new Course("MATH 500", 3);
 $allCourse = array(c1, c2, c3, c4);
 $temp_sol;
 
-find_course_combination($allCourse, -1, 12, $temp_sol);
+
+echo "update3"; echo "<br>"; //new line
+
+find_course_combination($allCourse, -1, 4, $temp_sol);
 debug_solutions();
 
 ?>
