@@ -75,7 +75,7 @@ function absolute_val($x){
 }
 
 function find_course_combination(&$potential_courses, $curr_index, $credits, &$selected) {
-    echo "find_course_comb inputs are: "; var_dump($potential_courses); var_dump($selected); echo "<br>";
+    // echo "find_course_comb inputs are: "; var_dump($potential_courses); var_dump($selected); echo "<br>";
     if( absolute_val($credits) < $ALLOW_DIFF ){
       array_push($solutions, $selected);
       echo "I FIND A SOLUTION!  "; var_dump($selected);
@@ -86,9 +86,10 @@ function find_course_combination(&$potential_courses, $curr_index, $credits, &$s
     if($credits < 0) return;
     
     for ($i = $curr_index + 1 ; $i < count($potential_courses); $i++) {
-      array_push($selected, $potential_courses[i]);
-      echo "now pushing: "; var_dump($potential_courses[i]); echo "<br>"; //new line
-      find_course_combination($potential_courses, $i, $creidts - $potential_courses[i]->credit, $selected);
+      $course = $potential_courses[i];
+      array_push($selected, $course);
+      echo "now pushing: "; var_dump($course); echo "<br>"; //new line
+      find_course_combination($potential_courses, $i, $creidts - $course->credit, $selected);
       array_pop($selected);
     }  //end for
 }
@@ -157,7 +158,7 @@ $allCourse = array($c1, $c2, $c3, $c4);
 $temp_sol = array();
 
 
-echo "update"; echo "<br>"; //new line
+echo "update3"; echo "<br>"; //new line
 
 find_course_combination($allCourse, -1, 4, $temp_sol);
 echo "THE SOLUTION IS: "; var_dump($solutions);
