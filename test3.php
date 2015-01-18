@@ -53,14 +53,19 @@
       die(var_dump($e));
     }
   }
-  
-  echo "<table>";
-  echo "<tr>";
-  echo "<td>";
-  echo "string";
-  echo "</td>";
-  echo "</tr>";
-  echo "</table>";
+  for ($a = 0; $a < 10; $a++) {
+    echo "<table>";
+      for ($b = 0; $b < 10; $b++) {
+      echo "<tr>";
+        for ($c = 0; $c < 10; $c++) {
+          echo "<td>";
+          echo "string";
+          echo "</td>";
+        }
+      echo "</tr>";
+      }
+    echo "</table>";
+  }
   
 ?>
 
