@@ -7,7 +7,7 @@
 <?php echo 'hello world';
 echo "<br>"; //new line
 
-echo "update3"; echo "<br>"; //new line
+echo "update"; echo "<br>"; //new line
 
 ?>
 
@@ -214,13 +214,15 @@ function print_one_schedule($aschedule) {
     for($i = 1; $i < 10; $i++){
     	$out[$i] = array();
     	$out[$i][0] = $i + 7;
+    	for($j=1; $j<6;$j++){
+    		$out[i][j] = "";
+    	}
     }
     
     //Core, set up
     foreach($aschedule as $lec){
     	$s_arr = str_split((string)$lec->days);
     	foreach($s_arr as $c){
-    		echo $c; echo "<br>";
     		if($c == "M") { $out[(int)$lec->start_time - 7][1] = $lec->coursename; }
     		else if($c == "T") { $out[(int)$lec->start_time - 7][2] = $lec->coursename;}
     		else if($c == "W") { $out[(int)$lec->start_time - 7][3] = $lec->coursename;}
@@ -247,7 +249,7 @@ function print_one_schedule($aschedule) {
     		// }else if( strlen($out[$i][$j]) < 4 ){
     		// 	echo  str_repeat('&nbsp;', 8);
     		}else{
-    		    if($j != 3) echo $out[$i][$j]; 
+    		    echo $out[$i][$j]; 
     		}
     		echo  str_repeat('&nbsp;', 7);
     	}
