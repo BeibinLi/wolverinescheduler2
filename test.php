@@ -14,6 +14,7 @@ class Lecture{
     public $coursename;
     public $start_time;
     public $end_time;
+    public $days;
     
     function __construct() 
     { 
@@ -160,6 +161,24 @@ function debug_solutions()
         echo "total: "; echo $total_credit ; echo "<br>"; //new line
     }
 }
+function debug_schedule(){
+        echo "<br>";
+    global $solutions;
+    global $schedule;
+    
+    echo "Here is the sections:"; echo "<br>";
+    
+    for($i=0; $i<count($schedule); $i++){
+        echo "Schedule: ";
+        for($j=0; $j<count($schedule[$i]); $j++){
+            $lect = $schedule[$i][$j];
+            echo $lect->start_time; echo " ";
+        }
+        echo "<br>";
+    }
+    
+    echo "<br>";
+}
 
 
 //begin main
@@ -198,11 +217,29 @@ $allCourse = array($c1, $c2, $c3, $c4);
 $temp_sol = array();
 
 
-echo "update63"; echo "<br>"; //new line
 
 find_course_combination($allCourse, -1, 12, $temp_sol);
 // echo "THE SOLUTION IS: "; var_dump($solutions);
-debug_solutions();
+
+for($i=0; $i < count($solutions); $i++){
+    $total_credits = 0;
+    for($j=0; j<count($solutions[$i]); $j++){
+        $sch = $solutions[$i][$j];
+        echo $sch->coursename; echo " ";
+    }
+    echo "total: "; echo $total_credits; echo "<br>";
+    
+    $dumb;
+    $schedule = array();
+    find_time($solutions[$i], -1, $dumb);
+    
+    debug_schedule();
+}
+
+// debug_solutions();
+
+echo "update"; echo "<br>"; //new line
+
 
 ?>
 
