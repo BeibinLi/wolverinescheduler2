@@ -54,6 +54,14 @@
     }
   }
   
+  echo "<table>";
+  echo "<tr>";
+  echo "<td>";
+  echo "string";
+  echo "</td>";
+  echo "</tr>";
+  echo "</table>";
+  
 ?>
 
 </body>
