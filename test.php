@@ -23,8 +23,8 @@ class Lecture{
     } 
     
     function __construct2($t1,$t2){
-        echo "new Lecture created\r\n";
-        echo "\r\n";
+        printf "new Lecture created\r\n";
+        printf "\r\n";
     }
 }
 
@@ -50,9 +50,9 @@ class Course{
         // $this->credit = $credit_in;
         // $this->coursename = $coursename_in
         
-        echo "Course created: ";
+        printf "Course created: ";
         // echo $this->coursename;
-        echo "\r\n";
+        printf "\r\n";
     }
     
     function add($lec){
