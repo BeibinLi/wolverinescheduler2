@@ -29,17 +29,17 @@ Released : 20120902
 
 		$(document).ready(function() {
 		
-			var result = "<?php echo json_encode($schedule); ?>"
+			// var result = "<?php echo json_encode($schedule); ?>"
 
-			alert(result[0]);
+			// alert(result[0]);
 			
-			alert(result[0][0])
+			// alert(result[0][0])
 			
-			alert(JSON.parse(result));
+			// alert(JSON.parse(result));
 			
-			alert(result[0]);
+			// alert(result[0]);
 			
-			alert(result[0][0])
+			// alert(result[0][0])
 
 			$('#calendar').fullCalendar({
 				header: {
