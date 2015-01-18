@@ -27,7 +27,7 @@ Released   : 20120902
 	<div id="header-wrapper" class="container">
 	<div id="header" class="container">
 		<div id="logo">
-			<img src="images/Untitled-4.png" width="230"> />
+			<img src="images/Untitled-4.png" width="230">
 		</div>
 		<div id="menu">
 			<ul>
