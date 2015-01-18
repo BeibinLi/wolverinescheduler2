@@ -218,10 +218,7 @@ function debug_schedule(){
             $lect = $schedule[$i][$j];
             echo $lect->coursename; echo ": "; 
             print_time( $lect->start_time ); echo " - "; print_time( $lect->end_time);
-            
-            echo "<br>";
-            echo $lect->days; echo (string)$lect->days;
-            (string)$days = $lect->days; echo "   "; echo (string)days; echo "<br>";
+            echo "   "; echo $lect->days; echo "<br>";
         }
         echo "<br>"; echo "<br>"; echo "<br>";
         $count++;
