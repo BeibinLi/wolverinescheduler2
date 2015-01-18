@@ -64,11 +64,13 @@ class Course{
 
 echo "update";
 
+
+
+$potential_courses; //array of courses
+
+$solutions; //2D array
+
 /*
-
-$potential_courses = array{};
-
-$solutions = array{}; //2D array
 
 $ALLOW_DIFF = 1;
 
