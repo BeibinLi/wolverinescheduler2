@@ -27,139 +27,9 @@ Released : 20120902
 	<script src="jquery.min.js"></script>
 	<script>
 		$(document).ready(function() {
-			// var result = "<?php echo $schedule; ?>"
-			// var test_result = "<?php echo $test_var; ?>"
-			// alert(test_result);
-			// alert(result[0]);
-			
-			// alert(result[0][0])
-			
-			// alert(JSON.parse(result));
-			
-			// alert(result[0]);
-			
-			// alert(result[0][0])
-			$('#calendar').fullCalendar({
-				header: {
-					left: 'prev,next today',
-					center: 'title',
-					right: 'month,agendaWeek,agendaDay'
-				},
-				defaultDate: '2014-11-12',
-				editable: true,
-				eventLimit: true, // allow "more" link when too many events
-				events: [
-					{
-						id: 999,
-						title: 'Repeating Event',
-						start: '2014-11-09T16:00:00'
-					},
-					{
-						id: 999,
-						title: 'Repeating Event',
-						start: '2014-11-16T16:00:00'
-					},
-					{
-						title: 'Meeting',
-						start: '2014-11-12T10:30:00',
-						end: '2014-11-12T12:30:00'
-					},
-					{
-						title: 'Lunch',
-						start: '2014-11-12T12:00:00'
-					},
-					{
-						title: 'Meeting',
-						start: '2014-11-12T14:30:00'
-					},
-					{
-						title: 'Happy Hour',
-						start: '2014-11-12T17:30:00'
-					},
-					{
-						title: 'Dinner',
-						start: '2014-11-12T20:00:00'
-					},
-					{
-						title: 'Birthday Party',
-						start: '2014-11-13T07:00:00'
-					},
-					{
-						title: 'Click for Google',
-						url: 'http://google.com/',
-						start: '2014-11-28'
-					}
-				]
-			});
-		});
-	</script>
-	<style>
-		#calendar {
-			max-width: 900px;
-			margin: 0 auto;
-		}
-	</style>
-
-
-</head>
-<body>
-<div id="wrapper">
-<div id="header-wrapper" class="container">
-<div id="header" class="container">
-<div id="logo">
-<img src="images/Untitled-4.png" width="230">
-</div>
-<div id="menu">
-<ul>
-<li class="current_page_item"><a href="#">Homepage</a></li>
-<li><a href="#">Blog</a></li>
-<li><a href="#">Photos</a></li>
-<li><a href="#">About</a></li>
-<li><a href="#">Contact</a></li>
-</ul>
-</div>
-</div>
-<div><img src="images/img03.png" width="1000" height="40" alt="" /></div>
-</div>
-<!-- end #header -->
-<div id="page">
-<div id="addingcourse">
-<div id="add_new_course">
-<h1>Add New Course</h1>
-</div>
-<center>
-<form id="addbar" action="/schedulizer/index.php" method="post" enctype="multipart/form-data">
-<table style="width:70%; padding-bottom:15px">
-<tr style="font-size:1.4em; font-family: 'Abel', sans-serif;">
-<td>Department</td>
-<td>Course Number</td>
-</tr><tr>
-<td><input id="dept_in1" type="text" class="class_in" name="dept_in1" value="<?php echo $_POST["dept_in1"]; ?>" onclick="changeValueDept()" style="font-family: 'Abel', Arial; color:#000000" /></td>
-<td><input id="num_in1" type="text" class="class_in" name="num_in1" value="<?php echo $_POST["num_in1"]; ?>" onclick="changeValueNum()" style="font-family: 'Abel', Arial; color:#000000" /></td>
-</tr>
-<tr>
-<td><input id="dept_in2" type="text" class="class_in" name="dept_in2" value="<?php echo $_POST["dept_in2"]; ?>" style="font-family: 'Abel', Arial; color:#000000" /></td>
-<td><input id="num_in2" type="text" class="class_in" name="num_in2" value="<?php echo $_POST["num_in2"]; ?>" style="font-family: 'Abel', Arial; color:#000000" /></td>
-</tr>
-<tr>
-<td><input id="dept_in3" type="text" class="class_in" name="dept_in3" value="<?php echo $_POST["dept_in3"]; ?>" style="font-family: 'Abel', Arial; color:#000000" /></td>
-<td><input id="num_in3" type="text" class="class_in" name="num_in3" value="<?php echo $_POST["num_in3"]; ?>" style="font-family: 'Abel', Arial; color:#000000" /></td>
-</tr>
-<tr>
-<td><input id="dept_in4" type="text" class="class_in" name="dept_in4" value="<?php echo $_POST["dept_in4"]; ?>" style="font-family: 'Abel', Arial; color:#000000" /></td>
-<td><input id="num_in4" type="text" class="class_in" name="num_in4" value="<?php echo $_POST["num_in4"]; ?>" style="font-family: 'Abel', Arial; color:#000000" /></td>
-</tr>
-<tr>
-<td><input id="dept_in5" type="text" class="class_in" name="dept_in5" value="<?php echo $_POST["dept_in5"]; ?>" style="font-family: 'Abel', Arial; color:#000000" /></td>
-<td><input id="num_in5" type="text" class="class_in" name="num_in5" value="<?php echo $_POST["num_in5"]; ?>" style="font-family: 'Abel', Arial; color:#000000" /></td>
-<!-- <td><input id="add_button" type="image" class="add" src="images/math-add-icon.png" style="width:35px; height:35px"> </td> -->
-</tr>
-</table>
-<input id="schedule_button" type="submit" value="CLICK TO SCHEDULE" style="background-color: #FFD700; width:40%; height: 50px;margin:0px; border:0px; font-size:1.6em; font-family: 'Abel', Arial; font-weight:bold" ></input>
-</form>
-</center>
-
-<?php error_reporting(-1); ?>
+		
+		
+		<?php error_reporting(-1); ?>
 <?php ini_set('display_errors', true); ?>
 
 <?php
@@ -481,6 +351,147 @@ if(!empty($_POST)) {
 }
 // CHANGE SCHEDULE TO A STRING?
 ?>
+		
+		
+		
+		
+		
+		
+		
+		
+			// var result = "<?php echo $schedule; ?>"
+			// var test_result = "<?php echo $test_var; ?>"
+			// alert(test_result);
+			// alert(result[0]);
+			
+			// alert(result[0][0])
+			
+			// alert(JSON.parse(result));
+			
+			// alert(result[0]);
+			
+			// alert(result[0][0])
+			$('#calendar').fullCalendar({
+				header: {
+					left: 'prev,next today',
+					center: 'title',
+					right: 'month,agendaWeek,agendaDay'
+				},
+				defaultDate: '2014-11-12',
+				editable: true,
+				eventLimit: true, // allow "more" link when too many events
+				events: [
+					{
+						id: 999,
+						title: 'Repeating Event',
+						start: '2014-11-09T16:00:00'
+					},
+					{
+						id: 999,
+						title: 'Repeating Event',
+						start: '2014-11-16T16:00:00'
+					},
+					{
+						title: 'Meeting',
+						start: '2014-11-12T10:30:00',
+						end: '2014-11-12T12:30:00'
+					},
+					{
+						title: 'Lunch',
+						start: '2014-11-12T12:00:00'
+					},
+					{
+						title: 'Meeting',
+						start: '2014-11-12T14:30:00'
+					},
+					{
+						title: 'Happy Hour',
+						start: '2014-11-12T17:30:00'
+					},
+					{
+						title: 'Dinner',
+						start: '2014-11-12T20:00:00'
+					},
+					{
+						title: 'Birthday Party',
+						start: '2014-11-13T07:00:00'
+					},
+					{
+						title: 'Click for Google',
+						url: 'http://google.com/',
+						start: '2014-11-28'
+					}
+				]
+			});
+		});
+	</script>
+	<style>
+		#calendar {
+			max-width: 900px;
+			margin: 0 auto;
+		}
+	</style>
+
+
+</head>
+<body>
+<div id="wrapper">
+<div id="header-wrapper" class="container">
+<div id="header" class="container">
+<div id="logo">
+<img src="images/Untitled-4.png" width="230">
+</div>
+<div id="menu">
+<ul>
+<li class="current_page_item"><a href="#">Homepage</a></li>
+<li><a href="#">Blog</a></li>
+<li><a href="#">Photos</a></li>
+<li><a href="#">About</a></li>
+<li><a href="#">Contact</a></li>
+</ul>
+</div>
+</div>
+<div><img src="images/img03.png" width="1000" height="40" alt="" /></div>
+</div>
+<!-- end #header -->
+<div id="page">
+<div id="addingcourse">
+<div id="add_new_course">
+<h1>Add New Course</h1>
+</div>
+<center>
+<form id="addbar" action="/schedulizer/index.php" method="post" enctype="multipart/form-data">
+<table style="width:70%; padding-bottom:15px">
+<tr style="font-size:1.4em; font-family: 'Abel', sans-serif;">
+<td>Department</td>
+<td>Course Number</td>
+</tr><tr>
+<td><input id="dept_in1" type="text" class="class_in" name="dept_in1" value="<?php echo $_POST["dept_in1"]; ?>" onclick="changeValueDept()" style="font-family: 'Abel', Arial; color:#000000" /></td>
+<td><input id="num_in1" type="text" class="class_in" name="num_in1" value="<?php echo $_POST["num_in1"]; ?>" onclick="changeValueNum()" style="font-family: 'Abel', Arial; color:#000000" /></td>
+</tr>
+<tr>
+<td><input id="dept_in2" type="text" class="class_in" name="dept_in2" value="<?php echo $_POST["dept_in2"]; ?>" style="font-family: 'Abel', Arial; color:#000000" /></td>
+<td><input id="num_in2" type="text" class="class_in" name="num_in2" value="<?php echo $_POST["num_in2"]; ?>" style="font-family: 'Abel', Arial; color:#000000" /></td>
+</tr>
+<tr>
+<td><input id="dept_in3" type="text" class="class_in" name="dept_in3" value="<?php echo $_POST["dept_in3"]; ?>" style="font-family: 'Abel', Arial; color:#000000" /></td>
+<td><input id="num_in3" type="text" class="class_in" name="num_in3" value="<?php echo $_POST["num_in3"]; ?>" style="font-family: 'Abel', Arial; color:#000000" /></td>
+</tr>
+<tr>
+<td><input id="dept_in4" type="text" class="class_in" name="dept_in4" value="<?php echo $_POST["dept_in4"]; ?>" style="font-family: 'Abel', Arial; color:#000000" /></td>
+<td><input id="num_in4" type="text" class="class_in" name="num_in4" value="<?php echo $_POST["num_in4"]; ?>" style="font-family: 'Abel', Arial; color:#000000" /></td>
+</tr>
+<tr>
+<td><input id="dept_in5" type="text" class="class_in" name="dept_in5" value="<?php echo $_POST["dept_in5"]; ?>" style="font-family: 'Abel', Arial; color:#000000" /></td>
+<td><input id="num_in5" type="text" class="class_in" name="num_in5" value="<?php echo $_POST["num_in5"]; ?>" style="font-family: 'Abel', Arial; color:#000000" /></td>
+<!-- <td><input id="add_button" type="image" class="add" src="images/math-add-icon.png" style="width:35px; height:35px"> </td> -->
+</tr>
+</table>
+<input id="schedule_button" type="submit" value="CLICK TO SCHEDULE" style="background-color: #FFD700; width:40%; height: 50px;margin:0px; border:0px; font-size:1.6em; font-family: 'Abel', Arial; font-weight:bold" ></input>
+</form>
+</center>
+
+
 
 <!--
 <form id="addbar" style="width:80%" action="" method="post">
