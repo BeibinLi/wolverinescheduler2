@@ -53,6 +53,8 @@
       die(var_dump($e));
     }
   }
+  
+  echo "<td > <td >";
   for ($a = 0; $a < 10; $a++) {
     echo '<table>';
       for ($b = 0; $b < 10; $b++) {
