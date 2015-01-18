@@ -299,7 +299,7 @@ foreach($inputs as $course_name){
      }
 }//end foreach inputs
 
-var_dump($allCourse); //??todo
+// var_dump($allCourse); //??todo
 
 
 //$allCourse = array();
