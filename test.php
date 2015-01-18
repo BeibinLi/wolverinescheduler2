@@ -108,7 +108,7 @@ function isOnSameDay($L1, $L2) {
     $L1_arr = str_split($L1);
     $L2_arr = str_split($L2);
     foreach ($L1_arr as &$c1) { // TODO horrible efficiency
-        foreach $L1_arr as &$c2 {
+        foreach ($L1_arr as &$c2) {
             if ($c1 == $c2)
                 return True;
         }
