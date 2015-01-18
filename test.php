@@ -262,7 +262,7 @@ $conn = sqlsrv_connect($server, array("UID"=>$user, "PWD"=>$pwd, "Database"=>$db
 if($conn === false){
 	echo "Failure!";
 } else {
-	echo "Success!";
+	// echo "Success!";
 }
 
 
@@ -276,7 +276,7 @@ foreach($inputs as $course_name){
     if( $stmt === false ) {
         echo "Query failed!";
     } else {
-        echo "Query successful";
+        // echo "Query successful";
     }
 
  	var_dump($stmt);
@@ -305,10 +305,14 @@ foreach($inputs as $course_name){
 	    $days = sqlsrv_get_field( $stmt, 2);
 
 	    $new_lecture = new Lecture($course_name, $start_time, $end_time, $days); //?? todo for location
+	    $new_course->add($new_lecture);
     	}
 	
+	array_push($allCourse, $new_course);
      }
 }//end foreach inputs
+
+var_dump($allCourse);
 
 
 //$allCourse = array();
