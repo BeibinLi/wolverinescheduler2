@@ -369,7 +369,7 @@ function debug_schedule(){
     global $schedule;
 
     $count = 1;
-    for($i=0; ($i < count($schedule) || $i < 10); $i++){
+    for($i=0; $i < min(count($schedule), 10); $i++){
         echo "Schedule "; echo $count; echo ":<br>";
         for($j=0; $j<count($schedule[$i]); $j++){
             $lect = $schedule[$i][$j];
