@@ -76,6 +76,10 @@ Released : 20120902
 <input id="schedule_button" type="submit" value="CLICK TO SCHEDULE" style="background-color: #FFD700; width:40%; height: 50px;margin:0px; border:0px; font-size:1.6em; font-family: 'Abel', Arial; font-weight:bold" ></input>
 </form>
 </center>
+
+<?php error_reporting(-1); ?>
+<?php ini_set('display_errors', true); ?>
+
 <?php
 if(!empty($_POST)) {
   echo "POST not empty";
@@ -105,7 +109,8 @@ if(!empty($_POST)) {
       }
     }
   }
-  ?>
+?>
+
 <!--
 <form id="addbar" style="width:80%" action="" method="post">
 <h2>Department
