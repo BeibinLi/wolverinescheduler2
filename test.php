@@ -7,7 +7,7 @@
 <?php echo 'hello world';
 echo "<br>"; //new line
 
-echo "update"; echo "<br>"; //new line
+echo "update1"; echo "<br>"; //new line
 
 ?>
 
@@ -218,7 +218,7 @@ function debug_schedule(){
             $lect = $schedule[$i][$j];
             echo $lect->coursename; echo ": "; 
             print_time( $lect->start_time ); echo " - "; print_time( $lect->end_time);
-            $days = $lect->days;
+            (string)$days = $lect->days;
             echo "   "; echo (string)days; echo "<br>";
         }
         echo "<br>"; echo "<br>"; echo "<br>";
