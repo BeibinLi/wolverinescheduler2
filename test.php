@@ -246,8 +246,8 @@ function print_one_schedule($aschedule) {
     			echo "09";
     		}else if($j == 0){ // first column
     			echo $out[$i][$j]; 
-    		// }else if( strlen($out[$i][$j]) < 4 ){
-    		// 	echo  str_repeat('&nbsp;', 8);
+    		}else if( strlen($out[$i][$j]) < 4 ){
+    			echo  str_repeat('&nbsp;', 8);
     		}else{
     		    //echo $i; echo ","; echo $j;
     		    echo $out[$i][$j]; 
@@ -302,7 +302,7 @@ function debug_schedule(){
 
 //START READING USER INPUT
 
-$inputs = array( "EECS 281", "EECS 183", "STATS 250", "EECS 482");
+$inputs = array( "EECS 281", "EECS 183", "MATH 217", "EECS 482");
 // $inputs = array(" ");
 
 // START SQL FETCH
