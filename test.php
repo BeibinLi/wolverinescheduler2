@@ -231,7 +231,7 @@ function debug_schedule(){
 
 //START READING USER INPUT
 
-$inputs = array("EECS 281", "EECS 183", "STATS 250", " ", "");
+$inputs = array( );
 
 
 // START SQL FETCH
