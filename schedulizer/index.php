@@ -14,7 +14,7 @@ Released : 20120902
 <meta name="keywords" content="" />
 <meta name="description" content="" />
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<title>Emerald by FCT</title>
+<title>Plan Your Semester</title>
 <link href='http://fonts.googleapis.com/css?family=Abel' rel='stylesheet' type='text/css'>
 <link href="style.css" rel="stylesheet" type="text/css" media="screen" />
 <script type="text/javascript" src="jquery/jquery-1.11.2.min.js"></script>
@@ -58,7 +58,7 @@ Released : 20120902
 <div id="page">
 <div id="addingcourse">
 <div id="add_new_course">
-<h1>Add New Course</h1>
+<h1>Enter Your Course</h1>
 </div>
 <center>
 <form id="addbar" action="/schedulizer/index.php" method="post" enctype="multipart/form-data">
