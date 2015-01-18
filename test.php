@@ -7,7 +7,7 @@
 <?php echo 'hello world';
 echo "<br>"; //new line
 
-echo "update"; echo "<br>"; //new line
+echo "update1"; echo "<br>"; //new line
 
 ?>
 
@@ -34,7 +34,19 @@ class Lecture{
         $this->start_time = $a2;
         $this->end_time = $a3;
     }
+    
+    function __construct4($a1,$a2,$a3,$a4){
+        // echo 'new Lecture created ';
+        $this->coursename = $a1;
+        $this->start_time = $a2;
+        $this->end_time = $a3;
+        $this->days = $a4;
+    }
 }
+
+$demodemo = new Lecture("EECS 280", 9, 10, "MWF");
+var_dump(demodemo);
+
 
 class Course{
     public $coursename;
@@ -259,7 +271,7 @@ if($conn === false){
 foreach($inputs as $course_name){
     $sql = "SELECT credits
     FROM courses
-    WHERE coursename = " . course_name . ";";
+    WHERE coursename = " . $course_name . ";";
 
     $stmt = sqlsrv_query( $conn, $sql);
     if( $stmt === false ) {
@@ -273,11 +285,11 @@ foreach($inputs as $course_name){
 	// Get the row fields. Field indeces start at 0 and must be retrieved in order.
 	// Retrieving row fields by name is not supported by sqlsrv_get_field.
 	$num_credit = sqlsrv_get_field( $stmt, 0);
-	$new_course = new Course(course_name, num_credit);
+	$new_course = new Course($course_name, $num_credit);
 	    
 	$sql = "SELECT start, end, days, location 
     	FROM lectures
-    	WHERE coursename = " . course_name . ";";
+    	WHERE coursename = " . $course_name . ";";
 
 	$stmt = sqlsrv_query( $conn, $sql);
     	if( $stmt === false ) {
