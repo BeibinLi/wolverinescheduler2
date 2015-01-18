@@ -86,6 +86,7 @@ function find_course_combination(&$potential_courses, $curr_index, $credits, &$s
     if($credits < 0) return;
     
     for ($i = $curr_index + 1 ; $i < count($potential_courses); $i++) {
+        var_dump($potential_courses);
       $course = $potential_courses[i];
       array_push($selected, $course);
       echo "now pushing: "; var_dump($course); echo "<br>"; //new line
@@ -158,7 +159,7 @@ $allCourse = array($c1, $c2, $c3, $c4);
 $temp_sol = array();
 
 
-echo "update3"; echo "<br>"; //new line
+echo "update"; echo "<br>"; //new line
 
 find_course_combination($allCourse, -1, 4, $temp_sol);
 echo "THE SOLUTION IS: "; var_dump($solutions);
