@@ -6,6 +6,9 @@
 
 <?php echo 'hello world';
 echo "<br>"; //new line
+
+echo "update"; echo "<br>"; //new line
+
 ?>
 
 <?php
@@ -62,6 +65,7 @@ class Course{
 // GLOBAL VARIABLES
 $solutions = array(); //2D array
 $schedule = array(); //2D array
+$allCourse = array(); //array for Courses 
 
 function absolute_val($x){
     if($x > 0) return $x;
@@ -229,7 +233,7 @@ function debug_schedule(){
 
 //START READING USER INPUT
 
-$inputs = array();
+$inputs = array("EECS 280", "EECS 281");
 
 
 // START SQL FETCH
@@ -252,10 +256,10 @@ if($conn === false){
 
 
 
-foreach($inputs as $class){
-    $sql = "SELECT coursename, credits
+foreach($inputs as $course_name){
+    $sql = "SELECT credits
     FROM courses
-    WHERE coursename = 4;"; //???
+    WHERE coursename = " . course_name . ";";
 
     $stmt = sqlsrv_query( $conn, $sql);
     if( $stmt === false ) {
@@ -264,26 +268,38 @@ foreach($inputs as $class){
         echo "Query successful";
     }
 
-echo "\r\n";
-
-// Make the first (and in this case, only) row of the result set available for reading.
-while( sqlsrv_fetch( $stmt ) ) {
-
+	// Make the first (and in this case, only) row of the result set available for reading.
+    if( sqlsrv_fetch( $stmt ) ) {
 	// Get the row fields. Field indeces start at 0 and must be retrieved in order.
 	// Retrieving row fields by name is not supported by sqlsrv_get_field.
-	$name = sqlsrv_get_field( $stmt, 0);
-	echo "$name: ";
-	echo "\r\n";
+	$num_credit = sqlsrv_get_field( $stmt, 0);
+	$new_course = new Course(course_name, num_credit);
+	    
+	$sql = "SELECT start, end, days, location 
+    	FROM lectures
+    	WHERE coursename = " . course_name . ";";
 
-	$comment = sqlsrv_get_field( $stmt, 1);
-	echo $comment;
-	echo "\r\n";
-}
-
+	$stmt = sqlsrv_query( $conn, $sql);
+    	if( $stmt === false ) {
+            echo "Query failed!";
+    	} else {
+            echo "Query successful";
+    	}
+    	
+    	while( sqlsrv_fetch( $stmt ) ) {
+	    $start_time = sqlsrv_get_field( $stmt, 0);
+	    $end_time = sqlsrv_get_field( $stmt, 1);
+	    $days = sqlsrv_get_field( $stmt, 2);
+	    $location = sqlsrv_get_field( $stmt, 3);
+	    
+	    $new_lecture = new Lecture($course_name, $start_time, $end_time, $days); //?? todo for location
+    	}
+	
+     }
 }//end foreach inputs
 
 
-$allCourse = array();
+//$allCourse = array();
 $temp_sol = array();
 
 
@@ -308,10 +324,6 @@ for($i=0; $i < count($solutions); $i++){
 }
 
 // var_dump($schedule);
-
-
-
-echo "update3"; echo "<br>"; //new line
 
 
 ?>
