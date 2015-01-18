@@ -53,7 +53,7 @@ class Course{
     }
     
     public function add(&$L){
-        array_push($this->lectures, $L);
+        array_push($this->lectures, (Lecture)$L);
         echo "ADD"; var_dump($this->lectures); echo "<br>";
     }
 }
@@ -192,7 +192,7 @@ $allCourse = array($c1, $c2, $c3, $c4);
 $temp_sol = array();
 
 
-echo "update3"; echo "<br>"; //new line
+echo "update63"; echo "<br>"; //new line
 
 find_course_combination($allCourse, -1, 12, $temp_sol);
 // echo "THE SOLUTION IS: "; var_dump($solutions);
