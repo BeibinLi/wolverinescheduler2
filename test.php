@@ -128,10 +128,10 @@ function debug_solutions()
 {
     for($i=0; $i < count($solutions); $i++){
         $total_credit = 0;
-        for($j=0; $j<count($solutions[i]); $j++){
-            echo << $solutions[i][j]->coursename; echo " ";
-            $total_credit = $total_credit + $solutions[i][j]->credit;
-        }
+        // for($j=0; $j<count($solutions[i]); $j++){
+        //     echo << $solutions[i][j]->coursename; echo " ";
+        //     $total_credit = $total_credit + $solutions[i][j]->credit;
+        // }
         echo "total: " << $total_credit ; echo "<br>"; //new line
     }
 }
