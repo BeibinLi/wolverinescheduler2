@@ -342,7 +342,7 @@ function debug_schedule(){
     global $solutions;
     global $schedule;
     
-    var_dump($schedule);
+    //var_dump($schedule);
     
     global $bigstring;
     
@@ -357,7 +357,7 @@ function debug_schedule(){
             $lect = $schedule[$i][$j];
             $bigstring = $bigstring . $lect->coursename . ", "  . $lect->start_time . ", ". $lect->end_time . ", " . $lect->days . ";";
         }
-	var_dump($bigstring);  echo "<br>";
+	// var_dump($bigstring);  echo "<br>";
     
     for($i=0; $i<count($schedule); $i++){
         echo "Schedule: "; echo $count; echo "<br>";
