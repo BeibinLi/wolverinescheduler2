@@ -136,7 +136,7 @@ function debug_solutions()
         echo "total: " << $total_credit ; echo "<br>"; //new line
     }
 }
-echo "update"; echo "<br>"; //new line
+echo "update2"; echo "<br>"; //new line
 // var_dump($cs);
 
 
@@ -146,7 +146,7 @@ $c2 = new Course("EECS 370", 4);
 $c3 = new Course("MATH 412", 3);
 $c4 = new Course("MATH 500", 3);
 
-// $allCourse = array(c1, c2, c3, c4);
+$allCourse = array(c1, c2, c3, c4);
 
 
 
