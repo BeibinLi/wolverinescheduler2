@@ -69,15 +69,15 @@ $solutions; //2D array
 $ALLOW_DIFF = 1;
 
 
-echo "update";
+echo "update2";
 
 function find_course_combination(&$potential_courses, $curr_index, $credits, &$selected) {
-    // if($credits <= $ALLOW_DIFF or (0-credits <= $ALLOW_DIFF)){
-    //   array_push($solutions, $selected);
-    //   return;
-    // }
+    if($credits <= $ALLOW_DIFF or (0-credits <= $ALLOW_DIFF)){
+      array_push($solutions, $selected);
+      return;
+    }
     
-    // if($credits < 0) return;
+    if($credits < 0) return;
     
     // for ($i = $curr_index + 1 ; $i <= count($potential_courses); $i++) {
     //   array_push($selected, $potential_courses[i]);
