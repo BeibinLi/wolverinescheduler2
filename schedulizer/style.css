@@ -18,6 +18,7 @@ body {
 #header
 {
 	border-radius:10px;
+	background-color: rgba(0,0,0,.5);
 }
 h1{
 	margin: 0;
