@@ -28,7 +28,7 @@ Released : 20120902
 	<script>
 
 		$(document).ready(function() {
-		
+			<?php $test_var = 21897; ?>
 			var result = "<?php echo json_encode($schedule); ?>"
 			var test_result = "<?php echo $test_var; ?>"
 			alert(test_result);
