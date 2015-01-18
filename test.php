@@ -222,11 +222,11 @@ function print_one_schedule($aschedule) {
     	$s_arr = str_split((string)$lec->days);
     	foreach($s_arr as $c){
     		echo $c; echo "<br>";
-    		if($c = "M") { $out[(int)$lec->start_time - 7][1] = $lec->coursename; }
-    		else if($c = "T") { $out[(int)$lec->start_time - 7][2] = $lec->coursename;}
-    		else if($c = "W") { $out[(int)$lec->start_time - 7][3] = $lec->coursename;}
-    		else if($c = "R") { $out[(int)$lec->start_time - 7][4] = $lec->coursename;}
-    		else if($c = "F") { $out[(int)$lec->start_time - 7][5] = $lec->coursename;}
+    		if($c == "M") { $out[(int)$lec->start_time - 7][1] = $lec->coursename; }
+    		else if($c == "T") { $out[(int)$lec->start_time - 7][2] = $lec->coursename;}
+    		else if($c == "W") { $out[(int)$lec->start_time - 7][3] = $lec->coursename;}
+    		else if($c == "R") { $out[(int)$lec->start_time - 7][4] = $lec->coursename;}
+    		else if($c == "F") { $out[(int)$lec->start_time - 7][5] = $lec->coursename;}
     	}
     }
     
@@ -243,7 +243,7 @@ function print_one_schedule($aschedule) {
     			echo "08";
     		}else if($out[$i][$j] == 9){
     			echo "09";
-    		}else if($i == 0){ // first column
+    		}else if($j == 0){ // first column
     			echo $out[$i][$j]; 
     		}else if(strlen($out[$i][$j]) < 4){
     			echo  str_repeat('&nbsp;', 8);
