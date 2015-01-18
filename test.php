@@ -104,7 +104,7 @@ function find_course_combination(&$potential_courses, $curr_index, $credits, &$s
     }  //end for
 }
 
-// function isOnSameDay($L1, $L2) {
+function isOnSameDay($L1, $L2) {
 //     $L1_arr = str_split($L1);
 //     $L2_arr = str_split($L2);
 //     foreach ($L1_arr as &$c1) { // TODO horrible efficiency
@@ -113,13 +113,14 @@ function find_course_combination(&$potential_courses, $curr_index, $credits, &$s
 //                 return True;
 //         }
 //     }
-// }
+    return False;
+}
 
 function hasConflict($L1, $L2) {
-    // if(isOnSameDay($L1, $L2) and $L1->start_time >= $L2->start_time and $L1->start_time < $L2->end_time)
-    //     return True;
-    // if(isOnSameDay($L1, $L2) and $L2->start_time >= $L1->start_time and $L2->start_time < $L1->end_time)
-    //     return True;
+    if(isOnSameDay($L1, $L2) and $L1->start_time >= $L2->start_time and $L1->start_time < $L2->end_time)
+        return True;
+    if(isOnSameDay($L1, $L2) and $L2->start_time >= $L1->start_time and $L2->start_time < $L1->end_time)
+        return True;
   return False;
 }
 
@@ -310,7 +311,7 @@ for($i=0; $i < count($solutions); $i++){
 
 
 
-echo "update4"; echo "<br>"; //new line
+echo "update"; echo "<br>"; //new line
 
 
 ?>
