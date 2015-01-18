@@ -31,28 +31,27 @@ class Lecture{
 }
 
 $lec = new Lecture("EECS 381", 3, 5);
-echo $lec->coursename; echo $lec->start_time; echo $lec->end_time;
 
 
-// class Course{
-//     public $credit;
-//     public $coursename;
-//     // public $lectures;
+class Course{
+    public $credit;
+    public $coursename;
+    // public $lectures;
     
-//     function __construct(){}
+    function __construct(){}
     
-//     public function set($a1,$a2){
-//         echo 'Course created: ';
-//         $this->credit = $a1;
-//         $this->coursename = $a2
-//         echo $this->credit;
-//         echo $this->coursename;
-//     }
+    public function set($a1,$a2){
+        echo 'Course created: ';
+        $this->credit = $a1;
+        $this->coursename = $a2
+        echo $this->credit;
+        echo $this->coursename;
+    }
     
-//     public function add($lec){
-//         array_push($this->lectures, $lec);
-//     }
-// }
+    public function add($lec){
+        array_push($this->lectures, $lec);
+    }
+}
 
 // $eecs = new Course();
 // $eecs->set("eecs 280", 4);
