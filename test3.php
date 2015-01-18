@@ -16,7 +16,7 @@
   $host = "tcp:yjjy54mc4i.database.windows.net";
   $user = "SQLAdmin@yjjy54mc4i";
   $pwd = "Mhacks12345";
-  $db = "tasklist";
+  $db = "MHacks2015";
   
   try {
     $conn = new PDO( "sqlsrv:Server= $host ; Database = $db ", $user, $pwd);
@@ -30,7 +30,7 @@
       //$dpt = $_POST['dpt'];
       //$coursenum = $_POST['coursenum'];
       //$coursename = $dpt . " " . $coursenum;
-      $sql_select = "SELECT coursename, credits FROM MHacks2015
+      $sql_select = "SELECT coursename, credits FROM courses
       WHERE coursename = 'EECS281'";
       $stmt = $conn->query($sql_select);
       //$stmt->bindValue(1, $coursename);
