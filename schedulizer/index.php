@@ -336,18 +336,36 @@ function print_time($time)
     	echo ":30";
     }
 }
+$bigstring;
 function debug_schedule(){
         echo "<br>";
     global $solutions;
     global $schedule;
+    
+    var_dump($schedule);
+    
+    global $bigstring;
+    
+    echo "Here are the sections:"; echo "<br>";
     $count = 1;
-    for($i=0; $i < min(count($schedule), 10); $i++){
-        echo "Schedule "; echo $count; echo ":<br>";
+    if( count($schedule) == 0 || $schedule[0] == NULL ){
+    	echo "Wrong! No Output!"; echo "<br>";
+    	return;
+    }
+	$i = 0;  echo "<br>";
+	for($j=0; $j<count($schedule[$i]); $j++){
+            $lect = $schedule[$i][$j];
+            $bigstring = $bigstring . $lect->coursename . ", "  . $lect->start_time . ", ". $lect->end_time . ", " . $lect->days . ";";
+        }
+	var_dump($bigstring);  echo "<br>";
+    
+    for($i=0; $i<count($schedule); $i++){
+        echo "Schedule: "; echo $count; echo "<br>";
         for($j=0; $j<count($schedule[$i]); $j++){
             $lect = $schedule[$i][$j];
             echo $lect->coursename; echo ": "; 
             print_time( $lect->start_time ); echo " - "; print_time( $lect->end_time);
-            echo "   "; echo str_replace("R", "Th", str_replace("T", "Tu", $lect->days)); echo "<br>";
+            echo "   "; echo $lect->days; echo "<br>";
         }
         echo "<br>"; echo "<br>"; echo "<br>";
         $count++;
@@ -355,6 +373,7 @@ function debug_schedule(){
     
     echo "<br>";
 }
+
 $host = "tcp:rd4vxrj1mk.database.windows.net";
 $user = "SQLAdmin";
 $pwd = "Mhacks12345";
