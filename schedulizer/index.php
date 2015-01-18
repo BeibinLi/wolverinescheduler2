@@ -478,7 +478,7 @@ if(!empty($_POST)) {
 						start: '2014-11-12T20:00:00'
 					},
 					{
-						title: 'Birthday Party',
+						title: 'Birthday Partay',
 						start: '2014-11-13T07:00:00'
 					},
 					{
