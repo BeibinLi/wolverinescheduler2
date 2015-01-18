@@ -7,7 +7,7 @@
 <?php echo 'hello world';
 echo "<br>"; //new line
 
-echo "update"; echo "<br>"; //new line
+echo "update1"; echo "<br>"; //new line
 
 ?>
 
@@ -122,8 +122,8 @@ function find_course_combination(&$potential_courses, $curr_index, $credits, &$s
 function isOnSameDay($L1, $L2) {
     $L1_arr = str_split($L1->days);
     $L2_arr = str_split($L2->days);
-    foreach ($L1_arr as &$c1) { // TODO horrible efficiency
-        foreach ($L1_arr as &$c2) {
+    foreach ($L1_arr as $c1) { // TODO horrible efficiency
+        foreach ($L1_arr as $c2) {
             if ($c1 == $c2)
                 return True;
         }
