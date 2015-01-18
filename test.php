@@ -60,9 +60,8 @@ class Course{
     }
 }
 
-$potential_courses; //array of courses
 
-$solutions; //2D array
+$solutions = array(); //2D array
 
 
 
@@ -80,7 +79,7 @@ function find_course_combination(&$potential_courses, $curr_index, $credits, &$s
     
     if($credits < 0) return;
     
-    for ($i = $curr_index + 1 ; $i <= count($potential_courses); $i++) {
+    for ($i = $curr_index + 1 ; $i < count($potential_courses); $i++) {
       array_push($selected, $potential_courses[i]);
       echo "now pushing: "; var_dump($potential_courses[i]); echo "<br>"; //new line
       find_course_combination($potential_courses, $i, $creidts - $potential_courses[i]->credit, $selected);
@@ -152,10 +151,10 @@ $allCourse = array(c1, c2, c3, c4);
 $temp_sol;
 
 
-echo "update1"; echo "<br>"; //new line
+echo "update2"; echo "<br>"; //new line
 
 find_course_combination($allCourse, -1, 4, $temp_sol);
-echo "THE SOLUTION IS:"; var_dump($solutions);
+echo "THE SOLUTION IS: "; var_dump($solutions);
 debug_solutions();
 
 ?>
