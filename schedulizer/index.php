@@ -231,14 +231,12 @@ function debug_schedule(){
         echo "<br>";
     global $solutions;
     global $schedule;
-    global $jsArray;
-    
+
     $count = 1;
     for($i=0; $i<min(count($schedule), 10); $i++){
         echo "Schedule "; echo $count; echo ":<br>";
         for($j=0; $j<count($schedule[$i]); $j++){
             $lect = $schedule[$i][$j];
-            array_push($jsArray, [$lect->coursename, $lect->start_time, $lect->end_time, $lect->days]);
             echo $lect->coursename; echo ": "; 
             print_time( $lect->start_time ); echo " - "; print_time( $lect->end_time);
             echo "   "; echo str_replace("R", "Th", str_replace("T", "Tu", $lect->days)); echo "<br>";
@@ -361,14 +359,6 @@ if(!empty($_POST)) {
 
 ?>
 
-			var result = <?php echo json_encode($jsArray); ?>;
-			alert(result);
-			alert(result[0]);
-			alert(result[0][0]);
-			var obj = JSON.parse(result);
-			alert(obj);
-			alert(obj[0]);
-			alert(obj[0][0]);
 			// var result = "<?php echo $schedule; ?>"
 			// var test_result = "<?php echo $test_var; ?>"
 			// alert(test_result);
