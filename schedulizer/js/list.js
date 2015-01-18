@@ -1,4 +1,6 @@
 var arr = [];
+var count1=0;
+var count2=0;
     stringArray = arr;
     for (var i = 0; i < arr.length; i++) {
         cell = document.createElement("td");
@@ -102,10 +104,16 @@ function generateCombination() {
 }
 
 function changeValueDept() {
-    document.getElementById("dept_in").value = "";
+    if(count1 == 0){
+        document.getElementById("dept_in").value = "";
+        count1 = 1;
+    }
     document.getElementById("dept_in").style.color="black";
              }
 function changeValueNum() {
+    if(count2 == 0){
                  document.getElementById("num_in").value = "";
+                 count2 = 1;
+    }
                  document.getElementById("num_in").style.color="black";
 }
