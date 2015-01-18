@@ -54,7 +54,7 @@
     }
   }
   
-  echo "<table style=""font-size:40px"">";
+  echo "<table>";
   echo "<tr>";
   echo "<td>";
   echo "string";
