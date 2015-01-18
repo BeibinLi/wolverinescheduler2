@@ -59,7 +59,7 @@
       echo "<tr>";
         for ($c = 0; $c < 10; $c++) {
           echo "<td>";
-          echo "string";
+          echo $a . $b . $c;
           echo "</td>";
         }
       echo "</tr>";
