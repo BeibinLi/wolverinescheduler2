@@ -39,12 +39,12 @@
       $stmt->execute();
       $courses = $stmt->fetchAll();
       if(count($courses) > 0) {
+        echo "Lectures:";
+        echo "\r\n";
         foreach($courses as $course) {
           //echo "Course: " . $course['C.coursename'] . ", Credits: " . $course['C.credits'];
-          echo "Lectures:";
-          echo "\r\n";
           echo "Start: " . $course['starttime'] . ", End: " . $course['endtime'] . 
-            ", Location: " . $course['location'] . ", Spots Left: " . $course['capacity'] - $course['enrolled'] . 
+            ", Location: " . $course['location'] . ", Capacity: " . $course['capacity'] . 
             ", Instructor: " . $course['instructor'] . ", Days: " . $course['days'];
         }
       }
