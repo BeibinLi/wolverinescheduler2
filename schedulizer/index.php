@@ -391,8 +391,8 @@ if(!empty($_POST)) {
     try {
       $dpt = $_POST['dept_in' . $i];
       $coursenum = $_POST['num_in' . $i];
-      $coursename = $dpt . " " . $coursenum;
-      array_push($inputs, trim($coursename));
+      $coursename = trim($dpt . " " . $coursenum);
+      array_push($inputs, $coursename);
     }
     catch(Exception $e) {
         die(var_dump($e));
