@@ -239,16 +239,14 @@ function print_one_schedule($aschedule) {
     echo "<br>"; 
     for($i = 1; $i < count($out); $i++){
     	for($j=0; $j < count($out[$i]); $j++){
-    		// if((int)$out[$i][$j] == 8){
-    		// 	echo "08";
-    		// }else if((int)$out[$i][$j] == 9){
-    		// 	echo "09";
-    		// }else 
-    		
-    		if($j == 0){ // first column
+    		if($i == 1 and $j == 0){
+    			echo "08";
+    		}else if( $i == 2 and $j == 0){
+    			echo "09";
+    		}else if($j == 0){ // first column
     			echo $out[$i][$j]; 
-    		}else if(strlen($out[$i][$j]) < 4){
-    			echo  str_repeat('&nbsp;', 8);
+    		// }else if( strlen($out[$i][$j]) < 4 ){
+    		// 	echo  str_repeat('&nbsp;', 8);
     		}else{
     			echo $out[$i][$j]; 
     		}
