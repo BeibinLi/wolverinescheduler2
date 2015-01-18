@@ -30,7 +30,6 @@
       $dpt = $_POST['dpt'];
       $coursenum = $_POST['coursenum'];
       $coursename = $dpt . " " . $coursenum;
-      echo $coursename;
       $sql_select = 'SELECT coursename, credits FROM courses
       WHERE coursename = ?';
       $stmt = $conn->prepare($sql_select);
@@ -39,7 +38,7 @@
       $courses = $stmt->fetchAll();
       if(count($courses) > 0) {
         foreach($courses as $course) {
-          echo $course['coursename'] . " : " . $course['credits'];
+          echo "Course: " . $course['coursename'] . ", Credits: " . $course['credits'];
         }
       }
     }
