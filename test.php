@@ -209,8 +209,8 @@ $bigstring;
 function print_one_schedule($aschedule) {
     $out = array(); //2D
     
-    $title = str_repeat('&nbsp;', 12) . "Monday". str_repeat('&nbsp;', 9).   "Tuesday". str_repeat('&nbsp;', 9).   
-    "Wednesday". str_repeat('&nbsp;', 9).   "Thursday". str_repeat('&nbsp;', 9).   "Friday";
+    $title = str_repeat('&nbsp;', 12) . "Monday". str_repeat('&nbsp;', 8).   "Tuesday". str_repeat('&nbsp;', 7).   
+    "Wednesday". str_repeat('&nbsp;', 6).   "Thursday". str_repeat('&nbsp;', 6).   "Friday";
     for($i = 1; $i < 10; $i++){
     	$out[$i] = array(); // array of string
     	$out[$i][0] = (string)($i + 7);
